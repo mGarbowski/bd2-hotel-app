@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("io.freefair.lombok") version "8.6"
 }
 
 group = "pl.mgarbowski"
@@ -10,6 +11,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.postgresql:postgresql:42.3.8")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
