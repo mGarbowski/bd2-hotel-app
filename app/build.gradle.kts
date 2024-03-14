@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("io.freefair.lombok") version "8.6"
+    id("application")
 }
 
 group = "pl.mgarbowski"
@@ -18,4 +19,8 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+application {
+    mainClass = "pl.mgarbowski.Main"
 }
