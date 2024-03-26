@@ -1,0 +1,160 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="760D4C9B-039A-C779-C15B-6B66E17EE718" name="client">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>34FE1126-61FB-9114-5D01-24C00CFB1F64</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="19DC1BF7-3F61-D1D6-F34F-31805CA4FDBB">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>BC7356BB-EB35-57D4-6552-A17C24BA741B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="6A82238D-6CBD-A83C-CAF4-066FCF288156">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>894B138B-7BC6-8C52-29D2-71BA85DE4EB5</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="surname" id="57D0589F-827B-9B0A-B733-13826212050C">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>8376B8E5-D338-6B6C-D105-67B84207968A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="age" id="388CEABC-058E-76F7-0A23-E827222E569B">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>9A4A7802-12EF-4B84-01AF-CE616BFCD0BB</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="gender" id="9113A055-A066-C30C-0639-E011764C5846">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>539B6687-5093-6D56-8155-4F9283E2526E</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="0C91E490-C7EB-9867-9BE5-1F69F36395E2">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>458655B2-4D24-FF06-C111-759628CB8B52</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone_number" id="0A7B3DFF-5EB9-7F0C-F75D-7FB16BCCE905">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>86BCECF0-C67A-4BEC-55CF-D6167F247E78</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="address_id" id="AD632160-BF2A-20E7-AA75-0F1E65DA799B">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>3CD57ED1-5CD8-AFA6-6D9A-D0354E1FA8AA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="60569BB5-292C-70D3-AF95-0021E4B5B064" referredColumn="935FC654-BCF2-D502-E82E-2940F2429695"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="720D9141-5302-6DE6-E88C-A80E9B11FB11" name="client_PK">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>61898773-1DA1-FAD6-AA84-00CDDD65FB21</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="19DC1BF7-3F61-D1D6-F34F-31805CA4FDBB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CFD637D8-E839-CB5B-FCE0-51821F656FBB" name="client__idx">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>15A82FB9-915B-0AC8-2884-CF308C69C946</importedID>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD632160-BF2A-20E7-AA75-0F1E65DA799B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="13BFCE0F-E9B2-44E6-6D96-4D3A97B97657" name="client_address_FK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD632160-BF2A-20E7-AA75-0F1E65DA799B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

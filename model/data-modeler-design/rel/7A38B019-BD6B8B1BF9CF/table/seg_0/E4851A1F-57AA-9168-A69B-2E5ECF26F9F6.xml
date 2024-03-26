@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E4851A1F-57AA-9168-A69B-2E5ECF26F9F6" name="hotel">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>5F9EB3EC-1921-09C2-FAB3-E132F4F89D0E</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="DE988B0F-B829-FD28-1790-801504A755AF">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>C901F647-0415-90BC-E4FD-268E1243D58E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone_number" id="9382915D-B970-B40D-9480-22F03DD0F937">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>88E7C608-16E3-A7B0-91F1-710DC9C6365B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="361E9641-5514-FBEC-E8BC-3E52FB547573">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>D40EBE98-D60B-CF9C-BF02-A7F565DFADF1</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="stars" id="4F3159B8-13EB-545C-E2B0-83745E41AEA2">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>B5241AEF-3AD1-734F-FD0F-1CED965CF4C7</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="address_id" id="C56763EC-D1AE-20F4-9831-8C7D3400994D">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>578E53D9-574F-C0C9-DBCB-D98CBDD0564B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D586EB04-EC18-E851-F206-6CA35C8D9FDD" referredColumn="935FC654-BCF2-D502-E82E-2940F2429695"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DDCE046C-93EE-D0E8-2988-4F091012CC16" name="hotel_PK">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>9A06BAB8-1704-07FD-2355-CA8B1259A6FB</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DE988B0F-B829-FD28-1790-801504A755AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E89759C5-56EB-74E8-BB0C-BF112347B026" name="hotel__idx">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>F511B25E-DFD1-CBF7-7C51-48A7A7605CEB</importedID>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C56763EC-D1AE-20F4-9831-8C7D3400994D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="70C04727-3038-1643-95F4-7DA5CB3C3992" name="hotel_address_FK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C56763EC-D1AE-20F4-9831-8C7D3400994D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="payments_booking_FK" directorySegmentName="seg_0" id="1D5E9870-7FE6-C37B-CF54-BA9577B09E92">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:49:56 UTC</createdTime>
+<generatorID>718093EC-061F-D532-76A9-394533BEDD94</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="C4901E35-FB96-7B30-306D-CD59B4FD5DD4" value="true"/>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<sourcePk>0A0103FF-FC8A-9F95-1675-54EF402B1053</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>EDB35E62-75C8-D6AE-EFB6-BB51FBC12A25</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E1FCC395-2AC2-31B4-3C28-B500B81400CD</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

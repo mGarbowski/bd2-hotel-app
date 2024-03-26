@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="30FFC058-E8AD-2469-746A-B12B75B6A67B" name="services">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:45:24 UTC</createdTime>
+<generatorID>4FC4D6D0-40A1-D5E1-D657-FAF0CD15D1D5</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="D8B7C17C-2229-B6B5-0371-78BF573513C6">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:45:24 UTC</createdTime>
+<generatorID>8787755B-AE96-9A6D-6472-A384ADC15FA6</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="7C3DBC14-F3BA-C81F-2E5C-B82AFC180264">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:45:24 UTC</createdTime>
+<generatorID>BF0D5AC0-6E84-A94D-C015-90E5111856F1</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="price" id="CC809590-B0A0-E364-BB49-50A6328872FF">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:45:24 UTC</createdTime>
+<generatorID>EEA6D398-B1FC-45CA-9410-14876D042C6C</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="iso code" id="4776DA38-8317-C367-31F8-CEE3E0A31BE4">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:40:43 UTC</createdTime>
+<generatorID>C0CEEE4A-E96F-5696-656E-CB90035EF737</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<referedAttribute>9B850CDD-FEA1-E614-B815-ED6770E9FF9C</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8CB7AC77-0805-D0A2-CA3B-FC8F4D9596BD" name="services PK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:45:24 UTC</createdTime>
+<generatorID>E342DA9E-358B-87B6-C136-79B865EEC5D4</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D8B7C17C-2229-B6B5-0371-78BF573513C6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

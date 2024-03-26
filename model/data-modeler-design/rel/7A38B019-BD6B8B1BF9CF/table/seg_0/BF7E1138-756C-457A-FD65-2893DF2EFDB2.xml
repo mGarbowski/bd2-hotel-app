@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BF7E1138-756C-457A-FD65-2893DF2EFDB2" name="booking">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>025C5F25-6B3E-2943-E941-F74B47A8B228</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="C9A199C6-85E3-EF9F-ADA6-78D2C3B28356">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>31AFF0EF-F9BF-9517-2342-753EFB20EEF4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="start_date" id="FBEDA382-DC6F-A025-511D-121D30830D8D">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>16DB6FE7-A5FE-F672-8A86-0EEF71EA4159</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>CC668EDD-3D63-0E45-2B2A-7B48F2ED4D06</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="end_date" id="5733F5AB-F312-8596-48CA-B6CBF59A29AB">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>9EA666F0-684E-75AC-EDFE-CB731EF4DD84</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>CC668EDD-3D63-0E45-2B2A-7B48F2ED4D06</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="no_people" id="9590676D-429E-644B-06EF-3A0492053C64">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>2845232B-1166-1CE8-3838-EA187EC5AAE6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="client_id" id="3C3B6C1E-D3F3-E9CE-FED1-70C034759D0C">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>BE4E6D3B-E086-D584-4972-980A1779F013</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2FACA326-930D-102C-3599-29643EBF537F" referredColumn="19DC1BF7-3F61-D1D6-F34F-31805CA4FDBB"/>
+</associations>
+</Column>
+<Column name="apartment_id" id="78D572E0-F755-FD29-E137-430794C998A9">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>95099373-54FF-1C51-52B4-EE1DB282B076</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="688A9DF2-A88C-737A-9336-A1FFA0D41DF2" referredColumn="63D3802B-0E32-C1CF-A0C6-18176F213AA9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="50C1AD4D-6E1F-CEEF-7F8B-2A000581E3D2" name="booking_PK">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>114EBDA0-10D6-0F33-B24C-DAFF220D0DF0</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C9A199C6-85E3-EF9F-ADA6-78D2C3B28356"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="41648022-ECC3-9964-72D5-29A2EB6BD10D" name="booking__idx">
+<sourceDDLFile>create-tables.ddl</sourceDDLFile>
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>05582D3F-0FEB-F18D-BF58-57F5E6902CC1</importedID>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="78D572E0-F755-FD29-E137-430794C998A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4DA29EBA-3E65-B6F1-5940-8F4D76797D32" name="booking_client_FK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3C3B6C1E-D3F3-E9CE-FED1-70C034759D0C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC630720-BFC2-01F2-6AFC-3DCC9742045D" name="booking_apartment_FK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="78D572E0-F755-FD29-E137-430794C998A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1D072344-1202-A2A2-176D-2DE339553D6C" name="booking_services">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:45:37 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="services_id" id="6325ABBD-7FC1-CFC1-4C2E-E5CD532F40D8">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:45:37 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B4CB0482-3BA4-D351-3CB2-B73BFD096087" referredColumn="8787755B-AE96-9A6D-6472-A384ADC15FA6"/>
+</associations>
+</Column>
+<Column name="booking_id" id="C1F86FA2-D8D4-4DB2-49E6-83DB3DB8FC72">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:45:37 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C8E7512F-0324-5EA8-03F7-A9DEF138BB13" referredColumn="C9A199C6-85E3-EF9F-ADA6-78D2C3B28356"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1A4ECF84-D1B9-54A8-FDFC-86F1F1B2D903" name="booking_services_PK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:45:37 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6325ABBD-7FC1-CFC1-4C2E-E5CD532F40D8"/>
+<colUsage columnID="C1F86FA2-D8D4-4DB2-49E6-83DB3DB8FC72"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0303CA1B-387C-8282-41F9-DC8671B84F19" name="booking_services_services_FK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:45:37 UTC</createdTime>
+<generatorID>20892D35-C7DF-8D9D-75AF-0738DE3EE26D</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6325ABBD-7FC1-CFC1-4C2E-E5CD532F40D8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0899B0E6-A349-13A1-5692-20BA70891809" name="booking_services_booking_FK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:45:37 UTC</createdTime>
+<generatorID>20892D35-C7DF-8D9D-75AF-0738DE3EE26D</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1F86FA2-D8D4-4DB2-49E6-83DB3DB8FC72"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

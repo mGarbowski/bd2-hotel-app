@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E1FCC395-2AC2-31B4-3C28-B500B81400CD" name="payment">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:49:56 UTC</createdTime>
+<generatorID>54FE7E33-73B2-D6FB-2F02-9DE208333D47</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="7A9C89D6-DA5C-39BE-E735-B5077ECD5BE6">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:49:56 UTC</createdTime>
+<generatorID>58FBAE7E-05AC-A8CC-D581-77EB01FBCE9C</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="timestamp" id="768D2F3F-E92C-67E9-0797-EEEB045DF9E6">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:49:56 UTC</createdTime>
+<generatorID>2ECE418E-C949-F8AA-0BD1-27F2EC919BB7</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="amount" id="5E60C7A5-CCEB-E5FE-515F-7ED019B70A43">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:49:56 UTC</createdTime>
+<generatorID>5D577496-D732-6377-BC9D-A889EFFF5C35</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="booking id" id="CDC112A5-2F0B-7A9E-14F3-BD1A64DF9DA9">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:49:56 UTC</createdTime>
+<generatorID>1D5E9870-7FE6-C37B-CF54-BA9577B09E92</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<referedAttribute>72EC5C4D-898D-6793-83DE-D0859DBD44BB</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

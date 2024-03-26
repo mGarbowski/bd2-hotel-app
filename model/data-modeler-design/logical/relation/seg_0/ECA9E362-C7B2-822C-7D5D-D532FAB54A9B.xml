@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="client address FK" directorySegmentName="seg_0" id="ECA9E362-C7B2-822C-7D5D-D532FAB54A9B">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<importedID>C4187FA8-FDED-8144-5AC8-E0A018731FFC</importedID>
+<engineerTo>
+<item key="C4901E35-FB96-7B30-306D-CD59B4FD5DD4" value="true"/>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<sourcePk>4A2C433F-A340-EA80-2110-86A85686853A</sourcePk>
+<dominantRole>5E73B4D3-12A4-754B-4E58-C1AFC5808DA8</dominantRole>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5E73B4D3-12A4-754B-4E58-C1AFC5808DA8</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>09B9102D-24AC-6A42-B6FC-B918D3B24DD4</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="data-modeler-design" id="5448E917-C622-72B8-C345-168646DEDC24" version="3.5">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:43:29 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>5448E917-C622-72B8-C345-168646DEDC24</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="3BA24BC9-24CC-CEA2-16BA-4B18A81325E2">
+<designStoragePath>C:\create-tables</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="7DE1ADA0-1411-E213-9273-E80F981249A0">
+<designStoragePath>C:\Users\mikol\politechnika\semestr-2\bazy-danych-1\projekt\export</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

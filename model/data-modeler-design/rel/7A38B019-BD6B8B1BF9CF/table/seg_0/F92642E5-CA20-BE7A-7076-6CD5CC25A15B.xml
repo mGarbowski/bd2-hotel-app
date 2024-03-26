@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F92642E5-CA20-BE7A-7076-6CD5CC25A15B" name="complaints">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:46:53 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<ordsAlias>table_13</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="3053F0E3-F95F-0410-9681-27E5E27D3A8E">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:47:20 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="C52D8F85-798C-915E-F636-A49DAE71C16D">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:47:20 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="text" id="B8512CE6-E8B9-8334-FA77-96C10DE1881F">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:47:20 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="booking_id" id="180DE4F7-2474-C623-D4CD-3D53204843B5">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:47:25 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7FA9464C-E078-784D-5353-7B16FABB29E3" referredColumn="C9A199C6-85E3-EF9F-ADA6-78D2C3B28356"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E457B41C-638A-8079-C38E-8A0056060EFB" name="complaints_PK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:47:20 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3053F0E3-F95F-0410-9681-27E5E27D3A8E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="15CAA0BC-AB98-85E1-F19C-FA1EC91ADF4E" name="complaints_booking_FK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:47:25 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="180DE4F7-2474-C623-D4CD-3D53204843B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
