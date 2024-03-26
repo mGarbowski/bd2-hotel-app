@@ -114,12 +114,15 @@
 <colAssociation fkAssociation="F5B75335-D18E-4774-8D62-61A7DFD9E3AF" referredColumn="DE988B0F-B829-FD28-1790-801504A755AF"/>
 </associations>
 </Column>
-<Column name="Currency_iso_code" id="470215FD-07CC-5947-22E2-51F80F5D6AA7">
+<Column name="currency_iso_code" id="470215FD-07CC-5947-22E2-51F80F5D6AA7">
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 11:57:40 UTC</createdTime>
 <generatorID>0E58C94F-DB41-5EF2-5103-B8B32A82529F</generatorID>
 <ownerDesignName>data-modeler-design</ownerDesignName>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -153,7 +156,7 @@
 <colUsage columnID="470215FD-07CC-5947-22E2-51F80F5D6AA7"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="49AB4B3E-26EA-795B-5836-4508E41235DE" name="apartment_hotel_FK">
+<ind_PK_UK id="49AB4B3E-26EA-795B-5836-4508E41235DE" name="apartment_hotel_fk">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
@@ -163,7 +166,7 @@
 <colUsage columnID="4DC4E1B9-9E7B-1947-10D4-87F46C7D9DAA"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E6672325-EBD7-D7F6-29B6-D18B8DB55D4F" name="apartment_Currency_FK">
+<ind_PK_UK id="E6672325-EBD7-D7F6-29B6-D18B8DB55D4F" name="apartment_currency_fk">
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 11:57:40 UTC</createdTime>
 <generatorID>C29A3F7A-FA85-BC69-343C-F4920D2DB451</generatorID>

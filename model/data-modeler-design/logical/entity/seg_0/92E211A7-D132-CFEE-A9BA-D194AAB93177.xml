@@ -137,7 +137,9 @@
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
 <referedAttribute>9B850CDD-FEA1-E614-B815-ED6770E9FF9C</referedAttribute>
-<use>0</use>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
@@ -146,9 +148,10 @@
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <importedID>6730BC47-B0A6-9D2B-1A39-710BCA73D2EF</importedID>
 <engineerTo>
-<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

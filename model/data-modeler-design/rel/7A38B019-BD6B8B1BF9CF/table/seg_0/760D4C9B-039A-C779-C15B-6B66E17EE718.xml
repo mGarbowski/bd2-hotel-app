@@ -121,7 +121,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="720D9141-5302-6DE6-E88C-A80E9B11FB11" name="client_PK">
+<ind_PK_UK id="720D9141-5302-6DE6-E88C-A80E9B11FB11" name="customer_PK">
 <sourceDDLFile>create-tables.ddl</sourceDDLFile>
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
@@ -146,7 +146,7 @@
 <colUsage columnID="AD632160-BF2A-20E7-AA75-0F1E65DA799B"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="13BFCE0F-E9B2-44E6-6D96-4D3A97B97657" name="client_address_FK">
+<ind_PK_UK id="13BFCE0F-E9B2-44E6-6D96-4D3A97B97657" name="customer_address_FK">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>

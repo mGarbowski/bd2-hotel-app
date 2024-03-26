@@ -59,7 +59,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="080D024D-CF19-4B46-2640-ADBA28EBF547" name="payments_booking_FK">
+<ind_PK_UK id="080D024D-CF19-4B46-2640-ADBA28EBF547" name="payment_booking_FK">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:46:44 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>

@@ -60,7 +60,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="client_id" id="3C3B6C1E-D3F3-E9CE-FED1-70C034759D0C">
+<Column name="customer_id" id="3C3B6C1E-D3F3-E9CE-FED1-70C034759D0C">
 <sourceDDLFile>create-tables.ddl</sourceDDLFile>
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
@@ -117,7 +117,7 @@
 <colUsage columnID="78D572E0-F755-FD29-E137-430794C998A9"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="4DA29EBA-3E65-B6F1-5940-8F4D76797D32" name="booking_client_FK">
+<ind_PK_UK id="4DA29EBA-3E65-B6F1-5940-8F4D76797D32" name="booking_customer_FK">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>

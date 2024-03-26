@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3969E029-8761-DF55-1C0F-B9CCEF3BDC3F" containerWithKeyObject="6744EBF7-F593-3738-3211-48B04ED6B2B0" localFKIndex="94D84B62-9B0F-878D-BE1E-0EE7FAA8BF75" name="apartment_features_apartment_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="76E998E4-AF62-D3CC-6D67-4353BDA3E564" containerWithKeyObject="51EA24F3-B01D-0066-CD56-D5A40B21AC5D" localFKIndex="EAA91F0B-10AC-1808-62EA-F32FD3A5A9AA" name="apartment_feature_apartment_fk">
 <createdBy>mgarbowski</createdBy>
-<createdTime>2024-03-26 11:57:40 UTC</createdTime>
-<generatorID>0B8A577C-0E83-E379-F9B1-141959E8F153</generatorID>
+<createdTime>2024-03-26 12:24:52 UTC</createdTime>
+<generatorID>4CDE561D-1DA2-01EC-8460-26B14F82208A</generatorID>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <referredTableLongName>apartment</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>08103B54-062A-82BF-D529-06EAC711F48E</referredTableID>
 <keyObject>A8421F98-BFDF-A850-CB13-EC5AB6EBACDA</keyObject>
 <referredKeyID>A8421F98-BFDF-A850-CB13-EC5AB6EBACDA</referredKeyID>
-<mandatory>false</mandatory>
+<mandatory>true</mandatory>
 <refColNames>id</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>

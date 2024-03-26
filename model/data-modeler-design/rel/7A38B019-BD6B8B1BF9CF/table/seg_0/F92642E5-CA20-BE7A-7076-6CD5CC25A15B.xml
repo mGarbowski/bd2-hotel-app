@@ -56,7 +56,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="E457B41C-638A-8079-C38E-8A0056060EFB" name="complaints_PK">
+<ind_PK_UK id="E457B41C-638A-8079-C38E-8A0056060EFB" name="complaint_PK">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:47:20 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
@@ -78,7 +78,7 @@
 <colUsage columnID="180DE4F7-2474-C623-D4CD-3D53204843B5"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="15CAA0BC-AB98-85E1-F19C-FA1EC91ADF4E" name="complaints_booking_FK">
+<ind_PK_UK id="15CAA0BC-AB98-85E1-F19C-FA1EC91ADF4E" name="complaint_booking_FK">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:47:25 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>

@@ -14,7 +14,9 @@
 <generatorID>A7206163-F3CC-3D0A-DF49-D3E19B744DB1</generatorID>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -46,6 +48,21 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <isSurrogateColumn>true</isSurrogateColumn>
 </Column>
+<Column name="services_id" id="4A2DF43C-7BDD-3862-FD6B-DBA5076A98C2">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 12:20:57 UTC</createdTime>
+<generatorID>C919A81D-38B4-501C-B8AA-411FC3F5EA85</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2A6D5BF6-E05A-FEB2-83B4-DED8971A02B5" referredColumn="8787755B-AE96-9A6D-6472-A384ADC15FA6"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="280CFE25-614F-9A6A-5464-E51D36845978" name="service_order_PK">
@@ -58,6 +75,17 @@
 <colUsage columnID="30FF8BCA-1E21-02ED-F160-983273D962CB"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="6719C042-FB46-B709-BFE5-EA577B3EC19C" name="service_order__IDX">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 12:20:57 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>6E6DE25B-A354-6ECB-9A1C-1750C07CAB5F</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="4A2DF43C-7BDD-3862-FD6B-DBA5076A98C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="9F057916-00CD-FE8D-1E42-44FB1871FEDF" name="service_order_booking_FK">
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 11:57:40 UTC</createdTime>
@@ -67,6 +95,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="54D03AB3-E777-7F69-8F3C-22DCCBF7B3EB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="78D3225E-A7CD-EAC1-AC6E-8DE10A55E648" name="service_order_services_FK">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 12:20:57 UTC</createdTime>
+<generatorID>6E6DE25B-A354-6ECB-9A1C-1750C07CAB5F</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4A2DF43C-7BDD-3862-FD6B-DBA5076A98C2"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

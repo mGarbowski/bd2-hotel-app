@@ -107,9 +107,10 @@
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <importedID>3D51497F-ADD2-585A-378C-DB3A8B363643</importedID>
 <engineerTo>
-<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="84B115C9-264E-6D18-82BB-CA6C33D3FF0A" name="apartment features">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="84B115C9-264E-6D18-82BB-CA6C33D3FF0A" name="feature">
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 11:34:37 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
@@ -22,22 +22,9 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id" id="0250524F-F280-E67F-B303-0925DC903333">
-<createdBy>mgarbowski</createdBy>
-<createdTime>2024-03-26 11:35:47 UTC</createdTime>
-<generatorID>0B8A577C-0E83-E379-F9B1-141959E8F153</generatorID>
-<ownerDesignName>data-modeler-design</ownerDesignName>
-<engineerTo>
-<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>3F2935B5-8DB0-7165-D3A4-5EA526835B8E</referedAttribute>
-<use>0</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
@@ -46,8 +33,9 @@
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 11:34:52 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

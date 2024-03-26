@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F8038F51-A961-7F59-3093-3611DFDDA67A" name="Currency">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F8038F51-A961-7F59-3093-3611DFDDA67A" name="currency">
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 11:38:13 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
@@ -22,8 +22,11 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="name" id="0E8B96BC-FE79-358F-802F-99770DE9F796">
 <createdBy>mgarbowski</createdBy>
@@ -32,8 +35,11 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -41,8 +47,9 @@
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 11:39:11 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

@@ -5,7 +5,6 @@
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>97949B6B-114A-5F37-D051-B7B6B382B6CE</importedID>
 <engineerTo>
-<item key="C4901E35-FB96-7B30-306D-CD59B4FD5DD4" value="true"/>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
@@ -23,7 +22,6 @@
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>517A5901-C9E9-4DA6-3355-28948770EF52</importedID>
 <engineerTo>
-<item key="C4901E35-FB96-7B30-306D-CD59B4FD5DD4" value="true"/>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
 <use>0</use>
@@ -37,7 +35,6 @@
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>3582C764-C20B-BF84-6CCF-A7151E4F6988</importedID>
 <engineerTo>
-<item key="C4901E35-FB96-7B30-306D-CD59B4FD5DD4" value="true"/>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
@@ -53,7 +50,6 @@
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>C90DBDAF-2A07-3E9F-F5D9-E25CBE48D6C8</importedID>
 <engineerTo>
-<item key="C4901E35-FB96-7B30-306D-CD59B4FD5DD4" value="true"/>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
 <referedAttribute>96262C99-5CEE-FFCB-6BA8-DF533AE7310E</referedAttribute>
@@ -68,10 +64,10 @@
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <importedID>B032FD63-7D8B-32B8-E4F6-D9210345A453</importedID>
 <engineerTo>
-<item key="C4901E35-FB96-7B30-306D-CD59B4FD5DD4" value="true"/>
-<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
