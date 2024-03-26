@@ -43,6 +43,33 @@
 <ownDataTypeParameters>,10,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Currency_iso_code" id="33BCB03F-3D4F-1A24-2D6E-49D67E33B98E">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:57:40 UTC</createdTime>
+<generatorID>4776DA38-8317-C367-31F8-CEE3E0A31BE4</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1F07532C-C80B-8AD2-B122-9BB2EB1D323F" referredColumn="5176F8D0-6F5C-C0C1-54F4-1F81A00FF053"/>
+</associations>
+</Column>
+<Column name="service_order_service_order_ID" id="C164E398-8647-B919-4DBA-4987196DE49A">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:57:40 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0AC48A1-BE5B-4E24-4F91-145FF3A13ABF" referredColumn="30FF8BCA-1E21-02ED-F160-983273D962CB"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="E342DA9E-358B-87B6-C136-79B865EEC5D4" name="services_PK">
@@ -54,6 +81,39 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="8787755B-AE96-9A6D-6472-A384ADC15FA6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A241511B-8C94-27DE-DAE9-97403A3DE1ED" name="services__IDX">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:57:40 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>C0CEEE4A-E96F-5696-656E-CB90035EF737</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="33BCB03F-3D4F-1A24-2D6E-49D67E33B98E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3576D05D-71B9-F1A9-EBBA-817FC222A2EA" name="services_service_order_FK">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:57:40 UTC</createdTime>
+<generatorID>6E6DE25B-A354-6ECB-9A1C-1750C07CAB5F</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C164E398-8647-B919-4DBA-4987196DE49A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AAD641CC-02EF-C1A5-53E1-AF47859A7FC8" name="services_Currency_FK">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:57:40 UTC</createdTime>
+<generatorID>C0CEEE4A-E96F-5696-656E-CB90035EF737</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="33BCB03F-3D4F-1A24-2D6E-49D67E33B98E"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

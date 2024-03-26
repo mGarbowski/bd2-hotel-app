@@ -10,7 +10,7 @@
 <referredTableID>E4851A1F-57AA-9168-A69B-2E5ECF26F9F6</referredTableID>
 <keyObject>DDCE046C-93EE-D0E8-2988-4F091012CC16</keyObject>
 <referredKeyID>DDCE046C-93EE-D0E8-2988-4F091012CC16</referredKeyID>
-<mandatory>false</mandatory>
+<mandatory>true</mandatory>
 <refColNames>id</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>

@@ -91,6 +91,17 @@
 <colUsage columnID="6A004878-6EB7-FA37-B918-1AC73DD4809E"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="5E115D77-3BC7-9E5D-15FF-8E17440F6337" name="rating__IDX">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:57:40 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>8EFDED6B-B0AF-B84B-D517-7A577D342706</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="8F455ADD-DC92-D36F-4A5B-AB2153755D3A"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="32CEA1F7-D4A1-FE66-D422-81B8FD4B6173" name="rating_booking_FK">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
