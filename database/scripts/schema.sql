@@ -1,84 +1,13 @@
+-- Create database schema
+-- All tables, constraints, views, indexes
+
 BEGIN TRANSACTION;
-
--- CREATE TABLE statements
-CREATE TABLE address
-(
-    id       SERIAL PRIMARY KEY,
-    street   VARCHAR(64),
-    zip_code VARCHAR(64),
-    city_id  INTEGER NOT NULL
-);
-
-CREATE TABLE apartment
-(
-    id                SERIAL PRIMARY KEY,
-    no_rooms          INTEGER,
-    no_bathrooms      INTEGER,
-    no_beds           INTEGER,
-    max_no_people     INTEGER,
-    area              INTEGER,
-    price_per_day     NUMERIC(10, 2),
-    hotel_id          INTEGER     NOT NULL,
-    currency_iso_code VARCHAR(32) NOT NULL
-);
-
-CREATE UNIQUE INDEX apartment__idx ON
-    apartment (
-               currency_iso_code
-               ASC);
-
-CREATE TABLE apartment_feature
-(
-    feature_name VARCHAR NOT NULL,
-    apartment_id INTEGER NOT NULL,
-    PRIMARY KEY (apartment_id, feature_name)
-);
-
-CREATE UNIQUE INDEX apartment_feature__idx ON
-    apartment_feature (
-                       feature_name
-                       ASC);
-
-CREATE TABLE booking
-(
-    id           SERIAL PRIMARY KEY,
-    start_date   DATE,
-    end_date     DATE,
-    no_people    INTEGER,
-    customer_id  INTEGER NOT NULL,
-    apartment_id INTEGER NOT NULL
-);
-
-CREATE UNIQUE INDEX booking__idx ON
-    booking (
-             apartment_id
-             ASC);
-
-CREATE TABLE city
-(
-    id         SERIAL PRIMARY KEY,
-    name       VARCHAR(64),
-    country_id INTEGER NOT NULL
-);
-
-CREATE TABLE complaint
-(
-    id         SERIAL PRIMARY KEY,
-    "date"     DATE,
-    text       TEXT,
-    booking_id INTEGER NOT NULL
-);
-
-CREATE UNIQUE INDEX complaint__idx ON
-    complaint (
-               booking_id
-               ASC);
 
 CREATE TABLE country
 (
     id   SERIAL PRIMARY KEY,
-    name VARCHAR,
-    code VARCHAR
+    name VARCHAR NOT NULL,
+    code VARCHAR NOT NULL
 );
 
 CREATE TABLE currency
@@ -87,155 +16,144 @@ CREATE TABLE currency
     name     VARCHAR(32) NOT NULL
 );
 
-CREATE TABLE customer
-(
-    id           SERIAL PRIMARY KEY,
-    name         VARCHAR(64),
-    surname      VARCHAR(64),
-    age          INTEGER,
-    gender       VARCHAR(1),
-    email        VARCHAR(64),
-    phone_number VARCHAR(64),
-    address_id   INTEGER NOT NULL
-);
-
-CREATE UNIQUE INDEX client__idx ON
-    customer (
-              address_id
-              ASC);
-
 CREATE TABLE feature
 (
     name VARCHAR NOT NULL PRIMARY KEY
 );
 
+CREATE TABLE city
+(
+    id         SERIAL PRIMARY KEY,
+    name       VARCHAR(64) NOT NULL,
+    country_id INTEGER     NOT NULL,
+    CONSTRAINT city_country_fk FOREIGN KEY (country_id) REFERENCES country (id)
+);
+
+CREATE TABLE address
+(
+    id       SERIAL PRIMARY KEY,
+    street   VARCHAR(64) NOT NULL,
+    zip_code VARCHAR(64) NOT NULL,
+    city_id  INTEGER     NOT NULL,
+    CONSTRAINT address_city_fk FOREIGN KEY (city_id) REFERENCES city (id)
+);
+
+CREATE TABLE customer
+(
+    id           SERIAL PRIMARY KEY,
+    name         VARCHAR(64) NOT NULL,
+    surname      VARCHAR(64) NOT NULL,
+    age          INTEGER     NOT NULL,
+    gender       CHAR(1)     NOT NULL,
+    email        VARCHAR(64) NOT NULL,
+    phone_number VARCHAR(64) NOT NULL,
+    address_id   INTEGER     NOT NULL,
+    CONSTRAINT customer_address_fk FOREIGN KEY (address_id) REFERENCES address (id)
+);
+
 CREATE TABLE hotel
 (
     id           SERIAL PRIMARY KEY,
-    phone_number VARCHAR(64),
-    email        VARCHAR(64),
-    stars        INTEGER,
-    address_id   INTEGER NOT NULL
+    phone_number VARCHAR(64) NOT NULL,
+    email        VARCHAR(64) NOT NULL,
+    stars        INTEGER     NOT NULL,
+    address_id   INTEGER     NOT NULL,
+    CONSTRAINT hotel_address_fk FOREIGN KEY (address_id) REFERENCES address (id)
 );
 
-CREATE UNIQUE INDEX hotel__idx ON
-    hotel (
-           address_id
-           ASC);
+CREATE TABLE apartment
+(
+    id                SERIAL PRIMARY KEY,
+    n_rooms           INTEGER        NOT NULL,
+    n_bathrooms       INTEGER        NOT NULL,
+    n_beds            INTEGER        NOT NULL,
+    max_n_people      INTEGER        NOT NULL,
+    area              INTEGER        NOT NULL,
+    price_per_day     NUMERIC(10, 2) NOT NULL,
+    hotel_id          INTEGER        NOT NULL,
+    currency_iso_code VARCHAR(32)    NOT NULL,
+    CONSTRAINT apartment_hotel_fk FOREIGN KEY (hotel_id) REFERENCES hotel (id),
+    CONSTRAINT apartment_currency_fk FOREIGN KEY (currency_iso_code) REFERENCES currency (iso_code)
+);
+
+CREATE TABLE services
+(
+    id                SERIAL PRIMARY KEY,
+    name              VARCHAR(64)    NOT NULL,
+    price             NUMERIC(10, 2) NOT NULL,
+    currency_iso_code VARCHAR(32)    NOT NULL,
+    CONSTRAINT services_currency_fk FOREIGN KEY (currency_iso_code) REFERENCES currency (iso_code)
+);
+
+CREATE TABLE available_service
+(
+    services_id INTEGER NOT NULL,
+    hotel_id    INTEGER NOT NULL,
+    CONSTRAINT available_service_pk PRIMARY KEY (services_id, hotel_id),
+    CONSTRAINT available_service_hotel_fk FOREIGN KEY (hotel_id) REFERENCES hotel (id),
+    CONSTRAINT available_service_services_fk FOREIGN KEY (services_id) REFERENCES services (id)
+);
+
+CREATE TABLE available_feature
+(
+    feature_name VARCHAR NOT NULL,
+    apartment_id INTEGER NOT NULL,
+    CONSTRAINT apartment_feature_pk PRIMARY KEY (apartment_id, feature_name),
+    CONSTRAINT apartment_feature_apartment_fk FOREIGN KEY (apartment_id) REFERENCES apartment (id),
+    CONSTRAINT apartment_feature_feature_fk FOREIGN KEY (feature_name) REFERENCES feature (name)
+);
+
+CREATE TABLE booking
+(
+    id           SERIAL PRIMARY KEY,
+    start_date   DATE    NOT NULL,
+    end_date     DATE    NOT NULL,
+    n_people     INTEGER NOT NULL,
+    customer_id  INTEGER NOT NULL,
+    apartment_id INTEGER NOT NULL,
+    CONSTRAINT booking_customer_fk FOREIGN KEY (customer_id) REFERENCES customer (id),
+    CONSTRAINT booking_apartment_fk FOREIGN KEY (apartment_id) REFERENCES apartment (id)
+);
 
 CREATE TABLE payment
 (
-    id         SERIAL PRIMARY KEY,
-    timestamp  DATE,
-    amount     NUMERIC(10, 2),
-    booking_id INTEGER NOT NULL
+    id                SERIAL PRIMARY KEY,
+    timestamp         DATE           NOT NULL,
+    amount            NUMERIC(10, 2) NOT NULL,
+    booking_id        INTEGER        NOT NULL,
+    currency_iso_code VARCHAR(32)    NOT NULL,
+    CONSTRAINT payment_booking_fk FOREIGN KEY (booking_id) REFERENCES booking (id),
+    CONSTRAINT payment_currency_fk FOREIGN KEY (currency_iso_code) REFERENCES currency (iso_code)
 );
 
 CREATE TABLE rating
 (
     id          SERIAL PRIMARY KEY,
-    "date"      DATE,
-    star_rating INTEGER,
-    text        TEXT,
-    booking_id  INTEGER NOT NULL
+    timestamp   DATE    NOT NULL,
+    star_rating INTEGER NOT NULL,
+    text        TEXT    NOT NULL,
+    booking_id  INTEGER NOT NULL,
+    CONSTRAINT rating_booking_fk FOREIGN KEY (booking_id) REFERENCES booking (id)
 );
 
-CREATE UNIQUE INDEX rating__idx ON
-    rating (
-            booking_id
-            ASC);
+CREATE TABLE complaint
+(
+    id         SERIAL PRIMARY KEY,
+    timestamp  DATE    NOT NULL,
+    text       TEXT    NOT NULL,
+    booking_id INTEGER NOT NULL,
+    CONSTRAINT complaint_booking_fk FOREIGN KEY (booking_id) REFERENCES booking (id)
+);
 
 CREATE TABLE service_order
 (
-    service_order_id SERIAL PRIMARY KEY,
-    timestamp        TIMESTAMP,
-    booking_id       INTEGER NOT NULL,
-    services_id      INTEGER NOT NULL
+    id                            SERIAL PRIMARY KEY,
+    timestamp                     TIMESTAMP,
+    booking_id                    INTEGER NOT NULL,
+    available_service_services_id INTEGER NOT NULL,
+    available_service_hotel_id    INTEGER NOT NULL,
+    CONSTRAINT service_order_booking_fk FOREIGN KEY (booking_id) REFERENCES booking (id),
+    CONSTRAINT service_order_available_service_fk FOREIGN KEY (available_service_services_id, available_service_hotel_id) REFERENCES available_service (services_id, hotel_id)
 );
-
-CREATE UNIQUE INDEX service_order__idx ON
-    service_order (
-                   services_id
-                   ASC);
-
-CREATE TABLE services
-(
-    id                SERIAL PRIMARY KEY,
-    name              VARCHAR(64),
-    price             NUMERIC(10, 2),
-    currency_iso_code VARCHAR(32) NOT NULL
-);
-
-CREATE UNIQUE INDEX services__idx ON
-    services (
-              currency_iso_code
-              ASC);
-
--- FOREIGN KEY constraints
-ALTER TABLE address
-    ADD CONSTRAINT address_city_fk FOREIGN KEY (city_id)
-        REFERENCES city (id);
-
-ALTER TABLE apartment
-    ADD CONSTRAINT apartment_currency_fk FOREIGN KEY (currency_iso_code)
-        REFERENCES currency (iso_code);
-
-ALTER TABLE apartment_feature
-    ADD CONSTRAINT apartment_feature_apartment_fk FOREIGN KEY (apartment_id)
-        REFERENCES apartment (id);
-
-ALTER TABLE apartment_feature
-    ADD CONSTRAINT apartment_feature_feature_fk FOREIGN KEY (feature_name)
-        REFERENCES feature (name);
-
-ALTER TABLE apartment
-    ADD CONSTRAINT apartment_hotel_fk FOREIGN KEY (hotel_id)
-        REFERENCES hotel (id);
-
-ALTER TABLE booking
-    ADD CONSTRAINT booking_apartment_fk FOREIGN KEY (apartment_id)
-        REFERENCES apartment (id);
-
-ALTER TABLE booking
-    ADD CONSTRAINT booking_customer_fk FOREIGN KEY (customer_id)
-        REFERENCES customer (id);
-
-ALTER TABLE city
-    ADD CONSTRAINT city_country_fk FOREIGN KEY (country_id)
-        REFERENCES country (id);
-
-ALTER TABLE complaint
-    ADD CONSTRAINT complaint_booking_fk FOREIGN KEY (booking_id)
-        REFERENCES booking (id);
-
-ALTER TABLE customer
-    ADD CONSTRAINT customer_address_fk FOREIGN KEY (address_id)
-        REFERENCES address (id);
-
-ALTER TABLE hotel
-    ADD CONSTRAINT hotel_address_fk FOREIGN KEY (address_id)
-        REFERENCES address (id);
-
-ALTER TABLE payment
-    ADD CONSTRAINT payment_booking_fk FOREIGN KEY (booking_id)
-        REFERENCES booking (id);
-
-ALTER TABLE rating
-    ADD CONSTRAINT rating_booking_fk FOREIGN KEY (booking_id)
-        REFERENCES booking (id);
-
-ALTER TABLE service_order
-    ADD CONSTRAINT service_order_booking_fk FOREIGN KEY (booking_id)
-        REFERENCES booking (id);
-
-ALTER TABLE service_order
-    ADD CONSTRAINT service_order_services_fk FOREIGN KEY (services_id)
-        REFERENCES services (id);
-
-ALTER TABLE services
-    ADD CONSTRAINT services_currency_fk FOREIGN KEY (currency_iso_code)
-        REFERENCES currency (iso_code);
-
-CREATE SEQUENCE service_order_service_order_id START WITH 1;
 
 COMMIT;

@@ -43,7 +43,7 @@ Plik `docker-compose.yml` zawiera konfigurację uruchomienia. Dane z bazy będą
 Katalog [scripts](./database/scripts) zawiera skrypty do bazy danych
 * [schema.sql](./database/scripts/schema.sql) - definiuje schemat bazy danych (tworzy tabele)
 * [sample-data.sql](./database/scripts/sample-data.sql) - dodaje przykładowe dane
-* [clean.sql](./database/scripts/clean.sql) - czyści zawartość bazy
+* [clean-all.sql](./database/scripts/clean-all.sql) - czyści zawartość bazy
 * [query.sql](./database/scripts/query.sql) - przykładowe zapytania
 
 Uruchomić skrypt można np. przez wtyczkę do IntelliJ. Trzeba dodać źródło danych w zakładce Database,

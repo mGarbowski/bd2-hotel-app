@@ -1,3 +1,5 @@
+-- Delete all objects from the database
+
 BEGIN TRANSACTION;
 -- Drop all tables
 DO $$ DECLARE
