@@ -1,12 +1,27 @@
 package pl.mgarbowski.hotelapp.commands;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.shell.command.annotation.Command;
-import org.springframework.shell.command.annotation.Option;
+import pl.mgarbowski.hotelapp.model.Country;
+import pl.mgarbowski.hotelapp.model.CountryRepository;
 
-@Command
+import java.util.List;
+
+@Command(command = "country")
+@RequiredArgsConstructor
 public class MyCommands {
-    @Command(command = "hello", description = "Display hello message")
-    public String helloWorld(@Option(defaultValue = "world") String arg) {
-        return "Hello " + arg;
+    private final CountryRepository countryRepository;
+
+    @Command(command = "list", description = "List all countries")
+    public List<String> listAll() {
+        return countryRepository.findAll().stream().map(Country::getName).toList();
+    }
+
+    @Command(command = "byCode", description = "Get country name by code")
+    public String getByCode(String code) {
+        return countryRepository
+                .findByCode(code)
+                .map(Country::getName)
+                .orElse("Not found");
     }
 }
