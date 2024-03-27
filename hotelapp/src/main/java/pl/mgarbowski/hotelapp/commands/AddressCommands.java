@@ -3,7 +3,7 @@ package pl.mgarbowski.hotelapp.commands;
 import lombok.RequiredArgsConstructor;
 import org.springframework.shell.command.annotation.Command;
 import pl.mgarbowski.hotelapp.model.Address;
-import pl.mgarbowski.hotelapp.model.AddressRepository;
+import pl.mgarbowski.hotelapp.repository.AddressRepository;
 
 @RequiredArgsConstructor
 @Command(command = "address")
