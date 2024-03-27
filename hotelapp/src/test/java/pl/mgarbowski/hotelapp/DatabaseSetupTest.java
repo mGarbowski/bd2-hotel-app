@@ -4,10 +4,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.jpa.repository.JpaRepository;
+import pl.mgarbowski.hotelapp.repository.ApartmentRepository;
 import pl.mgarbowski.hotelapp.repository.CurrencyRepository;
 import pl.mgarbowski.hotelapp.repository.CustomerRepository;
 import pl.mgarbowski.hotelapp.repository.HotelRepository;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 @SpringBootTest
 public class DatabaseSetupTest {
@@ -17,6 +19,8 @@ public class DatabaseSetupTest {
     HotelRepository hotelRepository;
     @Autowired
     CurrencyRepository currencyRepository;
+    @Autowired
+    ApartmentRepository apartmentRepository;
 
     <T, I> void testFindAll(JpaRepository<T, I> repository) {
         var all = repository.findAll();
@@ -37,5 +41,10 @@ public class DatabaseSetupTest {
     @Test
     void currencyRepositoryTest() {
         testFindAll(currencyRepository);
+    }
+
+    @Test
+    void apartmentRepositoryTest() {
+        testFindAll(apartmentRepository);
     }
 }
