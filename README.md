@@ -57,9 +57,25 @@ cat ./database/scripts/query.sql | docker exec -i database-db-1 psql -U admin -d
 ```
 
 
-
 ### Aplikacja
-TODO
+Aplikacja wymaga Javy w wersji 17, wygodną instalację umożliwia [SDKMan](https://sdkman.io/).
+
+Wszystkie komendy wykonujemy przez wrapper do Gradle `gradlew`
+
+#### Budowanie
+Do zbudowania aplikacji do pliku "fat jar" - plik wykonywalny dla JVM, aplikacja spakowana ze wszystkimi zależnościami
+
+```shell
+./gradlew bootJar
+```
+
+#### Uruchomienie jar
+```shell
+java -jar ./hotelapp/build/libs/hotelapp-0.0.1-SNAPSHOT.jar
+```
+
+#### Uruchomienie w IntelliJ
+Przy poprawnym załadowaniu projektu Gradle w IntelliJ, można wygodnie uruchamiać aplikację przez run configuration
 
 ### Data modeler
 Program do pobrania na stronie [Oracle](https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/download/)
