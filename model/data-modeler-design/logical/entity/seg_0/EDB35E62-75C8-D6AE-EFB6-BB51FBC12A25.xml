@@ -24,9 +24,9 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="start date" id="8E884C59-B472-4C21-FE32-5F71EA185314">
@@ -37,10 +37,9 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
-<domain>CC668EDD-3D63-0E45-2B2A-7B48F2ED4D06</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="end date" id="62544CFC-1ED8-A13C-E046-79DDF6E5B893">
@@ -51,13 +50,12 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
-<domain>CC668EDD-3D63-0E45-2B2A-7B48F2ED4D06</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="no people" id="1FE9BAF6-9EA4-ECBB-BDB2-A1F8834D90DB">
+<Attribute name="n people" id="1FE9BAF6-9EA4-ECBB-BDB2-A1F8834D90DB">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
@@ -65,13 +63,12 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="client id" id="017A07F6-54CF-3CB3-E172-038758B8712F">
+<Attribute name="customer_id" id="017A07F6-54CF-3CB3-E172-038758B8712F">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <generatorID>6F0F03F9-76C2-9C5D-F3EA-1955E032E6A6</generatorID>
@@ -81,21 +78,6 @@
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
 <referedAttribute>FA0DE262-79CB-E43A-2F7E-5A63A7B5F3CC</referedAttribute>
-<use>0</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="apartment id" id="E6A8E0A5-51EA-DD21-8942-26DAFAB3F3B5">
-<createdBy>mGarbowski</createdBy>
-<createdTime>2023-05-31 17:44:01 UTC</createdTime>
-<generatorID>0378B858-C374-7F75-6BC4-BAB90FC28C62</generatorID>
-<ownerDesignName>data-modeler-design</ownerDesignName>
-<importedID>998BC86D-19B7-402B-879D-35F007DBD439</importedID>
-<engineerTo>
-<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
-</engineerTo>
-<referedAttribute>3F2935B5-8DB0-7165-D3A4-5EA526835B8E</referedAttribute>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>

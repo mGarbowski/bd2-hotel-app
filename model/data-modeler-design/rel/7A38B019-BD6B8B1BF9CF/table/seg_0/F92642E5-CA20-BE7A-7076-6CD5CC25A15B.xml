@@ -22,7 +22,6 @@
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:47:20 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -33,7 +32,6 @@
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:47:20 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT040</logicalDatatype>
@@ -44,6 +42,7 @@
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:47:25 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
@@ -56,7 +55,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="E457B41C-638A-8079-C38E-8A0056060EFB" name="complaint_PK">
+<ind_PK_UK id="E457B41C-638A-8079-C38E-8A0056060EFB" name="complaint_pk">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:47:20 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>

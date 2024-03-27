@@ -37,7 +37,6 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <domain>CC668EDD-3D63-0E45-2B2A-7B48F2ED4D06</domain>
@@ -51,7 +50,6 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
@@ -65,7 +63,6 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <logicalDatatype>LOGDT028</logicalDatatype>
 <domain>97D56093-B6FF-A62E-9E18-59D1B1EBF4F3</domain>
@@ -81,9 +78,9 @@
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
 <referedAttribute>72EC5C4D-898D-6793-83DE-D0859DBD44BB</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

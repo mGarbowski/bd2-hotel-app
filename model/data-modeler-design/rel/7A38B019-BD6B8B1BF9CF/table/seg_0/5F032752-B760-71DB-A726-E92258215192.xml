@@ -28,7 +28,6 @@
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <nameHasQuotes>true</nameHasQuotes>
 <importedID>DE269A99-2687-72CC-F482-8D346EC49E03</importedID>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <domain>CC668EDD-3D63-0E45-2B2A-7B48F2ED4D06</domain>
@@ -41,7 +40,6 @@
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>1404DBDE-8282-A357-B7DC-1B5208365A32</importedID>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
@@ -54,7 +52,6 @@
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>A988B892-C9CC-21FA-3AD3-31DBBFE81007</importedID>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <logicalDatatype>LOGDT028</logicalDatatype>
 <domain>97D56093-B6FF-A62E-9E18-59D1B1EBF4F3</domain>
@@ -67,6 +64,7 @@
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>6F697E82-E35C-C823-CBD0-9EF5DED75039</importedID>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>

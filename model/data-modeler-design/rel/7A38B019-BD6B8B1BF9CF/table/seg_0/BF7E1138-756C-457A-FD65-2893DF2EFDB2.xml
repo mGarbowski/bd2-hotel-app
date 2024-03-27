@@ -15,6 +15,7 @@
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>31AFF0EF-F9BF-9517-2342-753EFB20EEF4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
@@ -27,7 +28,7 @@
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>16DB6FE7-A5FE-F672-8A86-0EEF71EA4159</importedID>
-<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <domain>CC668EDD-3D63-0E45-2B2A-7B48F2ED4D06</domain>
@@ -40,20 +41,20 @@
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>9EA666F0-684E-75AC-EDFE-CB731EF4DD84</importedID>
-<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <domain>CC668EDD-3D63-0E45-2B2A-7B48F2ED4D06</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="no_people" id="9590676D-429E-644B-06EF-3A0492053C64">
+<Column name="n_people" id="9590676D-429E-644B-06EF-3A0492053C64">
 <sourceDDLFile>create-tables.ddl</sourceDDLFile>
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>2845232B-1166-1CE8-3838-EA187EC5AAE6</importedID>
-<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>

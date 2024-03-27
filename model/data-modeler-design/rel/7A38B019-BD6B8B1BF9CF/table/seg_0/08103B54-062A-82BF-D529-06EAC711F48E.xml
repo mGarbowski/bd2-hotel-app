@@ -15,58 +15,59 @@
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>67971D19-ADEB-BD88-3400-708753540E0E</importedID>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="no_rooms" id="08A7CD67-F6B6-93D2-9E24-94CA3DA50E3F">
+<Column name="n_rooms" id="08A7CD67-F6B6-93D2-9E24-94CA3DA50E3F">
 <sourceDDLFile>create-tables.ddl</sourceDDLFile>
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>66965F78-5AB0-84A5-88F1-EA4A7E289954</importedID>
-<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="no_bathrooms" id="AB605DCD-B484-B6F6-C3B3-97B9B81866E3">
+<Column name="n_bathrooms" id="AB605DCD-B484-B6F6-C3B3-97B9B81866E3">
 <sourceDDLFile>create-tables.ddl</sourceDDLFile>
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>D94AB7CB-321E-3766-E766-C292E26E9A67</importedID>
-<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="no_beds" id="712ABED5-2D37-BB38-21C2-D6C61FA13A7E">
+<Column name="n_beds" id="712ABED5-2D37-BB38-21C2-D6C61FA13A7E">
 <sourceDDLFile>create-tables.ddl</sourceDDLFile>
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>188ECF33-E3E1-C380-1372-DBED9D002776</importedID>
-<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="max_no_people" id="7614ABC4-521C-8CCE-9422-285138C287BC">
+<Column name="max_n_people" id="7614ABC4-521C-8CCE-9422-285138C287BC">
 <sourceDDLFile>create-tables.ddl</sourceDDLFile>
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>EDDE9F08-740D-DBE1-E31D-C57152C19153</importedID>
-<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
@@ -79,7 +80,7 @@
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>CAA86A89-9DA0-61AF-86E9-F5AEA9145909</importedID>
-<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
@@ -92,7 +93,7 @@
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>B7A9866F-132B-6AFC-60B0-81AA6E74AD77</importedID>
-<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <domain>304B2D9B-DBD0-9DC5-AF7F-E9DDF42B1D3F</domain>
@@ -123,7 +124,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>32</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>

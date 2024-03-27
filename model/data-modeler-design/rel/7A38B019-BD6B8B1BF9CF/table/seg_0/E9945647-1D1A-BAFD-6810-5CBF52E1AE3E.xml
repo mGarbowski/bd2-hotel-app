@@ -28,7 +28,6 @@
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>A854180A-3884-22DE-2552-638B70A226EE</importedID>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -40,7 +39,6 @@
 <createdTime>2024-03-26 11:57:40 UTC</createdTime>
 <generatorID>B3478A9C-EA8A-18C4-4516-54DAC6A0F769</generatorID>
 <ownerDesignName>data-modeler-design</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>

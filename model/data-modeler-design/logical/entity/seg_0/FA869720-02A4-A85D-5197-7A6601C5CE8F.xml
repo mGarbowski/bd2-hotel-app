@@ -37,7 +37,6 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <domain>EAE51E23-1406-DC8B-904C-7C5291846C18</domain>
@@ -53,9 +52,9 @@
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
 <referedAttribute>96262C99-5CEE-FFCB-6BA8-DF533AE7310E</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

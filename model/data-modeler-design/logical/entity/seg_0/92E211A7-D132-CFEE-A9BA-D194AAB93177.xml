@@ -24,12 +24,12 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="no rooms" id="DEE2E0AC-1276-0FC6-4ED4-F3DDBF49C95C">
+<Attribute name="n rooms" id="DEE2E0AC-1276-0FC6-4ED4-F3DDBF49C95C">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
@@ -37,13 +37,12 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="no bathrooms" id="9B0D3273-BAF2-40BA-E2E3-139D47FA4C1E">
+<Attribute name="n bathrooms" id="9B0D3273-BAF2-40BA-E2E3-139D47FA4C1E">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
@@ -51,13 +50,12 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="no beds" id="630AE713-AF0D-BD8B-F757-8357187C6E7A">
+<Attribute name="n beds" id="630AE713-AF0D-BD8B-F757-8357187C6E7A">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
@@ -65,13 +63,12 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="max no people" id="00C5B8EF-52D7-D53A-3CCD-A4A3216441D4">
+<Attribute name="max n people" id="00C5B8EF-52D7-D53A-3CCD-A4A3216441D4">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
@@ -79,10 +76,9 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="area" id="1C06ADBF-C3B3-41D7-344D-EE4FBDF5EEF5">
@@ -93,10 +89,9 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="price per day" id="ED1209B3-1E16-59BD-D1CD-6AA3A9057CC4">
@@ -107,11 +102,12 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>304B2D9B-DBD0-9DC5-AF7F-E9DDF42B1D3F</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="hotel id" id="8496E16C-2429-E9CB-2604-D51E6084EC38">
 <createdBy>mGarbowski</createdBy>
@@ -128,7 +124,7 @@
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="iso code" id="0E58C94F-DB41-5EF2-5103-B8B32A82529F">
+<Attribute name="currency_code" id="0E58C94F-DB41-5EF2-5103-B8B32A82529F">
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 11:40:30 UTC</createdTime>
 <generatorID>C29A3F7A-FA85-BC69-343C-F4920D2DB451</generatorID>
@@ -137,6 +133,7 @@
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
 <referedAttribute>9B850CDD-FEA1-E614-B815-ED6770E9FF9C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>32</dataTypeSize>

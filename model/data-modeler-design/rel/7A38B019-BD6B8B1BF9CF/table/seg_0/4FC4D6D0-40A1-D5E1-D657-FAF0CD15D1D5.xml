@@ -22,7 +22,6 @@
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:57 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -34,7 +33,6 @@
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:57 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -52,7 +50,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>32</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>

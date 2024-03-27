@@ -8,6 +8,19 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="30FF8BCA-1E21-02ED-F160-983273D962CB">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:57:40 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
 <Column name="timestamp" id="4126A4DB-8C3B-0C26-1CC8-41538D516CC4">
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 11:57:40 UTC</createdTime>
@@ -35,23 +48,10 @@
 <colAssociation fkAssociation="CD201BE7-76BC-D78C-9B2A-F59D4A5CB82C" referredColumn="C9A199C6-85E3-EF9F-ADA6-78D2C3B28356"/>
 </associations>
 </Column>
-<Column name="service_order_ID" id="30FF8BCA-1E21-02ED-F160-983273D962CB">
+<Column name="available_service_services_id" id="52FF32DF-1F14-2F16-F6E2-9914026DA831">
 <createdBy>mgarbowski</createdBy>
-<createdTime>2024-03-26 11:57:40 UTC</createdTime>
-<ownerDesignName>data-modeler-design</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementColumn>true</autoIncrementColumn>
-<identityColumn>true</identityColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<isSurrogateColumn>true</isSurrogateColumn>
-</Column>
-<Column name="services_id" id="4A2DF43C-7BDD-3862-FD6B-DBA5076A98C2">
-<createdBy>mgarbowski</createdBy>
-<createdTime>2024-03-26 12:20:57 UTC</createdTime>
-<generatorID>C919A81D-38B4-501C-B8AA-411FC3F5EA85</generatorID>
+<createdTime>2024-03-27 11:35:26 UTC</createdTime>
+<generatorID>7680F03E-7F57-BC41-C437-FB5B90F56FAE</generatorID>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -60,7 +60,22 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="2A6D5BF6-E05A-FEB2-83B4-DED8971A02B5" referredColumn="8787755B-AE96-9A6D-6472-A384ADC15FA6"/>
+<colAssociation fkAssociation="C71835F1-A754-1642-AD59-D89F4FBC5D77" referredColumn="4DBCD0DD-12BA-CF8B-6334-A13795755DBF"/>
+</associations>
+</Column>
+<Column name="available_service_hotel_id" id="F6157A19-44B3-E281-C7F5-10F92310E3D5">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-27 11:35:26 UTC</createdTime>
+<generatorID>6FDB87C5-91EB-A552-7457-B2F5C99A5B10</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C71835F1-A754-1642-AD59-D89F4FBC5D77" referredColumn="D60A755A-BB4C-CAC1-E09C-189A9E235624"/>
 </associations>
 </Column>
 </columns>
@@ -75,18 +90,7 @@
 <colUsage columnID="30FF8BCA-1E21-02ED-F160-983273D962CB"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="6719C042-FB46-B709-BFE5-EA577B3EC19C" name="service_order__IDX">
-<createdBy>mgarbowski</createdBy>
-<createdTime>2024-03-26 12:20:57 UTC</createdTime>
-<ownerDesignName>data-modeler-design</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>6E6DE25B-A354-6ECB-9A1C-1750C07CAB5F</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="4A2DF43C-7BDD-3862-FD6B-DBA5076A98C2"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="9F057916-00CD-FE8D-1E42-44FB1871FEDF" name="service_order_booking_FK">
+<ind_PK_UK id="9F057916-00CD-FE8D-1E42-44FB1871FEDF" name="service_order_booking_fk">
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 11:57:40 UTC</createdTime>
 <generatorID>2CAC3BFA-DE34-3266-1747-C4173FFF4197</generatorID>
@@ -97,15 +101,16 @@
 <colUsage columnID="54D03AB3-E777-7F69-8F3C-22DCCBF7B3EB"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="78D3225E-A7CD-EAC1-AC6E-8DE10A55E648" name="service_order_services_FK">
+<ind_PK_UK id="D84C01E3-4DDD-71B5-18BE-F6FE90E52959" name="service_order_available_service_fk">
 <createdBy>mgarbowski</createdBy>
-<createdTime>2024-03-26 12:20:57 UTC</createdTime>
-<generatorID>6E6DE25B-A354-6ECB-9A1C-1750C07CAB5F</generatorID>
+<createdTime>2024-03-27 11:35:26 UTC</createdTime>
+<generatorID>24C0B343-6826-0001-4700-5F8ADCB6A22F</generatorID>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="4A2DF43C-7BDD-3862-FD6B-DBA5076A98C2"/>
+<colUsage columnID="52FF32DF-1F14-2F16-F6E2-9914026DA831"/>
+<colUsage columnID="F6157A19-44B3-E281-C7F5-10F92310E3D5"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

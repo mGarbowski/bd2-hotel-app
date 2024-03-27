@@ -37,7 +37,6 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -52,7 +51,6 @@
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -60,7 +58,7 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,10,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="iso code" id="4776DA38-8317-C367-31F8-CEE3E0A31BE4">
+<Attribute name="currency_code" id="4776DA38-8317-C367-31F8-CEE3E0A31BE4">
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 11:40:43 UTC</createdTime>
 <generatorID>C0CEEE4A-E96F-5696-656E-CB90035EF737</generatorID>
@@ -69,6 +67,7 @@
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
 <referedAttribute>9B850CDD-FEA1-E614-B815-ED6770E9FF9C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>32</dataTypeSize>

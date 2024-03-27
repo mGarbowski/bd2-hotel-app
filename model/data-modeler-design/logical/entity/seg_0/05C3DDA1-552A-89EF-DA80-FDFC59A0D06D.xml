@@ -37,23 +37,36 @@
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
 <referedAttribute>72EC5C4D-898D-6793-83DE-D0859DBD44BB</referedAttribute>
-<use>0</use>
+<use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id1" id="C919A81D-38B4-501C-B8AA-411FC3F5EA85">
+<Attribute name="id1" id="7680F03E-7F57-BC41-C437-FB5B90F56FAE">
 <createdBy>mgarbowski</createdBy>
-<createdTime>2024-03-26 12:20:46 UTC</createdTime>
-<generatorID>6E6DE25B-A354-6ECB-9A1C-1750C07CAB5F</generatorID>
+<createdTime>2024-03-27 11:20:31 UTC</createdTime>
+<generatorID>24C0B343-6826-0001-4700-5F8ADCB6A22F</generatorID>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <engineerTo>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
-<referedAttribute>D8B7C17C-2229-B6B5-0371-78BF573513C6</referedAttribute>
+<referedAttribute>1C4DF487-5E17-3759-D3D6-2642516DE218</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id11" id="6FDB87C5-91EB-A552-7457-B2F5C99A5B10">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-27 11:20:31 UTC</createdTime>
+<generatorID>24C0B343-6826-0001-4700-5F8ADCB6A22F</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<referedAttribute>65D09440-002E-774B-92E3-2B786F8D72D1</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
