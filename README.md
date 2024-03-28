@@ -26,6 +26,20 @@ Projekt składa się z bazy danych i aplikacji obsługujących system rezerwacji
     * Wyświetlenie rankingu hoteli względem zagregowanych ocen
     * Wyświetlenie podsumowania liczby zażaleń z podziałem na hotele
 
+TODO tabele analityczne uzupełniane wyzwalaczami albo widoki
+Zaplanować użycie triggerów i procedur składowanych
+
+## Model danych
+
+### Model pojęciowy
+![Diagram związków encji](./docs/er-diagram.png)
+
+## Wykorzystane technologie
+* Baza danych PostgreSQL
+* Aplikacja wykorzystująca Spring Framework
+  * ORM Spring Data JPA
+  * Moduł Spring Shell to tworzenia aplikacji CLI
+* Model ER i logiczny - Oracle Data Modeler
 
 ## Instalacja i uruchomienie
 
