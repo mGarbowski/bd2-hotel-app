@@ -20,6 +20,8 @@ public class DatabaseSetupTest {
     ApartmentRepository apartmentRepository;
     @Autowired
     ExtraServiceRepository extraServiceRepository;
+    @Autowired
+    BookingRepository bookingRepository;
 
     <T, I> void testFindAll(JpaRepository<T, I> repository) {
         var all = repository.findAll();
@@ -50,5 +52,10 @@ public class DatabaseSetupTest {
     @Test
     void extraServiceRepositoryTest() {
         testFindAll(extraServiceRepository);
+    }
+
+    @Test
+    void bookingRepositoryTest() {
+        testFindAll(bookingRepository);
     }
 }
