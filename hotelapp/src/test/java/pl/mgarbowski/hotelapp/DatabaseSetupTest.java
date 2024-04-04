@@ -13,7 +13,6 @@ import pl.mgarbowski.hotelapp.domain.customer.CustomerRepository;
 import pl.mgarbowski.hotelapp.domain.extraservice.AvailableServiceRepository;
 import pl.mgarbowski.hotelapp.domain.extraservice.ExtraServiceOrderRepository;
 import pl.mgarbowski.hotelapp.domain.extraservice.ExtraServiceRepository;
-import pl.mgarbowski.hotelapp.domain.feature.AvailableFeatureRepository;
 import pl.mgarbowski.hotelapp.domain.feature.FeatureRepository;
 import pl.mgarbowski.hotelapp.domain.hotel.HotelRepository;
 import pl.mgarbowski.hotelapp.domain.payment.PaymentRepository;
@@ -40,8 +39,6 @@ public class DatabaseSetupTest {
     RatingRepository ratingRepository;
     @Autowired
     FeatureRepository featureRepository;
-    @Autowired
-    AvailableFeatureRepository availableFeatureRepository;
     @Autowired
     AvailableServiceRepository availableServiceRepository;
     @Autowired
@@ -100,10 +97,6 @@ public class DatabaseSetupTest {
         testFindAll(featureRepository);
     }
 
-    @Test
-    void availableFeatureRepositoryTest() {
-        testFindAll(availableFeatureRepository);
-    }
 
     @Test
     void availableExtraServiceRepositoryTest() {
