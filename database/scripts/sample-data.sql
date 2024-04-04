@@ -107,4 +107,11 @@ VALUES ('2024-04-05', 'No hot water in the shower.', 1),
        ('2024-07-22', 'Noise from the street.', 4),
        ('2024-08-15', 'Uncomfortable mattress.', 5);
 
+INSERT INTO service_order (timestamp, booking_id, available_service_services_id, available_service_hotel_id)
+VALUES ('2024-03-01 08:00:00', 1, 1, 1),
+       ('2024-03-02 09:00:00', 2, 2, 2),
+       ('2024-03-03 10:00:00', 3, 3, 3),
+       ('2024-03-04 11:00:00', 4, 4, 4),
+       ('2024-03-05 12:00:00', 5, 5, 5);
+
 COMMIT;
