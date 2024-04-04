@@ -32,6 +32,8 @@ public class DatabaseSetupTest {
     AvailableFeatureRepository availableFeatureRepository;
     @Autowired
     AvailableServiceRepository availableServiceRepository;
+    @Autowired
+    PaymentRepository paymentRepository;
 
     <T, I> void testFindAll(JpaRepository<T, I> repository) {
         var all = repository.findAll();
@@ -92,5 +94,10 @@ public class DatabaseSetupTest {
     @Test
     void availableServiceRepositoryTest() {
         testFindAll(availableServiceRepository);
+    }
+
+    @Test
+    void paymentRepositoryTest() {
+        testFindAll(paymentRepository);
     }
 }
