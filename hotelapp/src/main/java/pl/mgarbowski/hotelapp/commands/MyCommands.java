@@ -2,8 +2,8 @@ package pl.mgarbowski.hotelapp.commands;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.shell.command.annotation.Command;
-import pl.mgarbowski.hotelapp.model.Country;
-import pl.mgarbowski.hotelapp.repository.CountryRepository;
+import pl.mgarbowski.hotelapp.domain.address.Country;
+import pl.mgarbowski.hotelapp.domain.address.CountryRepository;
 
 import java.util.List;
 

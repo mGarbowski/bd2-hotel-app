@@ -3,8 +3,8 @@ package pl.mgarbowski.hotelapp.commands;
 import lombok.RequiredArgsConstructor;
 import org.springframework.shell.command.annotation.Command;
 import pl.mgarbowski.hotelapp.ApplicationState;
-import pl.mgarbowski.hotelapp.model.Customer;
-import pl.mgarbowski.hotelapp.repository.CustomerRepository;
+import pl.mgarbowski.hotelapp.domain.customer.Customer;
+import pl.mgarbowski.hotelapp.domain.customer.CustomerRepository;
 
 @Command(command = "user")
 @RequiredArgsConstructor

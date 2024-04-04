@@ -4,7 +4,19 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.mgarbowski.hotelapp.repository.*;
+import pl.mgarbowski.hotelapp.domain.apartment.ApartmentRepository;
+import pl.mgarbowski.hotelapp.domain.booking.BookingRepository;
+import pl.mgarbowski.hotelapp.domain.booking.ComplaintRepository;
+import pl.mgarbowski.hotelapp.domain.booking.RatingRepository;
+import pl.mgarbowski.hotelapp.domain.currency.CurrencyRepository;
+import pl.mgarbowski.hotelapp.domain.customer.CustomerRepository;
+import pl.mgarbowski.hotelapp.domain.extraservice.AvailableServiceRepository;
+import pl.mgarbowski.hotelapp.domain.extraservice.ExtraServiceOrderRepository;
+import pl.mgarbowski.hotelapp.domain.extraservice.ExtraServiceRepository;
+import pl.mgarbowski.hotelapp.domain.feature.AvailableFeatureRepository;
+import pl.mgarbowski.hotelapp.domain.feature.FeatureRepository;
+import pl.mgarbowski.hotelapp.domain.hotel.HotelRepository;
+import pl.mgarbowski.hotelapp.domain.payment.PaymentRepository;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -94,7 +106,7 @@ public class DatabaseSetupTest {
     }
 
     @Test
-    void availableServiceRepositoryTest() {
+    void availableExtraServiceRepositoryTest() {
         testFindAll(availableServiceRepository);
     }
 
