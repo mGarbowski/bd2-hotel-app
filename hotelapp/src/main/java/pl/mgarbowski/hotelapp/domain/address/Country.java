@@ -1,4 +1,4 @@
-package pl.mgarbowski.hotelapp.model;
+package pl.mgarbowski.hotelapp.domain.address;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
