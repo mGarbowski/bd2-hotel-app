@@ -22,10 +22,16 @@ public class DatabaseSetupTest {
     ExtraServiceRepository extraServiceRepository;
     @Autowired
     BookingRepository bookingRepository;
-    @Autowired ComplaintRepository complaintRepository;
-    @Autowired RatingRepository ratingRepository;
-    @Autowired FeatureRepository featureRepository;
-    @Autowired AvailableFeatureRepository availableFeatureRepository;
+    @Autowired
+    ComplaintRepository complaintRepository;
+    @Autowired
+    RatingRepository ratingRepository;
+    @Autowired
+    FeatureRepository featureRepository;
+    @Autowired
+    AvailableFeatureRepository availableFeatureRepository;
+    @Autowired
+    AvailableServiceRepository availableServiceRepository;
 
     <T, I> void testFindAll(JpaRepository<T, I> repository) {
         var all = repository.findAll();
@@ -79,7 +85,12 @@ public class DatabaseSetupTest {
     }
 
     @Test
-    void availableFeatureRepository() {
+    void availableFeatureRepositoryTest() {
         testFindAll(availableFeatureRepository);
+    }
+
+    @Test
+    void availableServiceRepositoryTest() {
+        testFindAll(availableServiceRepository);
     }
 }
