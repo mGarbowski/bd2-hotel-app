@@ -2,7 +2,6 @@ package pl.mgarbowski.hotelapp.domain.booking;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import pl.mgarbowski.hotelapp.domain.booking.Booking;
 
 import java.sql.Date;
 

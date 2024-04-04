@@ -7,7 +7,7 @@ import pl.mgarbowski.hotelapp.domain.apartment.Apartment;
 @Entity
 @IdClass(AvailableFeatureKey.class)
 @Data
-public class AvailableFeature {
+public class AvailableFeature {  // TODO maybe replace @ManyToMany
     @Id
     @Column(name = "apartment_id")
     private Integer apartmentId;
