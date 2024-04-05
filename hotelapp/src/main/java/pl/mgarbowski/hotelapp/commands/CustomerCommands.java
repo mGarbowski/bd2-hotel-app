@@ -19,7 +19,6 @@ public class CustomerCommands {
 
     @Command(command = "login", description = "Log in as an existing customer")
     public String login(Integer customerId) {
-
         return customerService.attemptLogin(customerId)
                 .map(c -> String.format("Welcome %s %s!", c.getName(), c.getSurname()))
                 .orElse(String.format("Customer with id [%d] not found", customerId));
