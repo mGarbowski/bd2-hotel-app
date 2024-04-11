@@ -58,6 +58,7 @@ CREATE TABLE hotel
     email        VARCHAR(64) NOT NULL,
     stars        INTEGER     NOT NULL,
     address_id   INTEGER     NOT NULL,
+    avg_rating   NUMERIC(5, 2),
     CONSTRAINT hotel_address_fk FOREIGN KEY (address_id) REFERENCES address (id)
 );
 
