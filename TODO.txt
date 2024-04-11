@@ -1,0 +1,17 @@
+Widok do statystyk apartamentu (ile apartament zarobił na siebie, ilość rezerwacji, zażalenia).
+
+Widok statystyki hotelu (zarobki, ilość klientów, średnie zarobki miesięczne, rezerwacje, zażalenia).
+
+
+Tabele do dodania:
+
+Triggery do zrobienia:
+
+Pole Średnia ocena w Apartament i Hotel, aktualizowane triggerem (kolumna agregacyjna)
+
+Kolumna agregacyjna ilość bookingów. 
+
+
+Procedury:
+sprawdź aktywne bookingi klienta
+Zmienić booking-apartament na wiele-wiele
