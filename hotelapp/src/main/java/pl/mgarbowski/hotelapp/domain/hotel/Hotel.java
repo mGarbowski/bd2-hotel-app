@@ -16,4 +16,5 @@ public class Hotel {
     private Integer stars;
     @OneToOne
     private Address address;
+    private Float avg_rating;
 }
