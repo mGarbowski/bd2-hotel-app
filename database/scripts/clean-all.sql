@@ -1,5 +1,8 @@
 -- Delete all objects from the database
 
+drop trigger update_avg_rating_trigger on rating;
+DROP FUNCTION update_avg_ratings();
+
 BEGIN TRANSACTION;
 -- Drop all tables
 DO $$ DECLARE
@@ -18,8 +21,5 @@ BEGIN
             EXECUTE 'DROP SEQUENCE IF EXISTS ' || seqname.relname || ' CASCADE';
         END LOOP;
 END $$;
-
-drop trigger update_avg_rating_trigger on rating;
-DROP FUNCTION update_avg_ratings();
 
 COMMIT;
