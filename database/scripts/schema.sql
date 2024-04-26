@@ -186,7 +186,7 @@ BEGIN
 
     UPDATE apartment
     SET avg_rating = (SELECT avg(rating.star_rating)
-                      FROM rating join public.booking b on rating.booking_id = b.id
+                      FROM rating join booking b on rating.booking_id = b.id
                       where b.apartment_id = apt_id_v
                       GROUP BY b.apartment_id)
     WHERE apartment.id = apt_id_v;
@@ -198,8 +198,8 @@ BEGIN
 
     UPDATE hotel
     SET avg_rating = (SELECT avg(rating.star_rating)
-                      FROM rating join public.booking b on rating.booking_id = b.id
-                                  join public.apartment a on a.id = b.apartment_id
+                      FROM rating join booking b on rating.booking_id = b.id
+                                  join apartment a on a.id = b.apartment_id
                       Where a.hotel_id = hotel_id_v
                       group by a.hotel_id)
     where hotel.id = hotel_id_v;
