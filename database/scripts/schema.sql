@@ -53,11 +53,12 @@ CREATE TABLE customer
 
 CREATE TABLE hotel
 (
-    id           SERIAL PRIMARY KEY,
-    phone_number VARCHAR(64) NOT NULL,
-    email        VARCHAR(64) NOT NULL,
-    stars        INTEGER     NOT NULL,
-    address_id   INTEGER     NOT NULL,
+    id             SERIAL PRIMARY KEY,
+    phone_number   VARCHAR(64) NOT NULL,
+    email          VARCHAR(64) NOT NULL,
+    stars          INTEGER     NOT NULL,
+    address_id     INTEGER     NOT NULL,
+    total_bookings INTEGER     NOT NULL DEFAULT 0,
     CONSTRAINT hotel_address_fk FOREIGN KEY (address_id) REFERENCES address (id)
 );
 
@@ -72,6 +73,7 @@ CREATE TABLE apartment
     price_per_day     NUMERIC(10, 2) NOT NULL,
     hotel_id          INTEGER        NOT NULL,
     currency_iso_code VARCHAR(32)    NOT NULL,
+    total_bookings    INTEGER        NOT NULL DEFAULT 0,
     CONSTRAINT apartment_hotel_fk FOREIGN KEY (hotel_id) REFERENCES hotel (id),
     CONSTRAINT apartment_currency_fk FOREIGN KEY (currency_iso_code) REFERENCES currency (iso_code)
 );
