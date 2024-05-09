@@ -32,7 +32,7 @@ Zaplanować użycie triggerów i procedur składowanych
 ## Model danych
 
 ### Model pojęciowy
-![Diagram związków encji](./docs/er-diagram.png)
+![Diagram związków encji](./docs/er-diagram-2.png)
 
 ## Wykorzystane technologie
 * Baza danych PostgreSQL
