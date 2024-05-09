@@ -74,6 +74,19 @@
 <colAssociation fkAssociation="D586EB04-EC18-E851-F206-6CA35C8D9FDD" referredColumn="935FC654-BCF2-D502-E82E-2940F2429695"/>
 </associations>
 </Column>
+<Column name="avg_rating" id="AB087F3F-9FB5-9EE3-80F8-8A7E1821E90C">
+<createdBy>michluszcz</createdBy>
+<createdTime>2024-05-09 12:55:32 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="DDCE046C-93EE-D0E8-2988-4F091012CC16" name="hotel_PK">
@@ -101,7 +114,7 @@
 <colUsage columnID="C56763EC-D1AE-20F4-9831-8C7D3400994D"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="70C04727-3038-1643-95F4-7DA5CB3C3992" name="hotel_address_FK">
+<ind_PK_UK id="70C04727-3038-1643-95F4-7DA5CB3C3992" name="hotel_address_fk">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
