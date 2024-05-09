@@ -20,15 +20,21 @@ VALUES ('2024-06-22', 1, 'Awful', 3);
 
 
 INSERT INTO rating(timestamp, star_rating, text, booking_id)
-VALUES ('2024-06-22', 2, 'bad', 2);
+VALUES ('2024-06-22', 2, 'bad', 2); -- updates the average properly
+
+INSERT INTO rating(timestamp, star_rating, text, booking_id)
+VALUES ('2024-06-22', 2, 'bad', 15); -- not possible thanks to forign key constraint
 
 
 SELECT * FROM hotel;
 
 
 DELETE from rating
-    where star_rating = 3;
+    where star_rating = 3; -- also updates the averages
 
+UPDATE rating
+set star_rating = 5
+where star_rating = 1; -- update works properly
 
 
 SELECT * from hotel;
