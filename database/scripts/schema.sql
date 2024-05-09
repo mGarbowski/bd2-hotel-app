@@ -166,8 +166,6 @@ DECLARE
     apt_id_v INTEGER;
     hotel_id_v INTEGER;
 BEGIN
-    RAISE NOTICE 'NEW RECORD %', new;
-    RAISE NOTICE 'OLD RECORD %', old;
 
     -- check which apartment's rating is changing
     IF NEW is null then
@@ -175,13 +173,11 @@ BEGIN
         INTO apt_id_v
         from booking
         where booking.id = OLD.booking_id;
-        RAISE NOTICE 'OLD apartment id is %', apt_id_v;
     ELSE
         SELECT apartment_id
         INTO apt_id_v
         from booking
         where booking.id = NEW.booking_id;
-        RAISE NOTICE 'NEW apartment id is %', apt_id_v;
     end if;
 
     UPDATE apartment
