@@ -159,7 +159,6 @@ CREATE TABLE service_order
 );
 
 
--- CREATE OR REPLACE function update_aparment_avg_rating()
 CREATE OR REPLACE FUNCTION update_avg_ratings() RETURNS TRIGGER AS $$
 DECLARE
     apt_id_v INTEGER;
@@ -202,8 +201,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- SELECT update_avg_ratings();
--- DROP FUNCTION update_avg_ratings();
 
 create or replace trigger update_avg_rating_trigger
     AFTER INSERT OR UPDATE OR DELETE
