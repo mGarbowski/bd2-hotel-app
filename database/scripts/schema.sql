@@ -58,7 +58,7 @@ CREATE TABLE hotel
     email        VARCHAR(64) NOT NULL,
     stars        INTEGER     NOT NULL,
     address_id   INTEGER     NOT NULL,
-    avg_rating   NUMERIC(5, 2),
+    avg_rating   NUMERIC(5, 2) DEFAULT 0,
     CONSTRAINT hotel_address_fk FOREIGN KEY (address_id) REFERENCES address (id)
 );
 
@@ -158,7 +158,6 @@ CREATE TABLE service_order
     CONSTRAINT service_order_available_service_fk FOREIGN KEY (available_service_services_id, available_service_hotel_id) REFERENCES available_service (services_id, hotel_id)
 );
 
-COMMIT;
 
 -- CREATE OR REPLACE function update_aparment_avg_rating()
 CREATE OR REPLACE FUNCTION update_avg_ratings() RETURNS TRIGGER AS $$
@@ -212,4 +211,4 @@ create or replace trigger update_avg_rating_trigger
     for EACH ROW
 execute FUNCTION update_avg_ratings();
 
-
+COMMIT;
