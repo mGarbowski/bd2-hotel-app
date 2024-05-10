@@ -1,5 +1,5 @@
 -- Create database schema
--- All tables, constraints, views, indexes
+-- All tables, constraints, views, indexes, functions, triggers
 
 BEGIN TRANSACTION;
 
@@ -58,6 +58,7 @@ CREATE TABLE hotel
     email        VARCHAR(64) NOT NULL,
     stars        INTEGER     NOT NULL,
     address_id   INTEGER     NOT NULL,
+    avg_rating   NUMERIC(5, 2) DEFAULT 0,
     CONSTRAINT hotel_address_fk FOREIGN KEY (address_id) REFERENCES address (id)
 );
 
@@ -72,6 +73,7 @@ CREATE TABLE apartment
     price_per_day     NUMERIC(10, 2) NOT NULL,
     hotel_id          INTEGER        NOT NULL,
     currency_iso_code VARCHAR(32)    NOT NULL,
+    avg_rating        NUMERIC(5, 2),
     CONSTRAINT apartment_hotel_fk FOREIGN KEY (hotel_id) REFERENCES hotel (id),
     CONSTRAINT apartment_currency_fk FOREIGN KEY (currency_iso_code) REFERENCES currency (iso_code)
 );
@@ -155,5 +157,58 @@ CREATE TABLE service_order
     CONSTRAINT service_order_booking_fk FOREIGN KEY (booking_id) REFERENCES booking (id),
     CONSTRAINT service_order_available_service_fk FOREIGN KEY (available_service_services_id, available_service_hotel_id) REFERENCES available_service (services_id, hotel_id)
 );
+
+
+CREATE OR REPLACE FUNCTION update_avg_ratings() RETURNS TRIGGER AS
+$$
+DECLARE
+    apt_id_v   INTEGER;
+    hotel_id_v INTEGER;
+BEGIN
+
+    -- check which apartment's rating is changing
+    IF NEW is null then
+        SELECT apartment_id
+        INTO apt_id_v
+        from booking
+        where booking.id = OLD.booking_id;
+    ELSE
+        SELECT apartment_id
+        INTO apt_id_v
+        from booking
+        where booking.id = NEW.booking_id;
+    end if;
+
+    UPDATE apartment
+    SET avg_rating = (SELECT avg(rating.star_rating)
+                      FROM rating
+                               join booking b on rating.booking_id = b.id
+                      where b.apartment_id = apt_id_v
+                      GROUP BY b.apartment_id)
+    WHERE apartment.id = apt_id_v;
+
+    SELECT apartment.hotel_id
+    INTO hotel_id_v
+    from apartment
+    where apartment.id = apt_id_v;
+
+    UPDATE hotel
+    SET avg_rating = (SELECT avg(rating.star_rating)
+                      FROM rating
+                               join booking b on rating.booking_id = b.id
+                               join apartment a on a.id = b.apartment_id
+                      Where a.hotel_id = hotel_id_v
+                      group by a.hotel_id)
+    where hotel.id = hotel_id_v;
+    RETURN new;
+END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE OR REPLACE TRIGGER update_avg_rating_trigger
+    AFTER INSERT OR UPDATE OR DELETE
+    ON rating
+    for EACH ROW
+execute FUNCTION update_avg_ratings();
 
 COMMIT;

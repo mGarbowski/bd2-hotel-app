@@ -26,4 +26,5 @@ public class Apartment {
     private Hotel hotel;
     @ManyToOne(optional = false)
     private Currency currency;
+    private BigDecimal avg_rating;
 }
