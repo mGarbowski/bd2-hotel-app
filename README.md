@@ -26,13 +26,17 @@ Projekt składa się z bazy danych i aplikacji obsługujących system rezerwacji
     * Wyświetlenie rankingu hoteli względem zagregowanych ocen
     * Wyświetlenie podsumowania liczby zażaleń z podziałem na hotele
 
-TODO tabele analityczne uzupełniane wyzwalaczami albo widoki
-Zaplanować użycie triggerów i procedur składowanych
-
+  
 ## Model danych
 
 ### Model pojęciowy
 ![Diagram związków encji](./docs/er-diagram-2.png)
+
+### Denormalizacja
+Model jest zdenormalizowany dla przyspieszenia wybranych operacji
+
+* Atrybut `avg_rating` w `hotel`
+* Atrybut `avg_rating` w `apartment`
 
 ## Wykorzystane technologie
 * Baza danych PostgreSQL
