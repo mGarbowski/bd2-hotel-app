@@ -1,5 +1,5 @@
 -- Create database schema
--- All tables, constraints, views, indexes
+-- All tables, constraints, views, indexes, functions, triggers
 
 BEGIN TRANSACTION;
 
@@ -159,9 +159,10 @@ CREATE TABLE service_order
 );
 
 
-CREATE OR REPLACE FUNCTION update_avg_ratings() RETURNS TRIGGER AS $$
+CREATE OR REPLACE FUNCTION update_avg_ratings() RETURNS TRIGGER AS
+$$
 DECLARE
-    apt_id_v INTEGER;
+    apt_id_v   INTEGER;
     hotel_id_v INTEGER;
 BEGIN
 
@@ -180,7 +181,8 @@ BEGIN
 
     UPDATE apartment
     SET avg_rating = (SELECT avg(rating.star_rating)
-                      FROM rating join booking b on rating.booking_id = b.id
+                      FROM rating
+                               join booking b on rating.booking_id = b.id
                       where b.apartment_id = apt_id_v
                       GROUP BY b.apartment_id)
     WHERE apartment.id = apt_id_v;
@@ -192,8 +194,9 @@ BEGIN
 
     UPDATE hotel
     SET avg_rating = (SELECT avg(rating.star_rating)
-                      FROM rating join booking b on rating.booking_id = b.id
-                                  join apartment a on a.id = b.apartment_id
+                      FROM rating
+                               join booking b on rating.booking_id = b.id
+                               join apartment a on a.id = b.apartment_id
                       Where a.hotel_id = hotel_id_v
                       group by a.hotel_id)
     where hotel.id = hotel_id_v;
@@ -202,7 +205,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-create or replace trigger update_avg_rating_trigger
+CREATE OR REPLACE TRIGGER update_avg_rating_trigger
     AFTER INSERT OR UPDATE OR DELETE
     ON rating
     for EACH ROW
