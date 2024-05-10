@@ -1,9 +1,12 @@
 -- Delete all objects from the database
 
-drop trigger update_avg_rating_trigger on rating;
+BEGIN TRANSACTION;
+
+-- Drop all stored procedures etc
+DROP TRIGGER update_avg_rating_trigger on rating;
+
 DROP FUNCTION update_avg_ratings();
 
-BEGIN TRANSACTION;
 -- Drop all tables
 DO $$ DECLARE
     tabname RECORD;
