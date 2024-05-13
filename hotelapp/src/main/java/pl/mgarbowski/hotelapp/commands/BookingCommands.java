@@ -22,6 +22,8 @@ public class BookingCommands {
             complaintService.createComplaint(booking, date, complaintText);
         } catch (NoSuchElementException e) {
             return "Booking not found";
+        } catch (IllegalArgumentException e) {
+            return e.getMessage();
         }
         return "Complaint created";
     }
