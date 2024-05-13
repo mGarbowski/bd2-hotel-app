@@ -3,6 +3,7 @@ package pl.mgarbowski.hotelapp.commands;
 import lombok.RequiredArgsConstructor;
 import org.springframework.shell.command.annotation.Command;
 import pl.mgarbowski.hotelapp.domain.booking.BookingService;
+import pl.mgarbowski.hotelapp.domain.booking.ComplaintService;
 
 import java.sql.Date;
 
@@ -11,13 +12,12 @@ import java.sql.Date;
 @Command(command = "booking")
 public class BookingCommands {
     private final BookingService bookingService;
+    private final ComplaintService complaintService;
 
     @Command(command = "makeComplaint")
     public String makeComplaint(Integer bookingId, Date date, String complaintText) {
         var booking = bookingService.getBookingById(bookingId);
-        var bookingString = booking.toString();
-        // log booking string
-        System.out.println(bookingString);
+        complaintService.createComplaint(booking, date, complaintText);
 
         return "dsd";
     }
