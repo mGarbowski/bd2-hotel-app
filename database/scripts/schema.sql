@@ -159,6 +159,25 @@ CREATE TABLE service_order
 );
 
 
+CREATE OR REPLACE FUNCTION get_bookings_by_customer(customer INT)
+    RETURNS TABLE
+            (
+                booking_id   INT,
+                start_date   DATE,
+                end_date     DATE,
+                n_people     INT,
+                customer_id  INT,
+                apartment_id INT
+            )
+AS
+$$
+BEGIN
+    RETURN QUERY
+        SELECT * FROM booking b WHERE b.customer_id = customer;
+END;
+$$ LANGUAGE plpgsql;
+
+
 CREATE OR REPLACE FUNCTION update_avg_ratings() RETURNS TRIGGER AS
 $$
 DECLARE

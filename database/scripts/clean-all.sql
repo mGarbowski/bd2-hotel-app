@@ -6,6 +6,7 @@ BEGIN TRANSACTION;
 DROP TRIGGER update_avg_rating_trigger on rating;
 
 DROP FUNCTION update_avg_ratings();
+DROP FUNCTION get_bookings_by_customer;
 
 -- Drop all tables
 DO
