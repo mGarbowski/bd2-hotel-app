@@ -6,6 +6,7 @@ import pl.mgarbowski.hotelapp.domain.booking.BookingService;
 import pl.mgarbowski.hotelapp.domain.booking.ComplaintService;
 
 import java.sql.Date;
+import java.util.NoSuchElementException;
 
 
 @RequiredArgsConstructor
@@ -16,9 +17,12 @@ public class BookingCommands {
 
     @Command(command = "makeComplaint")
     public String makeComplaint(Integer bookingId, Date date, String complaintText) {
-        var booking = bookingService.getBookingById(bookingId);
-        complaintService.createComplaint(booking, date, complaintText);
-
-        return "dsd";
+        try {
+            var booking = bookingService.getBookingById(bookingId);
+            complaintService.createComplaint(booking, date, complaintText);
+        } catch (NoSuchElementException e) {
+            return "Booking not found";
+        }
+        return "Complaint created";
     }
 }
