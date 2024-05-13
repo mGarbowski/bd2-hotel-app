@@ -10,7 +10,7 @@ import java.sql.Date;
 public class ComplaintService {
     private final ComplaintRepository complaintRepository;
 
-    public void createComplaint(Booking booking, Date date, String complaintText) {
+    public void createComplaint(Booking booking, Date date, String complaintText) throws IllegalArgumentException {
         if(complaintRepository.getComplaintByBooking(booking).isPresent()) {
             throw new IllegalArgumentException("Complaint already exists for this booking");
         }
