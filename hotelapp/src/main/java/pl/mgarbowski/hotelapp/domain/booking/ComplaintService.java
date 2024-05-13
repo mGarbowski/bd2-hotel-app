@@ -11,6 +11,9 @@ public class ComplaintService {
     private final ComplaintRepository complaintRepository;
 
     public void createComplaint(Booking booking, Date date, String complaintText) {
+        if(complaintRepository.getComplaintByBooking(booking).isPresent()) {
+            throw new IllegalArgumentException("Complaint already exists for this booking");
+        }
         var complaint = new Complaint();
         complaint.setBooking(booking);
         complaint.setText(complaintText);
