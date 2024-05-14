@@ -17,6 +17,7 @@ public class PaymentCommands {
 
     @Command(command = "summary", description = "Display a summary for a given booking")
     public String displaySummary(Integer bookingId) {
+        // TODO check current user
         var summary = paymentService.getSummaryForBooking(bookingId);
         return formatMessage(summary);
     }
