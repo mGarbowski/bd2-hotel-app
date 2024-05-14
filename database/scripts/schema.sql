@@ -158,22 +158,6 @@ CREATE TABLE service_order
     CONSTRAINT service_order_available_service_fk FOREIGN KEY (available_service_services_id, available_service_hotel_id) REFERENCES available_service (services_id, hotel_id)
 );
 
--- TODO remove (?)
-CREATE OR REPLACE FUNCTION get_bookings_by_customer(customer INT)
-    RETURNS TABLE
-            (
-                booking_id   INT,
-                customer_id  INT,
-                apartment_id INT
-            )
-AS
-$$
-BEGIN
-    RETURN QUERY
-        SELECT b.id, b.customer_id, b.apartment_id FROM booking b WHERE b.customer_id = customer;
-END;
-$$ LANGUAGE plpgsql;
-
 
 CREATE OR REPLACE FUNCTION update_avg_ratings() RETURNS TRIGGER AS
 $$
