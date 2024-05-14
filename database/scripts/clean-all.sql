@@ -7,6 +7,7 @@ DROP TRIGGER update_avg_rating_trigger on rating;
 
 DROP FUNCTION update_avg_ratings();
 
+DROP FUNCTION IF EXISTS get_conflicting_bookings;
 -- Drop all tables
 DO
 $$
