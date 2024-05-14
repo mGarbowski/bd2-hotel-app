@@ -158,6 +158,25 @@ CREATE TABLE service_order
     CONSTRAINT service_order_available_service_fk FOREIGN KEY (available_service_services_id, available_service_hotel_id) REFERENCES available_service (services_id, hotel_id)
 );
 
+-- unique id required by JPA
+CREATE VIEW payments_summary AS
+SELECT gen_random_uuid()                                      AS id,
+       b.id                                                   AS booking_id,
+       'Reservation fee'                                      AS name,
+       -1 * (b.end_date - b.start_date + 1) * a.price_per_day AS amount
+FROM booking b
+         JOIN apartment a on b.apartment_id = a.id
+UNION ALL
+SELECT gen_random_uuid() AS id, b.id AS booking_id, s.name, -1 * s.price
+FROM services s
+         JOIN available_service avs ON s.id = avs.services_id
+         JOIN service_order so
+              ON so.available_service_hotel_id = avs.hotel_id AND so.available_service_services_id = avs.services_id
+         JOIN booking b ON so.booking_id = b.id
+UNION ALL
+SELECT gen_random_uuid() AS id, b.id AS booking_id, 'Payment' AS name, p.amount
+FROM payment p
+         JOIN booking b ON p.booking_id = b.id;
 
 CREATE OR REPLACE FUNCTION update_avg_ratings() RETURNS TRIGGER AS
 $$
