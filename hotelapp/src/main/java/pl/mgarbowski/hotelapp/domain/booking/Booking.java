@@ -25,7 +25,7 @@ public class Booking {
 
     protected Booking() {}
 
-    public Booking(Date startDate, Date endDate, Integer nPeople, Apartment apartment, Customer customer) {
+    Booking(Date startDate, Date endDate, Integer nPeople, Apartment apartment, Customer customer) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.nPeople = nPeople;
