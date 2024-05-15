@@ -17,11 +17,13 @@ public class BookingCommands {
 
     @Command(command = "makeComplaint")
     public String makeComplaint(Integer bookingId, Date date, String complaintText) {
-        try {
-            var booking = bookingService.getBookingById(bookingId);
-            complaintService.createComplaint(booking, date, complaintText);
-        } catch (NoSuchElementException e) {
+        var booking = bookingService.getBookingById(bookingId);
+        if(booking.isEmpty()) {
             return "Booking not found";
+        }
+
+        try {
+            complaintService.createComplaint(booking.get(), date, complaintText);
         } catch (IllegalArgumentException e) {
             return e.getMessage();
         }
