@@ -6,9 +6,6 @@ import pl.mgarbowski.hotelapp.domain.booking.BookingService;
 import pl.mgarbowski.hotelapp.domain.booking.ComplaintService;
 import pl.mgarbowski.hotelapp.domain.customer.CustomerService;
 
-import java.sql.Date;
-import java.util.NoSuchElementException;
-
 
 @RequiredArgsConstructor
 @Command(command = "booking")
