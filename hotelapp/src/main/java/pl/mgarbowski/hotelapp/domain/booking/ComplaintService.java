@@ -10,14 +10,14 @@ import java.sql.Date;
 public class ComplaintService {
     private final ComplaintRepository complaintRepository;
 
-    public void createComplaint(Booking booking, Date date, String complaintText) throws IllegalArgumentException {
+    public void createComplaint(Booking booking, String complaintText) throws IllegalArgumentException {
         if(complaintRepository.getComplaintByBooking(booking).isPresent()) {
             throw new IllegalArgumentException("Complaint already exists for this booking");
         }
         var complaint = new Complaint();
         complaint.setBooking(booking);
         complaint.setText(complaintText);
-        complaint.setTimestamp(date);
+        complaint.setTimestamp(new Date(System.currentTimeMillis()));
         complaintRepository.save(complaint);
     }
 }

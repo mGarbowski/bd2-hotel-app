@@ -15,15 +15,14 @@ public class BookingCommands {
     private final BookingService bookingService;
     private final ComplaintService complaintService;
 
-    @Command(command = "makeComplaint")
-    public String makeComplaint(Integer bookingId, Date date, String complaintText) {
+    @Command(command = "makeComplaint", description = "Make a complaint about a booking")
+    public String makeComplaint(Integer bookingId, String complaintText) {
         var booking = bookingService.getBookingById(bookingId);
         if(booking.isEmpty()) {
             return "Booking not found";
         }
-
         try {
-            complaintService.createComplaint(booking.get(), date, complaintText);
+            complaintService.createComplaint(booking.get(), complaintText);
         } catch (IllegalArgumentException e) {
             return e.getMessage();
         }
