@@ -36,6 +36,6 @@ public class PaymentCommands {
     }
 
     private static String formatSingleEntry(PaymentSummaryEntry entry) {
-        return String.format("%-32s\t%10.2f", entry.getName(), entry.getAmount());
+        return String.format("%-36s%10.2f", entry.getName(), entry.getAmount());
     }
 }
