@@ -16,4 +16,5 @@ public class Hotel {
     private Integer stars;
     @OneToOne
     private Address address;
+    private Integer total_bookings;
 }

@@ -22,6 +22,7 @@ public class Apartment {
     private Integer maxNPeople;
     private Integer area;
     private BigDecimal pricePerDay;
+    private Integer total_bookings;
     @ManyToOne(optional = false)
     private Hotel hotel;
     @ManyToOne(optional = false)
