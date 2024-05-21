@@ -158,4 +158,39 @@ CREATE TABLE service_order
     CONSTRAINT service_order_available_service_fk FOREIGN KEY (available_service_services_id, available_service_hotel_id) REFERENCES available_service (services_id, hotel_id)
 );
 
+
+
+CREATE FUNCTION increment_total_bookings()
+    RETURNS TRIGGER
+    LANGUAGE plpgsql
+AS
+$$
+BEGIN
+    UPDATE apartment
+    SET total_bookings = total_bookings + 1
+    WHERE id = new.apartment_id;
+
+    UPDATE hotel
+    SET total_bookings = total_bookings + 1
+    WHERE id = hotel_id_from_apt_id(new.apartment_id);
+    RETURN NEW;
+END;
+$$;
+
+
+CREATE FUNCTION hotel_id_from_apt_id(apt_id INTEGER) returns integer
+    LANGUAGE SQL AS
+$$
+SELECT hotel_id
+from apartment
+where id = apt_id;
+$$;
+
+CREATE TRIGGER increment_total_bookings_trigger
+    AFTER INSERT
+    ON booking
+    FOR EACH ROW
+EXECUTE PROCEDURE
+    increment_total_bookings();
+
 COMMIT;
