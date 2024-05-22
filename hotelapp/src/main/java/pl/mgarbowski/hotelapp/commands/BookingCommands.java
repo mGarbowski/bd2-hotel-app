@@ -118,8 +118,9 @@ public class BookingCommands {
     private static String formatSingleBooking(Booking booking) {
         var address = booking.getApartment().getHotel().getAddress();
         return String.format(
-                "[%d] %s, %s for %d people, from %s to %s",
+                "[%d] %s, %s, %s for %d people, from %s to %s",
                 booking.getId(),
+                booking.getApartment().getHotel().getName(),
                 address.getCity().getName(),
                 address.getStreet(),
                 booking.getNPeople(),
