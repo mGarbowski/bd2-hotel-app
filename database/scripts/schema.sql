@@ -54,6 +54,7 @@ CREATE TABLE customer
 CREATE TABLE hotel
 (
     id             SERIAL PRIMARY KEY,
+    name           VARCHAR(64) NOT NULL,
     phone_number   VARCHAR(64) NOT NULL,
     email          VARCHAR(64) NOT NULL,
     stars          INTEGER     NOT NULL,
