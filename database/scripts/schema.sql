@@ -1,5 +1,5 @@
 -- Create database schema
--- All tables, constraints, views, indexes
+-- All tables, constraints, views, indexes, functions, triggers
 
 BEGIN TRANSACTION;
 
@@ -59,6 +59,8 @@ CREATE TABLE hotel
     stars          INTEGER     NOT NULL,
     address_id     INTEGER     NOT NULL,
     total_bookings INTEGER     NOT NULL DEFAULT 0,
+    avg_rating   NUMERIC(5, 2) DEFAULT 0,
+
     CONSTRAINT hotel_address_fk FOREIGN KEY (address_id) REFERENCES address (id)
 );
 
@@ -74,6 +76,7 @@ CREATE TABLE apartment
     hotel_id          INTEGER        NOT NULL,
     currency_iso_code VARCHAR(32)    NOT NULL,
     total_bookings    INTEGER        NOT NULL DEFAULT 0,
+    avg_rating        NUMERIC(5, 2),
     CONSTRAINT apartment_hotel_fk FOREIGN KEY (hotel_id) REFERENCES hotel (id),
     CONSTRAINT apartment_currency_fk FOREIGN KEY (currency_iso_code) REFERENCES currency (iso_code)
 );
@@ -192,5 +195,97 @@ CREATE TRIGGER increment_total_bookings_trigger
     FOR EACH ROW
 EXECUTE PROCEDURE
     increment_total_bookings();
+
+-- unique id required by JPA
+CREATE VIEW payments_summary AS
+SELECT gen_random_uuid()                                      AS id,
+       b.id                                                   AS booking_id,
+       'Reservation fee'                                      AS name,
+       -1 * (b.end_date - b.start_date + 1) * a.price_per_day AS amount
+FROM booking b
+         JOIN apartment a on b.apartment_id = a.id
+UNION ALL
+SELECT gen_random_uuid() AS id, b.id AS booking_id, s.name, -1 * s.price
+FROM services s
+         JOIN available_service avs ON s.id = avs.services_id
+         JOIN service_order so
+              ON so.available_service_hotel_id = avs.hotel_id AND so.available_service_services_id = avs.services_id
+         JOIN booking b ON so.booking_id = b.id
+UNION ALL
+SELECT gen_random_uuid() AS id, b.id AS booking_id, 'Payment' AS name, p.amount
+FROM payment p
+         JOIN booking b ON p.booking_id = b.id;
+
+
+CREATE OR REPLACE FUNCTION get_conflicting_bookings(apartment_id_param INT, start_date_param DATE, end_date_param DATE)
+    RETURNS SETOF booking
+AS
+$$
+BEGIN
+    RETURN QUERY
+        SELECT *
+        FROM booking b
+        WHERE b.apartment_id = apartment_id_param
+          AND (
+            (start_date_param <= b.start_date AND b.start_date <= end_date_param)
+              OR (b.start_date <= start_date_param AND end_date_param <= b.end_date)
+              OR (b.start_date <= end_date_param AND end_date_param <= b.end_date)
+              OR (start_date_param <= b.start_date AND b.end_date <= end_date_param)
+            );
+END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE OR REPLACE FUNCTION update_avg_ratings() RETURNS TRIGGER AS
+$$
+DECLARE
+    apt_id_v   INTEGER;
+    hotel_id_v INTEGER;
+BEGIN
+
+    -- check which apartment's rating is changing
+    IF NEW is null then
+        SELECT apartment_id
+        INTO apt_id_v
+        from booking
+        where booking.id = OLD.booking_id;
+    ELSE
+        SELECT apartment_id
+        INTO apt_id_v
+        from booking
+        where booking.id = NEW.booking_id;
+    end if;
+
+    UPDATE apartment
+    SET avg_rating = (SELECT avg(rating.star_rating)
+                      FROM rating
+                               join booking b on rating.booking_id = b.id
+                      where b.apartment_id = apt_id_v
+                      GROUP BY b.apartment_id)
+    WHERE apartment.id = apt_id_v;
+
+    SELECT apartment.hotel_id
+    INTO hotel_id_v
+    from apartment
+    where apartment.id = apt_id_v;
+
+    UPDATE hotel
+    SET avg_rating = (SELECT avg(rating.star_rating)
+                      FROM rating
+                               join booking b on rating.booking_id = b.id
+                               join apartment a on a.id = b.apartment_id
+                      Where a.hotel_id = hotel_id_v
+                      group by a.hotel_id)
+    where hotel.id = hotel_id_v;
+    RETURN new;
+END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE OR REPLACE TRIGGER update_avg_rating_trigger
+    AFTER INSERT OR UPDATE OR DELETE
+    ON rating
+    for EACH ROW
+execute FUNCTION update_avg_ratings();
 
 COMMIT;

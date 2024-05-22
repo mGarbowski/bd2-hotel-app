@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class AddressService {
-    private AddressRepository addressRepository;
+    private final AddressRepository addressRepository;
     public List<Address> getAll() {
         return addressRepository.findAll();
     }
