@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 public class Hotel {
     @Id
     private Integer id;
+    private String name;
     private String phoneNumber;
     private String email;
     private Integer stars;

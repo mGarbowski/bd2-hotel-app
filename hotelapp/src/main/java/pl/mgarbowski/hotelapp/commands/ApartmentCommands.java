@@ -56,13 +56,13 @@ public class ApartmentCommands {
     private static String formatSingleApartment(Apartment apartment) {
         return String.format(
                 """
-                            Hotel: [%d] – Apartment number [%d] (%.2f stars) – Capacity: %s – Price per day: %.2f
+                            Hotel: %s – Apartment number [%d] (%.2f stars) – Capacity: %s – Price per day: %.2f
                                 - Rooms: %d
                                 - Bathrooms: %d
                                 - Beds: %d
                                 - Address: %s \n
                         """,
-                apartment.getHotel().getId(),
+                apartment.getHotel().getName(),
                 apartment.getId(),
                 apartment.getAvg_rating().doubleValue(),
                 apartment.getMaxNPeople() > 1 ?

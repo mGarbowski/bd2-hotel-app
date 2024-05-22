@@ -44,12 +44,12 @@ VALUES ('John', 'Doe', 30, 'M', 'john.doe@example.com', '123-456-7890', 1),
        ('Emily', 'Brown', 35, 'F', 'emily.brown@example.com', '555-987-6543', 4),
        ('William', 'Davis', 28, 'M', 'william.davis@example.com', '444-567-8901', 5);
 
-INSERT INTO hotel (phone_number, email, stars, address_id)
-VALUES ('555-111-2222', 'hotel1@example.com', 4, 1),
-       ('555-333-4444', 'hotel2@example.com', 5, 2),
-       ('555-555-6666', 'hotel3@example.com', 3, 3),
-       ('555-777-8888', 'hotel4@example.com', 4, 4),
-       ('555-999-0000', 'hotel5@example.com', 5, 5);
+INSERT INTO hotel (name, phone_number, email, stars, address_id)
+VALUES ('Escuza Hotel', '555-111-2222', 'hotel1@example.com', 4, 1),
+       ('Chimponello Estate','555-333-4444', 'hotel2@example.com', 5, 2),
+       ('DeLaChumpee Manor','555-555-6666', 'hotel3@example.com', 3, 3),
+       ('Three Trees Tavern', '555-777-8888', 'hotel4@example.com', 4, 4),
+       ('Rabin Rooms', '555-999-0000', 'hotel5@example.com', 5, 5);
 
 INSERT INTO apartment (n_rooms, n_bathrooms, n_beds, max_n_people, area, price_per_day, hotel_id, currency_iso_code)
 VALUES (2, 1, 1, 2, 80, 150.00, 1, 'USD'),
