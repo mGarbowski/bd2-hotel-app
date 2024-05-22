@@ -6,6 +6,8 @@ import jakarta.persistence.OneToOne;
 import lombok.Data;
 import pl.mgarbowski.hotelapp.domain.address.Address;
 
+import java.math.BigDecimal;
+
 @Data
 @Entity
 public class Hotel {
@@ -16,4 +18,6 @@ public class Hotel {
     private Integer stars;
     @OneToOne
     private Address address;
+    private Integer total_bookings;
+    private BigDecimal avg_rating;
 }
