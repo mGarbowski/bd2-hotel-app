@@ -14,12 +14,11 @@ public interface BookingRepository extends JpaRepository<Booking, Integer> {
 
     List<Booking> findBookingsByCustomer(Customer customer);
 
-    @Query(value = "SELECT new pl.mgarbowski.hotelapp.domain.booking.BookingDTO(b.id, b.startDate, b.endDate, b.nPeople, addr.street, c.name) " +
-            "FROM Booking b " +
+    @Query(value = "SELECT b FROM Booking b " +
             "JOIN Apartment a ON b.apartment.id = a.id " +
             "JOIN Hotel h ON a.hotel.id = h.id " +
             "JOIN Address addr ON h.address.id = addr.id " +
             "JOIN City c ON addr.city.id = c.id " +
             "WHERE b.customer.id = :customerId AND b.endDate > current_date")
-    List<BookingDTO> getActiveBookingsByCustomer(@Param("customerId") Integer customerId);
+    List<Booking> getActiveBookingsByCustomer(@Param("customerId") Integer customerId);
 }
