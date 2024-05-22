@@ -158,6 +158,45 @@ CREATE TABLE service_order
     CONSTRAINT service_order_available_service_fk FOREIGN KEY (available_service_services_id, available_service_hotel_id) REFERENCES available_service (services_id, hotel_id)
 );
 
+-- unique id required by JPA
+CREATE VIEW payments_summary AS
+SELECT gen_random_uuid()                                      AS id,
+       b.id                                                   AS booking_id,
+       'Reservation fee'                                      AS name,
+       -1 * (b.end_date - b.start_date + 1) * a.price_per_day AS amount
+FROM booking b
+         JOIN apartment a on b.apartment_id = a.id
+UNION ALL
+SELECT gen_random_uuid() AS id, b.id AS booking_id, s.name, -1 * s.price
+FROM services s
+         JOIN available_service avs ON s.id = avs.services_id
+         JOIN service_order so
+              ON so.available_service_hotel_id = avs.hotel_id AND so.available_service_services_id = avs.services_id
+         JOIN booking b ON so.booking_id = b.id
+UNION ALL
+SELECT gen_random_uuid() AS id, b.id AS booking_id, 'Payment' AS name, p.amount
+FROM payment p
+         JOIN booking b ON p.booking_id = b.id;
+
+
+CREATE OR REPLACE FUNCTION get_conflicting_bookings(apartment_id_param INT, start_date_param DATE, end_date_param DATE)
+    RETURNS SETOF booking
+AS
+$$
+BEGIN
+    RETURN QUERY
+        SELECT *
+        FROM booking b
+        WHERE b.apartment_id = apartment_id_param
+          AND (
+            (start_date_param <= b.start_date AND b.start_date <= end_date_param)
+              OR (b.start_date <= start_date_param AND end_date_param <= b.end_date)
+              OR (b.start_date <= end_date_param AND end_date_param <= b.end_date)
+              OR (start_date_param <= b.start_date AND b.end_date <= end_date_param)
+            );
+END;
+$$ LANGUAGE plpgsql;
+
 
 CREATE OR REPLACE FUNCTION update_avg_ratings() RETURNS TRIGGER AS
 $$

@@ -3,10 +3,11 @@
 BEGIN TRANSACTION;
 
 -- Drop all stored procedures etc TODO: replace with loops deleting all
-DROP TRIGGER update_avg_rating_trigger on rating;
 
-DROP FUNCTION update_avg_ratings();
+DROP TRIGGER IF EXISTS update_avg_rating_trigger ON rating;
+DROP FUNCTION IF EXISTS update_avg_ratings();
 
+DROP FUNCTION IF EXISTS get_conflicting_bookings;
 -- Drop all tables
 DO
 $$
