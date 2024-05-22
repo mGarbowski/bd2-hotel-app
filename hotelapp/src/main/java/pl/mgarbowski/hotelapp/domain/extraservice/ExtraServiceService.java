@@ -50,7 +50,7 @@ public class ExtraServiceService {
         }
 
         var queryUserId = customer.getId();
-        var actualUserId = maybeBooking.get().getId();
+        var actualUserId = maybeBooking.get().getCustomer().getId();
         if (!queryUserId.equals(actualUserId)) {
             throw new InvalidBookingException(errorMessage);
         }
