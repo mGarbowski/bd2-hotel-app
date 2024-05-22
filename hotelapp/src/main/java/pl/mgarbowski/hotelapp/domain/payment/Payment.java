@@ -20,4 +20,25 @@ public class Payment {
     private Booking booking;
     @ManyToOne // TODO make it many to one in ER diagram
     private Currency currency;
+
+
+    public static Payment createPayment(BigDecimal amount, Booking booking) {
+        return new Payment(
+                new Date(System.currentTimeMillis()),
+                amount,
+                booking,
+                new Currency("GBP", "British Pound")
+        );
+    }
+
+
+    private Payment(Date timestamp, BigDecimal amount, Booking booking, Currency currency) {
+        this.timestamp = timestamp;
+        this.amount = amount;
+        this.booking = booking;
+        this.currency = currency;
+    }
+
+    protected Payment() {
+    }
 }
