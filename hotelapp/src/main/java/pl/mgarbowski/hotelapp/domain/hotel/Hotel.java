@@ -18,5 +18,6 @@ public class Hotel {
     private Integer stars;
     @OneToOne
     private Address address;
+    private Integer total_bookings;
     private BigDecimal avg_rating;
 }
