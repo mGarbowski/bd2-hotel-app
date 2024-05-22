@@ -76,7 +76,7 @@ CREATE TABLE apartment
     hotel_id          INTEGER        NOT NULL,
     currency_iso_code VARCHAR(32)    NOT NULL,
     total_bookings    INTEGER        NOT NULL DEFAULT 0,
-    avg_rating        NUMERIC(5, 2),
+    avg_rating        NUMERIC(5, 2)  NOT NULL DEFAULT 0,
     CONSTRAINT apartment_hotel_fk FOREIGN KEY (hotel_id) REFERENCES hotel (id),
     CONSTRAINT apartment_currency_fk FOREIGN KEY (currency_iso_code) REFERENCES currency (iso_code)
 );
