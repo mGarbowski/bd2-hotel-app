@@ -178,6 +178,26 @@ SELECT gen_random_uuid() AS id, b.id AS booking_id, 'Payment' AS name, p.amount
 FROM payment p
          JOIN booking b ON p.booking_id = b.id;
 
+
+CREATE OR REPLACE FUNCTION get_conflicting_bookings(apartment_id_param INT, start_date_param DATE, end_date_param DATE)
+    RETURNS SETOF booking
+AS
+$$
+BEGIN
+    RETURN QUERY
+        SELECT *
+        FROM booking b
+        WHERE b.apartment_id = apartment_id_param
+          AND (
+            (start_date_param <= b.start_date AND b.start_date <= end_date_param)
+              OR (b.start_date <= start_date_param AND end_date_param <= b.end_date)
+              OR (b.start_date <= end_date_param AND end_date_param <= b.end_date)
+              OR (start_date_param <= b.start_date AND b.end_date <= end_date_param)
+            );
+END;
+$$ LANGUAGE plpgsql;
+
+
 CREATE OR REPLACE FUNCTION update_avg_ratings() RETURNS TRIGGER AS
 $$
 DECLARE

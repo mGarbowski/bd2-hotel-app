@@ -48,3 +48,15 @@ FROM hotel;
 SELECT *
 FROM apartment;
 
+-- Checking for conflicting bookings with ('2024-04-01', '2024-04-07', 2, 1, 1)
+
+-- should be nonempty
+SELECT * FROM get_conflicting_bookings(1, '2024-03-01', '2024-05-01');
+SELECT * FROM get_conflicting_bookings(1, '2024-03-01', '2024-04-03');
+SELECT * FROM get_conflicting_bookings(1, '2024-04-01', '2024-04-07');
+SELECT * FROM get_conflicting_bookings(1, '2024-04-02', '2024-04-07');
+SELECT * FROM get_conflicting_bookings(1, '2024-04-01', '2024-04-06');
+SELECT * FROM get_conflicting_bookings(1, '2024-04-02', '2024-04-06');
+--should be empty
+SELECT * FROM get_conflicting_bookings(1, '2024-03-01', '2024-03-03');
+SELECT * FROM get_conflicting_bookings(1, '2024-05-01', '2024-05-03');

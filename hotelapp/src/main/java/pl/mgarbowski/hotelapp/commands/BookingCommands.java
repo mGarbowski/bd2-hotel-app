@@ -9,8 +9,9 @@ import pl.mgarbowski.hotelapp.domain.booking.ComplaintService;
 import pl.mgarbowski.hotelapp.domain.booking.RatingService;
 import pl.mgarbowski.hotelapp.domain.customer.CustomerService;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
+
 
 @RequiredArgsConstructor
 @Command(command = "booking")
@@ -21,17 +22,32 @@ public class BookingCommands {
     private final CustomerService customerService;
     private final RatingService ratingService;
 
+    @Command(command = "make", description = "Book an apartment")
+    public String makeBooking(Integer apartmentId, Date startDate, Date endDate, Integer nPeople) {
+        var user = applicationState.getUser();
+        if (user.isEmpty()) {
+            return "Log in to make booking";
+        }
+
+        try {
+            bookingService.makeBooking(user.get(), apartmentId, startDate, endDate, nPeople);
+            return "Booking complete";
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+
     @Command(command = "makeComplaint", description = "Make a complaint about a booking")
     public String makeComplaint(Integer bookingId, String complaintText) {
         var customer = customerService.getLoggedIn();
-        if(customer.isEmpty()) {
+        if (customer.isEmpty()) {
             return "Not logged in";
         }
         var booking = bookingService.getBookingsByCustomer(customer.get())
                 .stream()
                 .filter(b -> b.getId().equals(bookingId))
                 .findFirst();
-        if(booking.isEmpty()) {
+        if (booking.isEmpty()) {
             return "Booking not found";
         }
         try {
@@ -43,16 +59,16 @@ public class BookingCommands {
     }
 
     @Command(command = "addOpinion", description = "Add an opinion to a booking")
-    public String addOpinion(Integer bookingId, Integer starRating, String opinionText) {
+    public String addOpinion(Integer bookingId, Integer starRating, String opinionText) { // TODO refactor code duplication
         var customer = customerService.getLoggedIn();
-        if(customer.isEmpty()) {
+        if (customer.isEmpty()) {
             return "Not logged in";
         }
         var booking = bookingService.getBookingsByCustomer(customer.get())
                 .stream()
                 .filter(b -> b.getId().equals(bookingId))
                 .findFirst();
-        if(booking.isEmpty()) {
+        if (booking.isEmpty()) {
             return "Booking not found";
         }
         try {
@@ -80,10 +96,10 @@ public class BookingCommands {
         }
 
         var present = bookings.stream()
-                .filter(b -> b.start().before(new Date()))
+                .filter(b -> b.start().before(new java.util.Date()))
                 .toList();
         var future = bookings.stream()
-                .filter(b -> b.start().after(new Date()))
+                .filter(b -> b.start().after(new java.util.Date()))
                 .toList();
 
         String message = "";
