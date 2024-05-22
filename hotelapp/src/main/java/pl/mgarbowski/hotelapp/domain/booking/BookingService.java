@@ -6,7 +6,9 @@ import pl.mgarbowski.hotelapp.domain.apartment.ApartmentRepository;
 import pl.mgarbowski.hotelapp.domain.customer.Customer;
 
 import java.sql.Date;
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -33,6 +35,18 @@ public class BookingService {
 
         var booking = new Booking(startDate, endDate, nPeople, apartment, customer);
         bookingRepository.save(booking);
+    }
+
+    public Optional<Booking> getBookingById(Integer id) throws NoSuchElementException {
+        return bookingRepository.findById(id);
+    }
+
+    public List<Booking> getBookingsByCustomer(Customer customer) {
+        return bookingRepository.findBookingsByCustomer(customer);
+    }
+
+    public List<BookingDTO> getActiveBookingsForCustomer(Integer customerId) {
+        return bookingRepository.getActiveBookingsByCustomer(customerId);
     }
 
     private boolean isApartmentAvailable(Integer apartmentId, Date startDate, Date endDate) {
