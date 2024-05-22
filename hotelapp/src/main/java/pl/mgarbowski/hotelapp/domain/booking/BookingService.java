@@ -21,4 +21,7 @@ public class BookingService {
         return bookingRepository.findBookingsByCustomer(customer);
     }
 
+    public List<BookingDTO> getActiveBookingsForCustomer(Integer customerId) {
+        return bookingRepository.getActiveBookingsByCustomer(customerId);
+    }
 }
