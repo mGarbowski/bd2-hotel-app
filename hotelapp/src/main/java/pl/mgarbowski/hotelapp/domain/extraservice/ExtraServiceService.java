@@ -7,6 +7,7 @@ import pl.mgarbowski.hotelapp.domain.booking.BookingRepository;
 import pl.mgarbowski.hotelapp.domain.customer.Customer;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -29,7 +30,8 @@ public class ExtraServiceService {
                 .findFirst();
     }
 
-    public void order(String extraName, Integer bookingId, Customer user) throws InvalidBookingException, ServiceNotAvailableException {
+    public void order(String extraName, Integer bookingId, Customer user)
+            throws InvalidBookingException, ServiceNotAvailableException, NoSuchElementException {
         var extra = getAvailableByName(extraName, bookingId, user)
                 .orElseThrow(() -> new ServiceNotAvailableException(extraName));
         var booking = getBookingBelongingToCustomer(user, bookingId);
