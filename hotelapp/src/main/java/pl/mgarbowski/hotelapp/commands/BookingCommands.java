@@ -3,10 +3,7 @@ package pl.mgarbowski.hotelapp.commands;
 import lombok.RequiredArgsConstructor;
 import org.springframework.shell.command.annotation.Command;
 import pl.mgarbowski.hotelapp.ApplicationState;
-import pl.mgarbowski.hotelapp.domain.booking.BookingDTO;
-import pl.mgarbowski.hotelapp.domain.booking.BookingService;
-import pl.mgarbowski.hotelapp.domain.booking.ComplaintService;
-import pl.mgarbowski.hotelapp.domain.booking.RatingService;
+import pl.mgarbowski.hotelapp.domain.booking.*;
 import pl.mgarbowski.hotelapp.domain.customer.CustomerService;
 
 import java.sql.Date;
@@ -90,16 +87,15 @@ public class BookingCommands {
         return formatMessage(activeBookings);
     }
 
-    private String formatMessage(List<BookingDTO> bookings) {
+    private String formatMessage(List<Booking> bookings) {
         if (bookings.isEmpty()) {
             return "You have no active bookings";
         }
-
         var present = bookings.stream()
-                .filter(b -> b.start().before(new java.util.Date()))
+                .filter(b -> b.getStartDate().before(new java.util.Date()))
                 .toList();
         var future = bookings.stream()
-                .filter(b -> b.start().after(new java.util.Date()))
+                .filter(b -> b.getStartDate().after(new java.util.Date()))
                 .toList();
 
         String message = "";
@@ -115,19 +111,20 @@ public class BookingCommands {
         return message;
     }
 
-    private static String formatMultipleBookings(List<BookingDTO> bookings) {
+    private static String formatMultipleBookings(List<Booking> bookings) {
         return String.join("\n", bookings.stream().map(BookingCommands::formatSingleBooking).toList());
     }
 
-    private static String formatSingleBooking(BookingDTO booking) {
+    private static String formatSingleBooking(Booking booking) {
+        var address = booking.getApartment().getHotel().getAddress();
         return String.format(
                 "[%d] %s, %s for %d people, from %s to %s",
-                booking.bookingId(),
-                booking.city(),
-                booking.street(),
-                booking.nPeople(),
-                booking.start().toString(),
-                booking.end().toString()
+                booking.getId(),
+                address.getCity().getName(),
+                address.getStreet(),
+                booking.getNPeople(),
+                booking.getStartDate().toString(),
+                booking.getEndDate().toString()
         );
     }
 }
