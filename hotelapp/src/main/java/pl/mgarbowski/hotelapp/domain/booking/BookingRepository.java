@@ -1,12 +1,15 @@
 package pl.mgarbowski.hotelapp.domain.booking;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import pl.mgarbowski.hotelapp.domain.customer.Customer;
+
+import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.util.List;
-
 public interface BookingRepository extends JpaRepository<Booking, Integer> {
+    List<Booking> findBookingsByCustomer(Customer customer);
+
     @Query(value = "SELECT new pl.mgarbowski.hotelapp.domain.booking.BookingDTO(b.id, b.startDate, b.endDate, b.nPeople, addr.street, c.name) " +
             "FROM Booking b " +
             "JOIN Apartment a ON b.apartment.id = a.id " +
