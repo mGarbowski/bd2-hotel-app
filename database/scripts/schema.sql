@@ -211,7 +211,7 @@ SELECT h.id                 AS hotel_id,
        COUNT(c2.id)         AS n_customers,
        h.total_bookings     AS n_bookings,
        COUNT(DISTINCT c.id) AS n_complaints,
-        ps_summed.summed_amount
+        ps_summed.summed_amount AS total_earning
 FROM hotel h
          JOIN apartment a on a.hotel_id = h.id
          LEFT JOIN booking b on a.id = b.apartment_id
