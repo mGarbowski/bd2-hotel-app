@@ -10,7 +10,6 @@ import java.util.UUID;
 
 @Entity
 @Getter
-@Table(name = "payments_summary")
 public class PaymentSummaryEntry {
     @Id
     private UUID id;

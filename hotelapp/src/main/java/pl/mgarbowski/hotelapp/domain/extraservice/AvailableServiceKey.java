@@ -6,6 +6,6 @@ import java.io.Serializable;
 
 @Data
 public class AvailableServiceKey implements Serializable {
-    private Integer servicesId;
+    private Integer extraServiceId;
     private Integer hotelId;
 }

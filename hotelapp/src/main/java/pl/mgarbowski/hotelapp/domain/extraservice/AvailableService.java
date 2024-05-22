@@ -7,16 +7,15 @@ import pl.mgarbowski.hotelapp.domain.hotel.Hotel;
 @Entity
 @Data
 @IdClass(AvailableServiceKey.class)
-@Table(name = "available_service")
 public class AvailableService {
     @Id
-    @Column(name = "services_id")
-    private Integer servicesId;
+    @Column(name = "extra_service_id")
+    private Integer extraServiceId;
     @Id
     @Column(name = "hotel_id")
     private Integer hotelId;
     @ManyToOne
-    @JoinColumn(name = "services_id")
+    @JoinColumn(name = "extra_service_id")
     private ExtraService extraService;
     @ManyToOne
     @JoinColumn(name = "hotel_id")
