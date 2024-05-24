@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-@Table(name = "services")  // TODO make names in the database schema consistent
 public class ExtraService {
     @Id
     private Integer id;

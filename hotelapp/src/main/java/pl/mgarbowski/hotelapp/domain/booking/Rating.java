@@ -11,7 +11,7 @@ public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Date timestamp;  //TODO decide on appropriate name and type
+    private Date timestamp;
     private Integer starRating;
     private String text;
     @OneToOne

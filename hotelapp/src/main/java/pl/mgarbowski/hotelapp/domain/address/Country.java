@@ -7,7 +7,6 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "country")
 public class Country {
     @Id
     private Integer id;

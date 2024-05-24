@@ -8,7 +8,6 @@ import java.sql.Timestamp;
 
 @Entity
 @Data
-@Table(name = "service_order")
 public class ExtraServiceOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
