@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B7EA853A-6903-8915-373F-44A0CAD4DA4D" containerWithKeyObject="08103B54-062A-82BF-D529-06EAC711F48E" localFKIndex="E6672325-EBD7-D7F6-29B6-D18B8DB55D4F" name="apartment_currency_fk">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="371D5166-4BF3-6C8F-AE4F-E9FAA0410BEC" containerWithKeyObject="08103B54-062A-82BF-D529-06EAC711F48E" localFKIndex="4C5178DE-8D78-8039-0B92-35D3D98D255E" name="apartment_currency_FK">
 <createdBy>mgarbowski</createdBy>
-<createdTime>2024-03-26 11:57:40 UTC</createdTime>
-<generatorID>C29A3F7A-FA85-BC69-343C-F4920D2DB451</generatorID>
+<createdTime>2024-05-24 10:50:46 UTC</createdTime>
+<generatorID>9CB9B1FF-3F06-5468-75DE-C86C8E800228</generatorID>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <referredTableLongName>currency</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
