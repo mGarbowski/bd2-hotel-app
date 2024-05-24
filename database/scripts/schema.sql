@@ -210,12 +210,22 @@ GROUP BY a.id, ps_sum.summed_amount, ps_sum.avg_amount;
 
 CREATE VIEW hotel_statistics AS
 SELECT h.id                    AS hotel_id,
+       h.name                  AS name,
+       h.email                 AS email,
+       h.avg_rating            AS avg_rating,
+       addr.street             AS street,
+       addr.zip_code           AS zip_code,
+       city.name               AS city,
+       country.name            AS country,
        COUNT(c2.id)            AS n_customers,
        h.total_bookings        AS n_bookings,
        COUNT(DISTINCT c.id)    AS n_complaints,
        ps_summed.summed_amount AS total_earning
 FROM hotel h
          JOIN apartment a on a.hotel_id = h.id
+         JOIN address addr on h.address_id = addr.id
+         JOIN city on addr.city_id = city.id
+         JOIN country on city.country_id = country.id
          LEFT JOIN booking b on a.id = b.apartment_id
          LEFT JOIN complaint c on b.id = c.booking_id
          LEFT JOIN customer c2 on b.customer_id = c2.id
@@ -228,7 +238,9 @@ FROM hotel h
                WHERE ps.amount < 0
                   OR ps.amount IS NULL
                GROUP BY h2.id) ps_summed on h.id = ps_summed.hotel_id
-GROUP BY h.id, ps_summed.summed_amount;
+GROUP BY h.id, h.name, h.email, h.avg_rating, addr.street, addr.zip_code, city.name, country.name, h.total_bookings, ps_summed.summed_amount
+ORDER BY avg_rating DESC;
+
 
 
 CREATE FUNCTION increment_total_bookings()
