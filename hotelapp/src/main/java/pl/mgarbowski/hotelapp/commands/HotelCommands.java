@@ -22,7 +22,7 @@ public class HotelCommands {
     }
 
     private String formatString(HotelStatistics hotelStatistics) {
-        var hotel = hotelRepository.findById(hotelStatistics.getHotel_id()).orElseThrow(
+        var hotel = hotelRepository.findById(hotelStatistics.getHotelId()).orElseThrow(
                 () -> new IllegalArgumentException("Hotel not found")
         );
         return String.format(
@@ -40,10 +40,10 @@ public class HotelCommands {
                 hotel.getName(),
                 formatAddress(hotel.getAddress()),
                 hotel.getEmail(),
-                hotelStatistics.getN_customers(),
-                hotelStatistics.getN_bookings(),
-                hotelStatistics.getN_complaints(),
-                hotelStatistics.getTotal_earning()
+                hotelStatistics.getNCustomers(),
+                hotelStatistics.getNBookings(),
+                hotelStatistics.getNComplaints(),
+                hotelStatistics.getTotalEarning()
         );
     }
 
