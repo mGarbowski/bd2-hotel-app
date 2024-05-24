@@ -82,7 +82,7 @@ CREATE TABLE apartment
     CONSTRAINT apartment_currency_fk FOREIGN KEY (currency_iso_code) REFERENCES currency (iso_code)
 );
 
-CREATE TABLE services
+CREATE TABLE extra_service
 (
     id                SERIAL PRIMARY KEY,
     name              VARCHAR(64)    NOT NULL,
@@ -93,11 +93,11 @@ CREATE TABLE services
 
 CREATE TABLE available_service
 (
-    services_id INTEGER NOT NULL,
-    hotel_id    INTEGER NOT NULL,
-    CONSTRAINT available_service_pk PRIMARY KEY (services_id, hotel_id),
+    extra_service_id INTEGER NOT NULL,
+    hotel_id         INTEGER NOT NULL,
+    CONSTRAINT available_service_pk PRIMARY KEY (extra_service_id, hotel_id),
     CONSTRAINT available_service_hotel_fk FOREIGN KEY (hotel_id) REFERENCES hotel (id),
-    CONSTRAINT available_service_services_fk FOREIGN KEY (services_id) REFERENCES services (id)
+    CONSTRAINT available_service_services_fk FOREIGN KEY (extra_service_id) REFERENCES extra_service (id)
 );
 
 CREATE TABLE available_feature
@@ -151,15 +151,15 @@ CREATE TABLE complaint
     CONSTRAINT complaint_booking_fk FOREIGN KEY (booking_id) REFERENCES booking (id)
 );
 
-CREATE TABLE service_order
+CREATE TABLE extra_service_order
 (
-    id                            SERIAL PRIMARY KEY,
-    timestamp                     TIMESTAMP,
-    booking_id                    INTEGER NOT NULL,
-    available_service_services_id INTEGER NOT NULL,
-    available_service_hotel_id    INTEGER NOT NULL,
-    CONSTRAINT service_order_booking_fk FOREIGN KEY (booking_id) REFERENCES booking (id),
-    CONSTRAINT service_order_available_service_fk FOREIGN KEY (available_service_services_id, available_service_hotel_id) REFERENCES available_service (services_id, hotel_id)
+    id                                 SERIAL PRIMARY KEY,
+    timestamp                          TIMESTAMP,
+    booking_id                         INTEGER NOT NULL,
+    available_service_extra_service_id INTEGER NOT NULL,
+    available_service_hotel_id         INTEGER NOT NULL,
+    CONSTRAINT extra_service_order_booking_fk FOREIGN KEY (booking_id) REFERENCES booking (id),
+    CONSTRAINT extra_service_order_available_service_fk FOREIGN KEY (available_service_extra_service_id, available_service_hotel_id) REFERENCES available_service (extra_service_id, hotel_id)
 );
 
 -- unique id required by JPA
@@ -172,10 +172,11 @@ FROM booking b
          JOIN apartment a on b.apartment_id = a.id
 UNION ALL
 SELECT gen_random_uuid() AS id, b.id AS booking_id, s.name, -1 * s.price
-FROM services s
-         JOIN available_service avs ON s.id = avs.services_id
-         JOIN service_order so
-              ON so.available_service_hotel_id = avs.hotel_id AND so.available_service_services_id = avs.services_id
+FROM extra_service s
+         JOIN available_service avs ON s.id = avs.extra_service_id
+         JOIN extra_service_order so
+              ON so.available_service_hotel_id = avs.hotel_id AND
+                 so.available_service_extra_service_id = avs.extra_service_id
          JOIN booking b ON so.booking_id = b.id
 UNION ALL
 SELECT gen_random_uuid() AS id, b.id AS booking_id, 'Payment' AS name, p.amount
