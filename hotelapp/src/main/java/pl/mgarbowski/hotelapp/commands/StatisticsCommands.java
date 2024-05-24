@@ -2,10 +2,8 @@ package pl.mgarbowski.hotelapp.commands;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.shell.command.annotation.Command;
-import pl.mgarbowski.hotelapp.domain.address.Address;
 import pl.mgarbowski.hotelapp.domain.apartment.ApartmentStatistics;
 import pl.mgarbowski.hotelapp.domain.apartment.ApartmentStatisticsRepository;
-import pl.mgarbowski.hotelapp.domain.hotel.HotelRepository;
 import pl.mgarbowski.hotelapp.domain.hotel.HotelStatistics;
 import pl.mgarbowski.hotelapp.domain.hotel.HotelStatisticsRepository;
 
@@ -16,7 +14,6 @@ import java.util.List;
 public class StatisticsCommands {
     private final ApartmentStatisticsRepository apartmentStatisticsRepository;
     private final HotelStatisticsRepository hotelStatisticsRepository;
-    private final HotelRepository hotelRepository;
 
     @Command(command = "apartments")
     public String allApartments() {
@@ -51,39 +48,38 @@ public class StatisticsCommands {
         );
     }
 
-    private String formatSingleHotelDetails(HotelStatistics hotelStatistics) {
-        var hotel = hotelRepository.findById(hotelStatistics.getHotelId()).orElseThrow(
-                () -> new IllegalArgumentException("Hotel not found")
-        );
+    private static String formatSingleHotelDetails(HotelStatistics hotelStatistics) {
         return String.format(
                 """
-                        
+                                                
                         %s
                         %s
                         %s
-                        
+                                                
                         Number of customers:    %d
                         Number of bookings:     %d
                         Number of complaints:   %d
                         Total earning:          %s
+                        Average rating:         %.2f
                         """,
-                hotel.getName(),
-                StatisticsCommands.formatAddress(hotel.getAddress()),
-                hotel.getEmail(),
+                hotelStatistics.getName(),
+                formatAddress(hotelStatistics),
+                hotelStatistics.getEmail(),
                 hotelStatistics.getNCustomers(),
                 hotelStatistics.getNBookings(),
                 hotelStatistics.getNComplaints(),
-                hotelStatistics.getTotalEarning()
+                hotelStatistics.getTotalEarning(),
+                hotelStatistics.getAvgRating()
         );
     }
 
-    private static String formatAddress(Address address) {
+    private static String formatAddress(HotelStatistics hotelStatistics) {
         return String.format(
                 "%s, %s, %s, %s",
-                address.getStreet(),
-                address.getZipCode(),
-                address.getCity().getName(),
-                address.getCity().getCountry().getName()
+                hotelStatistics.getStreet(),
+                hotelStatistics.getZipCode(),
+                hotelStatistics.getCity(),
+                hotelStatistics.getCountry()
         );
     }
 }
