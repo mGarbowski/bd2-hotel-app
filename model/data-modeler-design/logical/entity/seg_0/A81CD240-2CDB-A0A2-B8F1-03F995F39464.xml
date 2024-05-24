@@ -29,7 +29,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="date" id="DC0DB749-5500-9553-749E-08D616BA30AE">
+<Attribute name="timestamp" id="DC0DB749-5500-9553-749E-08D616BA30AE">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:49:56 UTC</createdTime>
 <generatorID>C52D8F85-798C-915E-F636-A49DAE71C16D</generatorID>

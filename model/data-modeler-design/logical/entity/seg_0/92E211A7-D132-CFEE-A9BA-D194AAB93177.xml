@@ -124,9 +124,35 @@
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="currency_code" id="0E58C94F-DB41-5EF2-5103-B8B32A82529F">
+<Attribute name="total_bookings" id="50D6F8B2-E8B7-6C84-CBD7-F5D64D8CB5D1">
 <createdBy>mgarbowski</createdBy>
-<createdTime>2024-03-26 11:40:30 UTC</createdTime>
+<createdTime>2024-05-24 10:33:59 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="avg_rating" id="AED7545F-F0FA-1CAD-B2E6-239570D63813">
+<createdBy>michluszcz</createdBy>
+<createdTime>2024-05-09 13:21:37 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="iso code" id="59C9189C-F131-A4BB-B6AB-763BE66CDFE9">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:50:11 UTC</createdTime>
 <generatorID>C29A3F7A-FA85-BC69-343C-F4920D2DB451</generatorID>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <engineerTo>
@@ -138,21 +164,6 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>32</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="avg_rating" id="AED7545F-F0FA-1CAD-B2E6-239570D63813">
-<createdBy>michluszcz</createdBy>
-<createdTime>2024-05-09 13:21:37 UTC</createdTime>
-<ownerDesignName>data-modeler-design</ownerDesignName>
-<engineerTo>
-<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,5,2</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

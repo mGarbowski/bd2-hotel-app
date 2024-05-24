@@ -21,6 +21,18 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="name" id="D029DCD5-D863-11E7-D076-D2344CFBAAAA">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:41:38 UTC</createdTime>
+<generatorID>347EE5E8-F17C-50DD-B8E4-C662DF8A285A</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="phone_number" id="9382915D-B970-B40D-9480-22F03DD0F937">
 <sourceDDLFile>create-tables.ddl</sourceDDLFile>
 <createdBy>mGarbowski</createdBy>
@@ -74,11 +86,21 @@
 <colAssociation fkAssociation="D586EB04-EC18-E851-F206-6CA35C8D9FDD" referredColumn="935FC654-BCF2-D502-E82E-2940F2429695"/>
 </associations>
 </Column>
+<Column name="total_bookings" id="A58A4886-CDAD-5D71-FA3A-85EF2EB57FFA">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:41:38 UTC</createdTime>
+<generatorID>E2991260-E3BB-1A02-FA53-4962AF5BE30D</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="avg_rating" id="AB087F3F-9FB5-9EE3-80F8-8A7E1821E90C">
 <createdBy>michluszcz</createdBy>
 <createdTime>2024-05-09 12:55:32 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>

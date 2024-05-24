@@ -83,6 +83,20 @@
 <domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id1" id="4C1AD297-D8DD-56DD-7F63-7424664FB0F9">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:33:06 UTC</createdTime>
+<generatorID>58776933-7F94-876F-6073-0E599E8F708E</generatorID>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<referedAttribute>D9941C07-5C15-FCE4-4B8A-BB6016C9F303</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="0A0103FF-FC8A-9F95-1675-54EF402B1053" name="booking_PK">

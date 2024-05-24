@@ -65,7 +65,7 @@
 <colUsage columnID="1F0481C2-27AD-8C83-9EB1-4E13C7290F28"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E14E4AE1-2F9D-47AA-2373-FCA0B26F8CCF" name="apartment_feature_feature_FK">
+<ind_PK_UK id="E14E4AE1-2F9D-47AA-2373-FCA0B26F8CCF" name="available_feature_feature_fk">
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 12:24:52 UTC</createdTime>
 <generatorID>29423C04-FC92-ACF8-06F6-89CDD6A83AEA</generatorID>
@@ -76,7 +76,7 @@
 <colUsage columnID="1F0481C2-27AD-8C83-9EB1-4E13C7290F28"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="EAA91F0B-10AC-1808-62EA-F32FD3A5A9AA" name="apartment_feature_apartment_FK">
+<ind_PK_UK id="EAA91F0B-10AC-1808-62EA-F32FD3A5A9AA" name="available_feature_apartment_fk">
 <createdBy>mgarbowski</createdBy>
 <createdTime>2024-03-26 12:24:52 UTC</createdTime>
 <generatorID>4CDE561D-1DA2-01EC-8460-26B14F82208A</generatorID>

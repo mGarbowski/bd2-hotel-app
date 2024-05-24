@@ -21,13 +21,14 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="date" id="0A5A5179-883E-931A-7711-1C9A63F6013A">
+<Column name="timestamp" id="0A5A5179-883E-931A-7711-1C9A63F6013A">
 <sourceDDLFile>create-tables.ddl</sourceDDLFile>
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:01 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <nameHasQuotes>true</nameHasQuotes>
 <importedID>DE269A99-2687-72CC-F482-8D346EC49E03</importedID>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <domain>CC668EDD-3D63-0E45-2B2A-7B48F2ED4D06</domain>

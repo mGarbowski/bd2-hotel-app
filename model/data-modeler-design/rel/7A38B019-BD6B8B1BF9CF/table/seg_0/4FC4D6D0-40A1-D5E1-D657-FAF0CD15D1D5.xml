@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4FC4D6D0-40A1-D5E1-D657-FAF0CD15D1D5" name="services">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4FC4D6D0-40A1-D5E1-D657-FAF0CD15D1D5" name="extra_service">
 <createdBy>mGarbowski</createdBy>
 <createdTime>2023-05-31 17:44:20 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
