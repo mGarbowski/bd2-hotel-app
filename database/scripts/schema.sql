@@ -185,19 +185,49 @@ FROM payment p
 
 
 CREATE VIEW apartment_statistics AS
-SELECT a.id                AS apartment_id,
-       COUNT(c.id)         AS n_customers,
-       COUNT(b.id)         AS n_bookings,
-       COUNT(co.id)        AS n_complaints,
-       SUM(-1 * ps.amount) AS total_earning,
-       AVG(-1 * ps.amount) AS avg_earning
+SELECT a.id                              AS apartment_id,
+       COUNT(c.id)                       AS n_customers,
+       COUNT(DISTINCT b.id)              AS n_bookings,
+       COUNT(DISTINCT co.id)             AS n_complaints,
+       coalesce(ps_sum.summed_amount, 0) AS total_earning,
+       coalesce(ps_sum.avg_amount, 0)    AS avg_earning
 FROM apartment a
-         JOIN booking b on a.id = b.apartment_id
-         JOIN customer c on b.customer_id = c.id
-         JOIN complaint co on b.id = co.booking_id
-         JOIN payments_summary ps on b.id = ps.booking_id
-WHERE ps.amount < 0
-GROUP BY a.id;
+         LEFT JOIN booking b on a.id = b.apartment_id
+         LEFT JOIN customer c on b.customer_id = c.id
+         LEFT JOIN complaint co on b.id = co.booking_id
+         JOIN (SELECT a.id                as apartment_id,
+                      SUM(-1 * ps.amount) AS summed_amount,
+                      AVG(-1 * ps.amount) AS avg_amount
+               FROM apartment a
+                        LEFT JOIN booking b on a.id = b.apartment_id
+                        LEFT JOIN payments_summary ps on b.id = ps.booking_id
+               WHERE ps.amount < 0
+                  OR ps.amount IS NULL
+               GROUP BY a.id) ps_sum on a.id = ps_sum.apartment_id
+GROUP BY a.id, ps_sum.summed_amount, ps_sum.avg_amount;
+
+
+CREATE VIEW hotel_statistics AS
+SELECT h.id                 AS hotel_id,
+       COUNT(c2.id)         AS n_customers,
+       h.total_bookings     AS n_bookings,
+       COUNT(DISTINCT c.id) AS n_complaints,
+        ps_summed.summed_amount AS total_earning
+FROM hotel h
+         JOIN apartment a on a.hotel_id = h.id
+         LEFT JOIN booking b on a.id = b.apartment_id
+         LEFT JOIN complaint c on b.id = c.booking_id
+         LEFT JOIN customer c2 on b.customer_id = c2.id
+         JOIN (SELECT h2.id                            as hotel_id,
+                      COALESCE(SUM(-1 * ps.amount), 0) AS summed_amount
+               FROM hotel h2
+                        JOIN apartment a2 on h2.id = a2.hotel_id
+                        JOIN booking b2 on a2.id = b2.apartment_id
+                        LEFT JOIN payments_summary ps on b2.id = ps.booking_id
+               WHERE ps.amount < 0
+                  OR ps.amount IS NULL
+               GROUP BY h2.id) ps_summed on h.id = ps_summed.hotel_id
+GROUP BY h.id,ps_summed.summed_amount;
 
 
 CREATE FUNCTION increment_total_bookings()
