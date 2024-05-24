@@ -163,7 +163,7 @@ CREATE TABLE extra_service_order
 );
 
 -- unique id required by JPA
-CREATE VIEW payment_summary_entry AS
+CREATE VIEW payments_summary AS
 SELECT gen_random_uuid()                                      AS id,
        b.id                                                   AS booking_id,
        'Reservation fee'                                      AS name,
