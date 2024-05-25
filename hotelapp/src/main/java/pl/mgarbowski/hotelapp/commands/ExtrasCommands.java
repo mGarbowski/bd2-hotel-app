@@ -10,7 +10,7 @@ import pl.mgarbowski.hotelapp.domain.extraservice.ServiceNotAvailableException;
 
 import java.util.List;
 
-@Command(command = "extra")
+@Command(command = "extra", group = "extra")
 @RequiredArgsConstructor
 public class ExtrasCommands {
     private final ApplicationState applicationState;

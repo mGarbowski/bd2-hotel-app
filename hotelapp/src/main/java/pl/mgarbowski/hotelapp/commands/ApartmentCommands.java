@@ -12,7 +12,7 @@ import java.sql.Date;
 import java.util.List;
 
 @RequiredArgsConstructor
-@Command(command = "apartment")
+@Command(command = "apartment", group = "apartment")
 public class ApartmentCommands {
     private final ApartmentService apartmentService;
 

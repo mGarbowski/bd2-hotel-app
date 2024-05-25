@@ -7,9 +7,9 @@ import pl.mgarbowski.hotelapp.domain.address.CountryRepository;
 
 import java.util.List;
 
-@Command(command = "country")
+@Command(command = "country", group = "country")
 @RequiredArgsConstructor
-public class MyCommands {
+public class CountryCommands {
     private final CountryRepository countryRepository;
 
     @Command(command = "list", description = "List all countries")

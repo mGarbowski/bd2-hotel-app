@@ -8,7 +8,7 @@ import pl.mgarbowski.hotelapp.domain.payment.PaymentSummaryEntry;
 import java.math.BigDecimal;
 import java.util.List;
 
-@Command(command = "payment")
+@Command(command = "payment", group = "payment")
 @RequiredArgsConstructor
 public class PaymentCommands {
     private final PaymentService paymentService;

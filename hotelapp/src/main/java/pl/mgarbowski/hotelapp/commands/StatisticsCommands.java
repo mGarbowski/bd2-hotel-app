@@ -9,13 +9,13 @@ import pl.mgarbowski.hotelapp.domain.hotel.HotelStatisticsRepository;
 
 import java.util.List;
 
-@Command(command = "stats")
+@Command(command = "stats", group = "stats")
 @RequiredArgsConstructor
 public class StatisticsCommands {
     private final ApartmentStatisticsRepository apartmentStatisticsRepository;
     private final HotelStatisticsRepository hotelStatisticsRepository;
 
-    @Command(command = "apartments")
+    @Command(command = "apartments", description = "Show statistics for all apartments")
     public String allApartments() {
         var stats = apartmentStatisticsRepository.findAll();
         return formatApartments(stats);

@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @RequiredArgsConstructor
-@Command(command = "booking")
+@Command(command = "booking", group = "booking")
 public class BookingCommands {
     private final ApplicationState applicationState;
     private final BookingService bookingService;

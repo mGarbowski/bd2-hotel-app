@@ -5,7 +5,7 @@ import org.springframework.shell.command.annotation.Command;
 import pl.mgarbowski.hotelapp.domain.customer.Customer;
 import pl.mgarbowski.hotelapp.domain.customer.CustomerService;
 
-@Command(command = "user")
+@Command(command = "user", group = "user")
 @RequiredArgsConstructor
 public class CustomerCommands {
     private final CustomerService customerService;
