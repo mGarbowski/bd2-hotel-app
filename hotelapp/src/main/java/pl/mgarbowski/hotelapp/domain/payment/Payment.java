@@ -18,7 +18,7 @@ public class Payment {
     private BigDecimal amount;
     @ManyToOne
     private Booking booking;
-    @ManyToOne // TODO make it many to one in ER diagram
+    @ManyToOne
     private Currency currency;
 
 
