@@ -8,6 +8,10 @@ import pl.mgarbowski.hotelapp.domain.currency.Currency;
 
 import java.math.BigDecimal;
 
+
+/**
+ * Represents an ExtraService entity.
+ */
 @Data
 @Entity
 public class ExtraService {
