@@ -5,6 +5,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
+/**
+ * Represents an address entity.
+ */
 @Data
 @Entity
 public class Address {
@@ -15,6 +18,11 @@ public class Address {
     @ManyToOne(optional = false)
     private City city;
 
+    /**
+     * Returns a string representation of the address.
+     *
+     * @return a formatted string of the address
+     */
     @Override
     public String toString() {
         return String.format(
