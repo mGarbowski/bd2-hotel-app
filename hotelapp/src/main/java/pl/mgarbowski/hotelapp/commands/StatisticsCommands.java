@@ -9,18 +9,32 @@ import pl.mgarbowski.hotelapp.domain.hotel.HotelStatisticsRepository;
 
 import java.util.List;
 
+/**
+ * Shell commands for retrieving statistics for apartments and hotels.
+ */
 @Command(command = "stats", group = "stats")
 @RequiredArgsConstructor
 public class StatisticsCommands {
     private final ApartmentStatisticsRepository apartmentStatisticsRepository;
     private final HotelStatisticsRepository hotelStatisticsRepository;
 
+    /**
+     * Shows statistics for all apartments.
+     *
+     * @return a formatted string of statistics for all apartments
+     */
     @Command(command = "apartments", description = "Show statistics for all apartments")
     public String allApartments() {
         var stats = apartmentStatisticsRepository.findAll();
         return formatApartments(stats);
     }
 
+    /**
+     * Shows statistics for a single hotel.
+     *
+     * @param hotelId the ID of the hotel
+     * @return a formatted string of the hotel's statistics
+     */
     @Command(command = "hotel", description = "Show statistics for single hotel")
     public String singleHotel(Integer hotelId) {
         var statistics = hotelStatisticsRepository.findById(hotelId).orElseThrow(
@@ -29,12 +43,23 @@ public class StatisticsCommands {
         return formatSingleHotelDetails(statistics);
     }
 
+    /**
+     * Shows statistics for all hotels.
+     *
+     * @return a formatted string of statistics for all hotels
+     */
     @Command(command = "hotels", description = "Show statistics for all hotels")
     public String allHotels() {
         var stats = hotelStatisticsRepository.findAll();
         return formatAllHotels(stats);
     }
 
+    /**
+     * Formats statistics for all apartments into a string.
+     *
+     * @param apartments the list of apartment statistics
+     * @return a formatted string of statistics for all apartments
+     */
     private static String formatApartments(List<ApartmentStatistics> apartments) {
         var rows = apartments.stream()
                 .map(StatisticsCommands::formatSingleApartment)
@@ -43,6 +68,12 @@ public class StatisticsCommands {
         return header + String.join("\n", rows);
     }
 
+    /**
+     * Formats statistics for a single apartment into a string.
+     *
+     * @param apartment the statistics of the apartment
+     * @return a formatted string of the apartment's statistics
+     */
     private static String formatSingleApartment(ApartmentStatistics apartment) {
         return String.format(
                 "[%d]\t%d\t%d\t%d\t%.2f\t%.2f",
@@ -55,6 +86,12 @@ public class StatisticsCommands {
         );
     }
 
+    /**
+     * Formats detailed statistics for a single hotel into a string.
+     *
+     * @param hotelStatistics the statistics of the hotel
+     * @return a formatted string of the hotel's detailed statistics
+     */
     private static String formatSingleHotelDetails(HotelStatistics hotelStatistics) {
         return String.format(
                 """
@@ -80,12 +117,24 @@ public class StatisticsCommands {
         );
     }
 
+    /**
+     * Formats statistics for all hotels into a string.
+     *
+     * @param hotels the list of hotel statistics
+     * @return a formatted string of statistics for all hotels
+     */
     private static String formatAllHotels(List<HotelStatistics> hotels) {
         var rows = hotels.stream().map(StatisticsCommands::formatSingleHotelRow).toList();
         var header = "ID\tAvg Rating\tName\tAddress\tEmail\tCustomers\tBookings\tComplaints\tTotal Earning\n";
         return header + String.join("\n", rows);
     }
 
+    /**
+     * Formats a single hotel's statistics into a tab-separated string.
+     *
+     * @param hotel the statistics of the hotel
+     * @return a formatted string of the hotel's statistics
+     */
     private static String formatSingleHotelRow(HotelStatistics hotel) {
         return String.format(
                 "[%d]\t%.2f\t%s\t%s\t%s\t%d\t%d\t%d\t%.2f",
@@ -101,6 +150,12 @@ public class StatisticsCommands {
         );
     }
 
+    /**
+     * Formats a hotel's address into a string.
+     *
+     * @param hotelStatistics the statistics of the hotel
+     * @return a formatted string of the hotel's address
+     */
     private static String formatAddress(HotelStatistics hotelStatistics) {
         return String.format(
                 "%s, %s, %s, %s",
