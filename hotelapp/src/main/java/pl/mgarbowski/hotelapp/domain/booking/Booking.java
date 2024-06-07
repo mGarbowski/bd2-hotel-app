@@ -7,6 +7,9 @@ import pl.mgarbowski.hotelapp.domain.customer.Customer;
 
 import java.sql.Date;
 
+/**
+ * Represents a booking entity.
+ */
 @Entity
 @Data
 public class Booking {
@@ -23,8 +26,20 @@ public class Booking {
     @ManyToOne
     private Customer customer;
 
+    /**
+     * Protected constructor for JPA.
+     */
     protected Booking() {}
 
+    /**
+     * Constructs a new Booking with the specified details.
+     *
+     * @param startDate the start date of the booking
+     * @param endDate   the end date of the booking
+     * @param nPeople   the number of people for the booking
+     * @param apartment the apartment being booked
+     * @param customer  the customer making the booking
+     */
     Booking(Date startDate, Date endDate, Integer nPeople, Apartment apartment, Customer customer) {
         this.startDate = startDate;
         this.endDate = endDate;
