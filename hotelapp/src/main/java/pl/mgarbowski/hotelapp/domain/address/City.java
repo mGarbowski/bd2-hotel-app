@@ -5,6 +5,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
+/**
+ * Represents a city entity.
+ */
 @Data
 @Entity
 public class City {
