@@ -8,6 +8,8 @@ import pl.mgarbowski.hotelapp.domain.currency.Currency;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+
+
 @Entity
 @Data
 public class Payment {
