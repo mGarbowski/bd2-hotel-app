@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.sql.Date;
 
+/**
+ * Represents a rating entity.
+ */
 @Entity
 @Data
 public class Rating {
