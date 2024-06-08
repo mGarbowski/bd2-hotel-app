@@ -21,4 +21,13 @@ public class CustomerCommandsTests {
             response
         );
     }
+
+    @Test
+    void testWhoLoggedIn() {
+        var response = customerCommands.login(1);
+        assertEquals(
+            "Welcome John Doe!",
+            response
+        );
+    }
 }
