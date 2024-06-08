@@ -13,4 +13,12 @@ public class CustomerCommandsTests {
     @Autowired
     CustomerCommands customerCommands;
 
+    @Test
+    void testWhoNotLoggedIn() {
+        var response = customerCommands.who();
+        assertEquals(
+            "You are not currently logged in",
+            response
+        );
+    }
 }
