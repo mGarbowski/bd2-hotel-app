@@ -24,6 +24,12 @@ public class CustomerCommands {
                 .orElse(String.format("Customer with id [%d] not found", customerId));
     }
 
+    @Command(command = "logout", description = "Log out")
+    public String logout() {
+        customerService.logout();
+        return "Logged out";
+    }
+
     @Command(command = "list", description = "List all customers")
     public String list() {
         var customers = customerService.getAll().stream()
