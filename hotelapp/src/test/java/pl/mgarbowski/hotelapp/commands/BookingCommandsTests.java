@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import pl.mgarbowski.hotelapp.HotelappApplication;
+import pl.mgarbowski.hotelapp.domain.booking.BookingRepository;
+import pl.mgarbowski.hotelapp.domain.booking.ComplaintRepository;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -21,6 +23,12 @@ public class BookingCommandsTests {
 
     @Autowired
     CustomerCommands customerCommands;
+
+    @Autowired
+    ComplaintRepository complaintRepository;
+
+    @Autowired
+    BookingRepository bookingRepository;
 
     @BeforeEach
     void clearDb() {
@@ -114,6 +122,16 @@ public class BookingCommandsTests {
         var response = bookingCommands.makeComplaint(100, "Bad service");
         assertEquals(
                 "Booking not found",
+                response
+        );
+    }
+
+    @Test
+    void testMakeComplaintComplaintAlreadyExists() {
+        customerCommands.login(1);
+        var response = bookingCommands.makeComplaint(1, "Bad service");
+        assertEquals(
+                "Complaint already exists for this booking",
                 response
         );
     }
