@@ -98,4 +98,13 @@ public class BookingCommandsTests {
                 response
         );
     }
+
+    @Test
+    void testMakeComplaintNotLoggedIn() {
+        var response = bookingCommands.makeComplaint(1, "Bad service");
+        assertEquals(
+                "Not logged in",
+                response
+        );
+    }
 }
