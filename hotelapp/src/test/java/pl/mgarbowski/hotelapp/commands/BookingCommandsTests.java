@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import pl.mgarbowski.hotelapp.HotelappApplication;
 import pl.mgarbowski.hotelapp.domain.booking.BookingRepository;
 import pl.mgarbowski.hotelapp.domain.booking.ComplaintRepository;
+import pl.mgarbowski.hotelapp.domain.booking.RatingRepository;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -29,6 +30,9 @@ public class BookingCommandsTests {
 
     @Autowired
     BookingRepository bookingRepository;
+
+    @Autowired
+    RatingRepository ratingRepository;
 
     @BeforeEach
     void clearDb() {
@@ -153,4 +157,14 @@ public class BookingCommandsTests {
                 complaint.get().getText()
         );
     }
+
+    @Test
+    void testAddOpinionNotLoggedIn() {
+        var response = bookingCommands.addOpinion(1, 4,"Excellent");
+        assertEquals(
+                "Not logged in",
+                response
+        );
+    }
+
 }
