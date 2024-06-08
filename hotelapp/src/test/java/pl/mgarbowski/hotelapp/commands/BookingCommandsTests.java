@@ -35,10 +35,10 @@ public class BookingCommandsTests {
             clearContent = new String(Files.readAllBytes(Paths.get("../database/scripts/clean-all.sql")));
             schemaContent = new String(Files.readAllBytes(Paths.get("../database/scripts/schema.sql")));
             dataContent = new String(Files.readAllBytes(Paths.get("../database/scripts/sample-data.sql")));
-            System.out.println("Read SQL files");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Failed to read SQL files");
+            System.exit(1);
         }
 
         customerCommands.logout();
