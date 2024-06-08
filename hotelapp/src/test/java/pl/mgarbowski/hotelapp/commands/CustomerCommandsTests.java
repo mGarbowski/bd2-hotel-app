@@ -41,5 +41,12 @@ public class CustomerCommandsTests {
         );
     }
 
-
+    @Test
+    void testLoginCorrect() {
+        var response = customerCommands.login(1);
+        assertEquals(
+                "Welcome John Doe!",
+                response
+        );
+    }
 }
