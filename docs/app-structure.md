@@ -56,3 +56,16 @@ Uruchomienie tego skryptu przywróci bazę do stanu początkowego.
 W pliku `query.sql`
 zdefiniowane są przykładowe zapytania do bazy danych.
 Uruchomienie tego skryptu wykona zapytania na bazie danych.
+
+## Aplikacja
+
+### Komendy
+
+Wszystkie komendy zdefiniowane są w podkatalogu `commands`.
+
+Każda komenda jest osobną klasą, której metody odpowiadają
+za wykonanie kodu dla poszczególnych argumentów i opcji.
+Np. `booking makeComplaint --bookingId 1 --complaintText "Zbyt głośno"`
+Wywoła metodę `makeComplaint` z klasy `BookingCommand` z argumentami `1` oraz `Zbyt głośno`. 
+
+Dodatkowo opis komend oraz przyjmowane argumenty i opcje można wyświetlić poprzez `--help`.
