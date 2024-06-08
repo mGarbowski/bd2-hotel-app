@@ -93,4 +93,13 @@ public class BookingCommandsTests {
                 response
         );
     }
+
+    @Test
+    void testMakeBookingNotLoggedIn() {
+        var response = bookingCommands.makeBooking(1, Date.valueOf("2025-04-01"), Date.valueOf("2025-04-07"), 2);
+        assertEquals(
+                "Log in to make booking",
+                response
+        );
+    }
 }
