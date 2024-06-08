@@ -49,4 +49,15 @@ public class CustomerCommandsTests {
                 response
         );
     }
+
+    @Test
+    void testLogoutCorrect() {
+        customerCommands.login(1);
+        customerCommands.logout();
+        var response = customerCommands.who();
+        assertEquals(
+            "You are not currently logged in",
+            response
+        );
+    }
 }
