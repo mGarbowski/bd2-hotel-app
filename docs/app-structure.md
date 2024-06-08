@@ -73,3 +73,11 @@ Np. `booking makeComplaint --bookingId 1 --complaintText "Zbyt głośno"`
 Wywoła metodę `makeComplaint` z klasy `BookingCommand` z argumentami `1` oraz `Zbyt głośno`. 
 
 Dodatkowo opis komend oraz przyjmowane argumenty i opcje można wyświetlić poprzez `--help`.
+
+### Domain
+
+W podkatalogu `domain` znadują się foldery,
+grupujące poszczególne tabele bazy danych.
+W każdym z tych folderów znajdują się klasy typu
+`Service` oraz `Repository`.
+
