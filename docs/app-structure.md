@@ -47,3 +47,8 @@ Uruchomienie tego skryptu utworzy strukturę bazy danych.
 W pliku `sample-data.sql` zdefiniowane są przykładowe dane.
 Uruchomienie tego skryptu wypełnienie bazę danymi.
 
+#### Czyszczenie
+W pliku `clean-all.sql`
+zdefiniowane są skrypty do czyszczące zawartość bazy danych.
+Uruchomienie tego skryptu przywróci bazę do stanu początkowego.
+
