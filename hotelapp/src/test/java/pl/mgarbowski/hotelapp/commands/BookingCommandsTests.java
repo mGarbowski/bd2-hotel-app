@@ -167,4 +167,15 @@ public class BookingCommandsTests {
         );
     }
 
+    @Test
+    void testAddOpinionBookingNotFound() {
+        customerCommands.login(1);
+        var response = bookingCommands.addOpinion(100, 4,"Excellent");
+        assertEquals(
+                "Booking not found",
+                response
+        );
+    }
+
+
 }
