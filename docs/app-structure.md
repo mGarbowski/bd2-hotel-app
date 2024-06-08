@@ -9,8 +9,9 @@
     * [Zapytania](#zapytania)
 * [Aplikacja](#aplikacja)
   * [Komendy](#komendy)
-  * [Service](#service)
-  * [Repository](#repository)
+  * [Domain](#domain)
+    * [Service](#service)
+    * [Repository](#repository)
 
 
 ## Baza danych
@@ -62,6 +63,9 @@ Uruchomienie tego skryptu wykona zapytania na bazie danych.
 ### Komendy
 
 Wszystkie komendy zdefiniowane są w podkatalogu `commands`.
+
+Komendy opdowiadają za opdowiednią walidację argumentów i opcji,
+przekazanie ich do logiki aplikacji oraz wyświetlenie wyników.
 
 Każda komenda jest osobną klasą, której metody odpowiadają
 za wykonanie kodu dla poszczególnych argumentów i opcji.
