@@ -37,4 +37,14 @@ public class BookingCommandsTests {
                 response
         );
     }
+
+    @Test
+    void testListLoggedInNoBookings() {
+        customerCommands.login(2);
+        var response = bookingCommands.getActiveBookings();
+        assertEquals(
+                "You have no active bookings",
+                response
+        );
+    }
 }
