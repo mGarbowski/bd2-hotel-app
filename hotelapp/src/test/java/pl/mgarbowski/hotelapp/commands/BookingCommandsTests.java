@@ -187,5 +187,25 @@ public class BookingCommandsTests {
         );
     }
 
+    @Test
+    void testAddOpinionCorrect() {
+        customerCommands.login(4);
+        var response = bookingCommands.addOpinion(8,4, "Excellent");
+        assertEquals(
+                "Opinion added",
+                response
+        );
 
+        var rating = ratingRepository.getRatingByBooking(
+                bookingRepository.findById(8).get()
+        );
+        assertEquals(
+                "Excellent",
+                rating.get().getText()
+        );
+        assertEquals(
+                4,
+                rating.get().getStarRating()
+        );
+    }
 }
