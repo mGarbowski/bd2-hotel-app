@@ -24,9 +24,10 @@ public class CustomerCommandsTests {
 
     @Test
     void testWhoLoggedIn() {
-        var response = customerCommands.login(1);
+        customerCommands.login(1);
+        var response = customerCommands.who();
         assertEquals(
-            "Welcome John Doe!",
+            "[1] John Doe",
             response
         );
     }
@@ -39,4 +40,6 @@ public class CustomerCommandsTests {
             response
         );
     }
+
+
 }
