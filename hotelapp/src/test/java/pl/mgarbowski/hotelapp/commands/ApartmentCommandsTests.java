@@ -8,7 +8,6 @@ import pl.mgarbowski.hotelapp.HotelappApplication;
 import java.sql.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(classes = HotelappApplication.class)
 public class ApartmentCommandsTests {
