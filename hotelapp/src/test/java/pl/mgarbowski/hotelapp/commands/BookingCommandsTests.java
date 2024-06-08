@@ -26,24 +26,6 @@ public class BookingCommandsTests {
     @Autowired
     CustomerCommands customerCommands;
 
-    private void runCommand(String command) {
-        String os = System.getProperty("os.name").toLowerCase();
-
-        ProcessBuilder builder = new ProcessBuilder();
-
-        if (os.contains("win")) {
-            builder.command("cmd.exe", "/c", command);
-        } else {
-            builder.command("sh", "-c", command);
-        }
-
-        try {
-            builder.start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     @BeforeEach
     void clearDb() {
         String clearContent = "";
