@@ -11,3 +11,16 @@
   * [Komendy](#komendy)
   * [Service](#service)
   * [Repository](#repository)
+
+
+## Baza danych
+
+### Uruchomienie
+
+Do uruchomienia bazy danych, najporstszym rozwiązaniem jest użycie Docker Compose
+z plikiem konfiguracyjnym `database/docker-compose.yml`.
+
+```shell
+docker compose -f ../database/docker-compose.yml up -d
+```
+
