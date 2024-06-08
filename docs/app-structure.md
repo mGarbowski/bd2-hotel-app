@@ -52,3 +52,7 @@ W pliku `clean-all.sql`
 zdefiniowane są skrypty do czyszczące zawartość bazy danych.
 Uruchomienie tego skryptu przywróci bazę do stanu początkowego.
 
+#### Zapytania
+W pliku `query.sql`
+zdefiniowane są przykładowe zapytania do bazy danych.
+Uruchomienie tego skryptu wykona zapytania na bazie danych.
