@@ -135,4 +135,22 @@ public class BookingCommandsTests {
                 response
         );
     }
+
+    @Test
+    void testMakeComplaintCorrect() {
+        customerCommands.login(4);
+        var response = bookingCommands.makeComplaint(8, "Bad service");
+        assertEquals(
+                "Complaint created",
+                response
+        );
+
+        var complaint = complaintRepository.getComplaintByBooking(
+                bookingRepository.findById(8).get()
+        );
+        assertEquals(
+                "Bad service",
+                complaint.get().getText()
+        );
+    }
 }
