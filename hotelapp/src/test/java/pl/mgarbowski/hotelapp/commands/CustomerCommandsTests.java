@@ -30,4 +30,13 @@ public class CustomerCommandsTests {
             response
         );
     }
+
+    @Test
+    void testLoginCustomerNotFound() {
+        var response = customerCommands.login(100);
+        assertEquals(
+            "Customer with id [100] not found",
+            response
+        );
+    }
 }
