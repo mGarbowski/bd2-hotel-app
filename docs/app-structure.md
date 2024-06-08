@@ -36,3 +36,9 @@ poprzez `docker exec`:
 cat ../database/scripts/<skrypt>.sql | docker exec -i database-db-1 psql -U admin -d postgres
 ```
 
+#### Schemat
+
+W pliku `schema.sql` zdefiniowany jest schemat bazy danych
+wraz z widokami, triggerami, oraz procedurami.
+Uruchomienie tego skryptu utworzy strukturę bazy danych.
+
