@@ -81,3 +81,9 @@ grupujące poszczególne tabele bazy danych.
 W każdym z tych folderów znajdują się klasy typu
 `Service` oraz `Repository`.
 
+#### Service
+
+Klasy typu `Service` implementują logikę modyfikowania danych
+znadujących się w bazie i są wykorzystywane przez komendy.
+Weryfikają porpawność danych na poziomie aplikacji, przed zapisem do bazy.
+
