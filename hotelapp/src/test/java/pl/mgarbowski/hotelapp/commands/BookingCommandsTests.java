@@ -26,6 +26,52 @@ public class BookingCommandsTests {
     @Autowired
     CustomerCommands customerCommands;
 
+    private void runCommand(String command) {
+        String os = System.getProperty("os.name").toLowerCase();
+
+        ProcessBuilder builder = new ProcessBuilder();
+
+        if (os.contains("win")) {
+            builder.command("cmd.exe", "/c", command);
+        } else {
+            builder.command("sh", "-c", command);
+        }
+
+        try {
+            builder.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @BeforeEach
+    void clearDb() {
+        String clearContent = "";
+        String schemaContent = "";
+        String dataContent = "";
+        try {
+            clearContent = new String(Files.readAllBytes(Paths.get("../database/scripts/clean-all.sql")));
+            schemaContent = new String(Files.readAllBytes(Paths.get("../database/scripts/schema.sql")));
+            dataContent = new String(Files.readAllBytes(Paths.get("../database/scripts/sample-data.sql")));
+            System.out.println("Read SQL files");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Failed to read SQL files");
+        }
+
+        customerCommands.logout();
+        try (
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "admin", "admin");
+            var stmt = conn.createStatement()
+        ) {
+            stmt.execute(clearContent);
+            stmt.execute(schemaContent);
+            stmt.execute(dataContent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @Test
     void testListNotLoggedIn() {
         var response = bookingCommands.getActiveBookings();
