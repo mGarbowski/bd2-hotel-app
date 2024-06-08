@@ -177,5 +177,15 @@ public class BookingCommandsTests {
         );
     }
 
+    @Test
+    void testAddOpinionOpinionAlreadyExists() {
+        customerCommands.login(1);
+        var response = bookingCommands.addOpinion(1, 4, "Excellent");
+        assertEquals(
+                "Rating already exists for this booking",
+                response
+        );
+    }
+
 
 }
