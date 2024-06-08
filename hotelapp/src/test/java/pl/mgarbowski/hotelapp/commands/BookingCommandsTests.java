@@ -1,11 +1,19 @@
 package pl.mgarbowski.hotelapp.commands;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import pl.mgarbowski.hotelapp.HotelappApplication;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.DriverManager;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -44,6 +52,16 @@ public class BookingCommandsTests {
         var response = bookingCommands.getActiveBookings();
         assertEquals(
                 "You have no active bookings",
+                response
+        );
+    }
+
+    @Test
+    void testMakeBooking() {
+        customerCommands.login(2);
+        var response = bookingCommands.makeBooking(1, Date.valueOf("2025-04-01"), Date.valueOf("2025-04-07"), 2);
+        assertEquals(
+                "Booking complete",
                 response
         );
     }
