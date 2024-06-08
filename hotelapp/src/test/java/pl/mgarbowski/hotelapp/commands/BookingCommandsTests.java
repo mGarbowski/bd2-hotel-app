@@ -107,4 +107,14 @@ public class BookingCommandsTests {
                 response
         );
     }
+
+    @Test
+    void testMakeComplaintBookingNotFound() {
+        customerCommands.login(1);
+        var response = bookingCommands.makeComplaint(100, "Bad service");
+        assertEquals(
+                "Booking not found",
+                response
+        );
+    }
 }
