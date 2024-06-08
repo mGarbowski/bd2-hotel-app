@@ -16,11 +16,6 @@ public class AddressCommandsTests {
     @Test
     void testListAll() {
         var response = addressCommands.listAll();
-        System.out.println("===================================");
-        System.out.println("===================================");
-        System.out.println(response);
-        System.out.println("===================================");
-        System.out.println("===================================");
         assertEquals("[1] 123 Main St, 10001, New York, United States\n" +
                 "[2] 456 Park Ave, SW1A 1AA, London, United Kingdom\n" +
                 "[3] 789 Rue de la Paix, 75001, Paris, France\n" +
