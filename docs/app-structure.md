@@ -42,3 +42,8 @@ W pliku `schema.sql` zdefiniowany jest schemat bazy danych
 wraz z widokami, triggerami, oraz procedurami.
 Uruchomienie tego skryptu utworzy strukturę bazy danych.
 
+#### Dane
+
+W pliku `sample-data.sql` zdefiniowane są przykładowe dane.
+Uruchomienie tego skryptu wypełnienie bazę danymi.
+
