@@ -15,6 +15,8 @@ public class BookingCommandsTests {
     @Autowired
     BookingCommands bookingCommands;
 
+    @Autowired
+    CustomerCommands customerCommands;
 
     @Test
     void testListNotLoggedIn() {
@@ -25,4 +27,14 @@ public class BookingCommandsTests {
         );
     }
 
+    @Test
+    void testListLoggedInOneUpcoming() {
+        customerCommands.login(1);
+        var response = bookingCommands.getActiveBookings();
+        assertEquals(
+                "Upcoming:\n" +
+                        "[3] Chimponello Estate, London, 456 Park Ave for 2 people, from 2025-04-01 to 2025-04-07",
+                response
+        );
+    }
 }
