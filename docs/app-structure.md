@@ -87,3 +87,7 @@ Klasy typu `Service` implementują logikę modyfikowania danych
 znadujących się w bazie i są wykorzystywane przez komendy.
 Weryfikają porpawność danych na poziomie aplikacji, przed zapisem do bazy.
 
+#### Repository
+
+Klasy typu `Repository` odpwiadają za bezpośrednie wykonywanie
+zapytań SQL na bazie danych.
