@@ -24,3 +24,15 @@ z plikiem konfiguracyjnym `database/docker-compose.yml`.
 docker compose -f ../database/docker-compose.yml up -d
 ```
 
+### Skrypty
+
+Schemat, przykładowe dane, oraz pomocnicze skrypty,
+są zdefiniowane w plikach SQL w katalogu `database/scripts`.
+
+Skrypty najporściej uruchamiać w uruchomionym kontenerze bazy danych,
+poprzez `docker exec`:
+
+```shell
+cat ../database/scripts/<skrypt>.sql | docker exec -i database-db-1 psql -U admin -d postgres
+```
+
