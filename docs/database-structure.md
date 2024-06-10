@@ -99,7 +99,6 @@ Returns a set of bookings that overlap with the specified date range for the giv
       payments.
     - Uses a generated UUID to ensure a unique identifier for each entry, required by JPA.
 
-
 2. **View: `apartment_statistics`**:
     - Provides statistical information about each apartment. This view includes data on the number of
       customers, bookings, complaints, total earnings, and average earnings for each apartment. It aggregates data from
