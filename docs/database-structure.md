@@ -69,3 +69,24 @@ database:
 Each table serves a specific role in the overall structure, ensuring comprehensive management of the hotel network's
 data, from geographical and personal details to bookings, payments, and customer feedback.
 
+# Summary of triggers and functions:
+
+## Triggers
+### increment_total_bookings_trigger:
+
+Triggered after a new booking is inserted into the booking table.
+Calls increment_total_bookings() to increment the total_bookings counters in the appropriate records of the apartment
+and hotel tables.
+
+### update_avg_rating_trigger:
+
+Triggered after any insert, update, or delete on the rating table.
+Calls update_avg_ratings() to recalculate and update the average_rating in the respectable apartment and hotel based on
+the latest ratings data.
+
+## Functions
+
+### get_conflicting_bookings(apartment_id_param, start_date_param, end_date_param):
+
+A function designed to be called when checking for booking conflicts.
+Returns a set of bookings that overlap with the specified date range for the given apartment.
