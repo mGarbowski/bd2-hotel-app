@@ -12,6 +12,9 @@ These analytic features include:
 The apartment_statistics, hotel_statistics and payments_summary views,
 avg_rating and total_bookings columns in Apartment and Hotel tables.
 
+The database scripts are written in the PostreSQL dialect, as that is the database system the team decided on and
+recommend using. (setting up PostreSQL using Docker in [./build-and-run.md](./build-and-run.md))
+
 # The tables
 
 1. **country**: Stores information about countries, including their names and codes. Used for associating locations with
@@ -88,7 +91,6 @@ the latest ratings data.
 
 A function designed to be called when checking for booking conflicts.
 Returns a set of bookings that overlap with the specified date range for the given apartment.
-
 
 1. **View: `payments_summary`**:
     - Combines information from bookings, apartments, extra services, and payments.
