@@ -14,9 +14,6 @@ avg_rating and total_bookings columns in Apartment and Hotel tables.
 
 # The tables
 
-Certainly! Here's a description of the general purpose of each table in the provided SQL script for a hotel network
-database:
-
 1. **country**: Stores information about countries, including their names and codes. Used for associating locations with
    countries.
 
@@ -98,7 +95,6 @@ Returns a set of bookings that overlap with the specified date range for the giv
     - Summarizes all financial transactions related to a booking, including reservation fees, extra service charges, and
       payments.
     - Uses a generated UUID to ensure a unique identifier for each entry, required by JPA.
-
 
 2. **View: `apartment_statistics`**:
     - Provides statistical information about each apartment. This view includes data on the number of
