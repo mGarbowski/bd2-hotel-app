@@ -12,6 +12,7 @@ Projekt składa się z bazy danych i aplikacji obsługujących system rezerwacji
 
 * [Model danych](./docs/data-model.md)
 * [Instrukcja uruchomienia](./docs/build-and-run.md)
+* [Dokumentacja bazy](./docs/database-structure.md)
 
 ## Funkcjonalności
 * Operacyjne
