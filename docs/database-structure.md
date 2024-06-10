@@ -72,6 +72,7 @@ data, from geographical and personal details to bookings, payments, and customer
 # Summary of triggers and functions:
 
 ## Triggers
+
 ### increment_total_bookings_trigger:
 
 Triggered after a new booking is inserted into the booking table.
@@ -90,3 +91,29 @@ the latest ratings data.
 
 A function designed to be called when checking for booking conflicts.
 Returns a set of bookings that overlap with the specified date range for the given apartment.
+
+Certainly! Here is a description of the general purpose of each view in the provided SQL script for a hotel network
+database:
+
+1. **View: `payments_summary`**:
+    - Combines information from bookings, apartments, extra services, and payments.
+    - Summarizes all financial transactions related to a booking, including reservation fees, extra service charges, and
+      payments.
+    - Uses a generated UUID to ensure a unique identifier for each entry, required by JPA.
+
+
+2. **View: `apartment_statistics`**:
+    - Provides statistical information about each apartment. This view includes data on the number of
+      customers, bookings, complaints, total earnings, and average earnings for each apartment. It aggregates data from
+      bookings, customers, complaints, and the `payments_summary` view to offer a comprehensive overview of each
+      apartment's performance and customer interaction.
+
+3. **View: `hotel_statistics`**:
+    - Aggregates data on the hotel's name, contact details, average rating, address, number of customers, total
+      bookings, and complaints.
+    - Calculates total earnings from the `payments_summary` view.
+    - Provides a comprehensive statistical overview of each hotel's performance, financial results, and customer
+      interaction.
+
+These views are designed to facilitate easy access to aggregated and detailed statistical data for apartments and
+hotels, assisting in performance monitoring and financial analysis.
