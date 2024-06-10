@@ -92,8 +92,6 @@ the latest ratings data.
 A function designed to be called when checking for booking conflicts.
 Returns a set of bookings that overlap with the specified date range for the given apartment.
 
-Certainly! Here is a description of the general purpose of each view in the provided SQL script for a hotel network
-database:
 
 1. **View: `payments_summary`**:
     - Combines information from bookings, apartments, extra services, and payments.
