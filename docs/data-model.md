@@ -1,14 +1,14 @@
-# Model danych
+# Data Model
 
-## Model pojęciowy
-![Diagram związków encji](./er-diagram.png)
+## Conceptual Model
+![Entity-Relationship Diagram](./er-diagram.png)
 
-## Model relacyjny
-![Diagram relacyjny](./relational-diagram.png)
+## Relational Model
+![Relational Diagram](./relational-diagram.png)
 
-## Denormalizacja
-Model jest zdenormalizowany dla przyspieszenia wybranych operacji
+## Denormalization
+The model is denormalized to speed up selected operations.
 
-Atrybuty `hotel.avg_rating` i `apartment.avg_rating` są aktualizowane wyzwalaczem po zmianie w tabeli `rating`.
+Attributes `hotel.avg_rating` and `apartment.avg_rating` are updated by a trigger after changes in the `rating` table.
 
-Atrybuty `hotel.total_bookings` `apartment.total_bookings` są aktualizowane wyzwalaczem po zmianie w tabeli `booking`.
+Attributes `hotel.total_bookings` and `apartment.total_bookings` are updated by a trigger after changes in the `booking` table.
