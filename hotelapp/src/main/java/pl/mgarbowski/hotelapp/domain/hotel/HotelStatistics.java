@@ -6,6 +6,9 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 
+/**
+ * Represents a HotelStatistics entity.
+ */
 @Entity
 @Getter
 public class HotelStatistics {

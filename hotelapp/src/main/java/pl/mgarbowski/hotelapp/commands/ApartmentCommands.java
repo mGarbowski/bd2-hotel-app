@@ -11,12 +11,23 @@ import java.security.InvalidParameterException;
 import java.sql.Date;
 import java.util.List;
 
+/**
+ * Shell commands for managing apartments.
+ */
 @RequiredArgsConstructor
 @Command(command = "apartment", group = "apartment")
 public class ApartmentCommands {
     private final ApartmentService apartmentService;
 
-
+    /**
+     * Searches for free apartments in a specified city within a date range.
+     *
+     * @param city  the city to search in
+     * @param start the start date of the booking
+     * @param end   the end date of the booking
+     * @return a string representation of available apartments or a message if none are available
+     * @throws InvalidParameterException if any parameter is null
+     */
     @Command(command = "searchCity", description = "Search free apartments in city")
     public String searchFreeApartmentsInCity(String city, Date start, Date end) {
         if (city == null || start == null || end == null) {
@@ -36,6 +47,12 @@ public class ApartmentCommands {
         }
     }
 
+    /**
+     * Formats a list of apartments into a string.
+     *
+     * @param apartments the list of apartments
+     * @return a formatted string of apartments
+     */
     private String formatString(List<Apartment> apartments) {
         return String.join(" ", apartments.stream()
                 .map(ApartmentCommands::formatSingleApartment)
@@ -43,6 +60,12 @@ public class ApartmentCommands {
         );
     }
 
+    /**
+     * Formats an address into a string.
+     *
+     * @param address the address to format
+     * @return a formatted string of the address
+     */
     private static String formatAddress(Address address) {
         return String.format(
                 "%s, %s, %s, %s",
@@ -53,6 +76,12 @@ public class ApartmentCommands {
         );
     }
 
+    /**
+     * Formats a single apartment's details into a string.
+     *
+     * @param apartment the apartment to format
+     * @return a formatted string of the apartment's details
+     */
     private static String formatSingleApartment(Apartment apartment) {
         return String.format(
                 """

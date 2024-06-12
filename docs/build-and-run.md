@@ -1,56 +1,52 @@
-# Instalacja i uruchomienie
+# Installation and Launch
 
-## Baza danych
-Do uruchomienia lokalnie używamy Docker Compose ([instalacja dla Ubuntu](https://docs.docker.com/engine/install/ubuntu/))
+## Database
+To run locally, we use Docker Compose ([installation for Ubuntu](https://docs.docker.com/engine/install/ubuntu/))
 
-### Uruchomienie
+### Launch
 ```shell
-docker compose -f database/docker-compose.yml up -d
+docker compose -f ../database/docker-compose.yml up -d
 ```
 
-Plik `docker-compose.yml` zawiera konfigurację uruchomienia. Dane z bazy będą nieulotne, przechowywane w katalogu
-`./database/data` (ignorowanym przez git)
+The `docker-compose.yml` file contains the launch configuration. The database data will be persistent, stored in the `./database/data` directory (ignored by git).
 
-### Skrypty
+### Scripts
 
-Katalog [scripts](./database/scripts) zawiera skrypty do bazy danych
-* [schema.sql](./database/scripts/schema.sql) - definiuje schemat bazy danych (tworzy tabele)
-* [sample-data.sql](./database/scripts/sample-data.sql) - dodaje przykładowe dane
-* [clean-all.sql](./database/scripts/clean-all.sql) - czyści zawartość bazy
-* [query.sql](./database/scripts/query.sql) - przykładowe zapytania
+The [scripts](../database/scripts) directory contains database scripts:
+* [schema.sql](../database/scripts/schema.sql) - defines the database schema (creates tables)
+* [sample-data.sql](../database/scripts/sample-data.sql) - adds sample data
+* [clean-all.sql](../database/scripts/clean-all.sql) - cleans the database content
+* [query.sql](../database/scripts/query.sql) - sample queries
 
-Uruchomić skrypt można np. przez wtyczkę do IntelliJ. Trzeba dodać źródło danych w zakładce Database,
-otworzyć wybrany skrypt i wybrać sesję bazy danych. Skrypt można uruchomić zielonym przyciskiem play lub skrótem Ctrl+Enter.
+Scripts can be run, for example, through an IntelliJ plugin. You need to add a data source in the Database tab, open the selected script, and choose the database session. The script can be run with the green play button or the Ctrl+Enter shortcut.
 
-Skrypt można uruchomić wywołując w kontenerze polecenie psql i przekazując skrypt potokiem na stdin.
-Zakładając, że kontener ma nazwę `database-db-1` wykonujemy:
+A script can also be run by invoking the psql command in the container and passing the script through stdin. Assuming the container is named `database-db-1`, execute:
 
 ```shell
-cat ./database/scripts/query.sql | docker exec -i database-db-1 psql -U admin -d postgres
+cat ../database/scripts/query.sql | docker exec -i database-db-1 psql -U admin -d postgres
 ```
 
+## Application
+The application requires Java version 17. Convenient installation can be done via [SDKMan](https://sdkman.io/).
 
-## Aplikacja
-Aplikacja wymaga Javy w wersji 17, wygodną instalację umożliwia [SDKMan](https://sdkman.io/).
+All commands are executed through the Gradle wrapper `gradlew`.
 
-Wszystkie komendy wykonujemy przez wrapper do Gradle `gradlew`
-
-### Budowanie
-Do zbudowania aplikacji do pliku "fat jar" - plik wykonywalny dla JVM, aplikacja spakowana ze wszystkimi zależnościami
+### Building
+To build the application into a "fat jar" - an executable file for the JVM, with the application packaged with all dependencies:
 
 ```shell
 ./gradlew bootJar
 ```
 
-### Uruchomienie jar
+### Running the jar
 ```shell
 java -jar ./hotelapp/build/libs/hotelapp-0.0.1-SNAPSHOT.jar
 ```
 
-### Uruchomienie w IntelliJ
-Przy poprawnym załadowaniu projektu Gradle w IntelliJ, można wygodnie uruchamiać aplikację przez run configuration
+### Running in IntelliJ
+With the project correctly loaded in IntelliJ Gradle, the application can be conveniently run through the run configuration.
 
-## Data modeler
-Program do pobrania na stronie [Oracle](https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/download/)
+## Data Modeler
+The program can be downloaded from the [Oracle](https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/download/) website.
 
 File > Open > data-modeler-design.dmd

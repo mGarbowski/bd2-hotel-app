@@ -10,6 +10,9 @@ import pl.mgarbowski.hotelapp.domain.hotel.Hotel;
 
 import java.math.BigDecimal;
 
+/**
+ * Represents an apartment entity.
+ */
 @Data
 @Entity
 public class Apartment {
