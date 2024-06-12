@@ -40,7 +40,7 @@ public class CustomerCommands {
 
 
     /**
-     * Logs out currently logged int user.
+     * Logs out currently logged in user.
      *
      * @return confirmation message
      */
