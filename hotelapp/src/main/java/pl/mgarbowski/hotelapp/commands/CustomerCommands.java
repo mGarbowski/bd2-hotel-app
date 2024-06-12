@@ -38,6 +38,12 @@ public class CustomerCommands {
                 .orElse(String.format("Customer with id [%d] not found", customerId));
     }
 
+
+    /**
+     * Logs out currently logged int user.
+     *
+     * @return confirmation message
+     */
     @Command(command = "logout", description = "Log out")
     public String logout() {
         customerService.logout();

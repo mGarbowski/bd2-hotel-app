@@ -37,6 +37,9 @@ public class CustomerService {
         return maybeCustomer;
     }
 
+    /**
+     * Sets current user as none, effectively logging him out.
+     */
     public void logout() {
         appState.setUser(Optional.empty());
     }
