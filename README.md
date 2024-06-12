@@ -56,4 +56,4 @@ Podział pracy:
 * Implementacja funkcjonalności aplikacyjnej – Mikołaj Garbowski/Jędrzej Grabski/Aleksander Drwal/Maksym Bieńkowski
 * Dokumentacja kodu – Jędrzej Grabski/Maksym Bieńkowski/Aleksander Drwal
 * Dokumentacja Bazy danych - Michał Łuszczek
-* Testy Jednostkowe – Aleksander Drwal/Jędrzej Grabski/...
+* Testy Jednostkowe i Integracyjne – Aleksander Drwal/Jędrzej Grabski
