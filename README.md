@@ -45,7 +45,7 @@ It can be accessed by opening the [index.html](docs/javadocs/index.html) file in
   * Spring Shell module for creating CLI applications
 * ER and logical model - Oracle Data Modeler
 
-**Division of Work:**
+## Division of Work:
 
 * User Interface Skeleton - Mikołaj Garbowski
 * Database Schema – The Entire Team
