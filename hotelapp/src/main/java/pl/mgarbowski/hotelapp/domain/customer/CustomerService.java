@@ -37,6 +37,10 @@ public class CustomerService {
         return maybeCustomer;
     }
 
+    public void logout() {
+        appState.setUser(Optional.empty());
+    }
+
     /**
      * Retrieves all customers.
      *
