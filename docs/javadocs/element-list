@@ -1,0 +1,11 @@
+pl.mgarbowski.hotelapp
+pl.mgarbowski.hotelapp.commands
+pl.mgarbowski.hotelapp.domain.address
+pl.mgarbowski.hotelapp.domain.apartment
+pl.mgarbowski.hotelapp.domain.booking
+pl.mgarbowski.hotelapp.domain.currency
+pl.mgarbowski.hotelapp.domain.customer
+pl.mgarbowski.hotelapp.domain.extraservice
+pl.mgarbowski.hotelapp.domain.feature
+pl.mgarbowski.hotelapp.domain.hotel
+pl.mgarbowski.hotelapp.domain.payment

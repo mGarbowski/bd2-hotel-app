@@ -6,6 +6,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+/**
+ * Represents a country entity.
+ */
 @Entity
 @Data
 public class Country {

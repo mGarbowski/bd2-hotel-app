@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 import pl.mgarbowski.hotelapp.domain.hotel.Hotel;
 
+/**
+ * Represents an AvailableService entity.
+ */
 @Entity
 @Data
 @IdClass(AvailableServiceKey.class)
