@@ -18,4 +18,12 @@ public class CountryCommandsTests {
         assertEquals("[United States, United Kingdom, France, Germany, Canada]", response.toString());
     }
 
+    @Test
+    void testGetByCodeExists() {
+        var responseUS = countryCommands.getByCode("US");
+        assertEquals("United States", responseUS);
+        var responseUK = countryCommands.getByCode("UK");
+        assertEquals("United Kingdom", responseUK);
+    }
+
 }
