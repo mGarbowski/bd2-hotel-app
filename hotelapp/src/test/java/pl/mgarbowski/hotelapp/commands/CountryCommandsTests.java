@@ -26,4 +26,9 @@ public class CountryCommandsTests {
         assertEquals("United Kingdom", responseUK);
     }
 
+    @Test
+    void testGetByCodeNotExists() {
+        var response = countryCommands.getByCode("XX");
+        assertEquals("Not found", response);
+    }
 }
