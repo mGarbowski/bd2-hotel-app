@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import lombok.Data;
 import pl.mgarbowski.hotelapp.domain.apartment.Apartment;
 
+
+/**
+ * Represents an AvailableFeature entity.
+ */
 @Entity
 @IdClass(AvailableFeatureKey.class)
 @Data

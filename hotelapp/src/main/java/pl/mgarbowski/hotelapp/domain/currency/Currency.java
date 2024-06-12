@@ -5,6 +5,9 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+/**
+ * Represents a currency entity.
+ */
 @Data
 @Entity
 @AllArgsConstructor
@@ -13,5 +16,8 @@ public class Currency {
     private String isoCode;
     private String name;
 
+    /**
+     * Protected constructor for JPA.
+     */
     protected Currency() {}
 }

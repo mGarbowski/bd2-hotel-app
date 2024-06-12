@@ -8,6 +8,9 @@ import lombok.Getter;
 import java.math.BigDecimal;
 import java.util.UUID;
 
+/**
+ * Represents a payment summary entry.
+ */
 @Entity
 @Getter
 @Table(name = "payments_summary")

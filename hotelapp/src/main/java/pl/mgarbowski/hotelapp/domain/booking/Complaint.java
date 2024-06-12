@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.sql.Date;
 
+/**
+ * Represents a complaint entity.
+ */
 @Entity
 @Data
 public class Complaint {

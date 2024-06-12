@@ -8,6 +8,9 @@ import pl.mgarbowski.hotelapp.domain.address.Address;
 
 import java.math.BigDecimal;
 
+/**
+ * Represents a Hotel entity.
+ */
 @Data
 @Entity
 public class Hotel {

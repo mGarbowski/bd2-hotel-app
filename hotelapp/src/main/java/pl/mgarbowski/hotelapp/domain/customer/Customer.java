@@ -6,6 +6,9 @@ import jakarta.persistence.OneToOne;
 import lombok.Data;
 import pl.mgarbowski.hotelapp.domain.address.Address;
 
+/**
+ * Represents a customer entity.
+ */
 @Data
 @Entity
 public class Customer {

@@ -6,6 +6,9 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 
+/**
+ * Represents statistics for an apartment.
+ */
 @Entity
 @Getter
 public class ApartmentStatistics {
