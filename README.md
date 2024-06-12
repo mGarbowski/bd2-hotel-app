@@ -30,6 +30,11 @@ Projekt składa się z bazy danych i aplikacji obsługujących system rezerwacji
     * Wyświetlenie podsumowania liczby zażaleń z podziałem na hotele
 
 
+## Dokumentacja
+Dokumentacja kodu została wygenerowana za pomocą JavaDocs.
+Może być uruchomiona przez otworzenie pliku [index.html](docs/javadocs/index.html) w folderze `docs/javadocs`
+
+
 ## Wykorzystane technologie
 * Baza danych PostgreSQL
 * Aplikacja wykorzystująca Spring Framework
