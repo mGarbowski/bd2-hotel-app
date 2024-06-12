@@ -92,19 +92,20 @@ the latest ratings data.
 A function designed to be called when checking for booking conflicts.
 Returns a set of bookings that overlap with the specified date range for the given apartment.
 
-1. **View: `payments_summary`**:
+## Views
+1. **`payments_summary`**:
     - Combines information from bookings, apartments, extra services, and payments.
     - Summarizes all financial transactions related to a booking, including reservation fees, extra service charges, and
       payments.
     - Uses a generated UUID to ensure a unique identifier for each entry, required by JPA.
 
-2. **View: `apartment_statistics`**:
+2. **`apartment_statistics`**:
     - Provides statistical information about each apartment. This view includes data on the number of
       customers, bookings, complaints, total earnings, and average earnings for each apartment. It aggregates data from
       bookings, customers, complaints, and the `payments_summary` view to offer a comprehensive overview of each
       apartment's performance and customer interaction.
 
-3. **View: `hotel_statistics`**:
+3. **`hotel_statistics`**:
     - Aggregates data on the hotel's name, contact details, average rating, address, number of customers, total
       bookings, and complaints.
     - Calculates total earnings from the `payments_summary` view.
