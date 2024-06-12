@@ -1,9 +1,12 @@
-# Hotel App
+
+# Hotel app
+
 * Mikołaj Garbowski
 * Michał Łuszczek
 * Maksym Bieńkowski
 * Jędrzej Grabski
 * Aleksander Drwal
+
 
 Semester project for the Databases 2 course (2024L)
 
@@ -41,3 +44,14 @@ It can be accessed by opening the [index.html](docs/javadocs/index.html) file in
   * Spring Data JPA ORM
   * Spring Shell module for creating CLI applications
 * ER and logical model - Oracle Data Modeler
+
+## Division of Work:
+
+* User Interface Skeleton - Mikołaj Garbowski
+* Database Schema – The Entire Team
+* SQL Scripts – Mikołaj Garbowski
+* SQL Triggers/Procedures - Michał Łuszczek, Maksym Bieńkowski
+* Application Functionality Implementation – Mikołaj Garbowski/Jędrzej Grabski/Aleksander Drwal/Maksym Bieńkowski
+* Code Documentation – Jędrzej Grabski/Maksym Bieńkowski/Aleksander Drwal
+* Database Documentation - Michał Łuszczek
+* Unit and Integration Tests – Aleksander Drwal/Jędrzej Grabski
