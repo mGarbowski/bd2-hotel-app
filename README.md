@@ -7,7 +7,6 @@
 * Jędrzej Grabski
 * Aleksander Drwal
 
-
 Semester project for the Databases 2 course (2024L)
 
 ## Project Description
@@ -17,6 +16,7 @@ The project consists of a database and applications supporting the hotel reserva
 * [Build and Run Instructions](./docs/build-and-run.md)
 * [App Structure](./docs/app-structure.md)
 * [End User Documentation](./docs/end-user-documentation.md)
+* [Database documentation](./docs/database-structure.md)
 
 ## Features
 * Operational
