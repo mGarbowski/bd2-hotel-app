@@ -1,93 +1,93 @@
-# Struktura Aplikacji
+# Application Structure
 
-* [Baza danych](#baza-danych)
-  * [Uruchomienie](#uruchomienie)
-  * [Skrypty](#skrypty)
-    * [Schemat](#schemat)
-    * [Dane](#dane)
-    * [Czyszczenie](#czyszczenie)
-    * [Zapytania](#zapytania)
-* [Aplikacja](#aplikacja)
-  * [Komendy](#komendy)
+* [Database](#database)
+  * [Startup](#startup)
+  * [Scripts](#scripts)
+    * [Schema](#schema)
+    * [Data](#data)
+    * [Cleanup](#cleanup)
+    * [Queries](#queries)
+* [Application](#application)
+  * [Commands](#commands)
   * [Domain](#domain)
     * [Service](#service)
     * [Repository](#repository)
 
+## Database
 
-## Baza danych
+### Startup
 
-### Uruchomienie
-
-Do uruchomienia bazy danych, najporstszym rozwiązaniem jest użycie Docker Compose
-z plikiem konfiguracyjnym `database/docker-compose.yml`.
+To start the database, the simplest solution is to use Docker Compose
+with the configuration file `database/docker-compose.yml`.
 
 ```shell
 docker compose -f ../database/docker-compose.yml up -d
 ```
 
-### Skrypty
+### Scripts
 
-Schemat, przykładowe dane, oraz pomocnicze skrypty,
-są zdefiniowane w plikach SQL w katalogu `database/scripts`.
+The schema, sample data, and helper scripts
+are defined in SQL files in the `database/scripts` directory.
 
-Skrypty najporściej uruchamiać w uruchomionym kontenerze bazy danych,
-poprzez `docker exec`:
+The easiest way to run the scripts is in the running database container
+using `docker exec`:
 
 ```shell
-cat ../database/scripts/<skrypt>.sql | docker exec -i database-db-1 psql -U admin -d postgres
+cat ../database/scripts/<script>.sql | docker exec -i database-db-1 psql -U admin -d postgres
 ```
 
-#### Schemat
+#### Schema
 
-W pliku `schema.sql` zdefiniowany jest schemat bazy danych
-wraz z widokami, triggerami, oraz procedurami.
-Uruchomienie tego skryptu utworzy strukturę bazy danych.
+The `schema.sql` file defines the database schema
+along with views, triggers, and procedures.
+Running this script will create the database structure.
 
-#### Dane
+#### Data
 
-W pliku `sample-data.sql` zdefiniowane są przykładowe dane.
-Uruchomienie tego skryptu wypełnienie bazę danymi.
+The `sample-data.sql` file defines sample data.
+Running this script will populate the database with data.
 
-#### Czyszczenie
-W pliku `clean-all.sql`
-zdefiniowane są skrypty do czyszczące zawartość bazy danych.
-Uruchomienie tego skryptu przywróci bazę do stanu początkowego.
+#### Cleanup
 
-#### Zapytania
-W pliku `query.sql`
-zdefiniowane są przykładowe zapytania do bazy danych.
-Uruchomienie tego skryptu wykona zapytania na bazie danych.
+The `clean-all.sql` file
+defines scripts for cleaning the database content.
+Running this script will restore the database to its initial state.
 
-## Aplikacja
+#### Queries
 
-### Komendy
+The `query.sql` file
+defines sample database queries.
+Running this script will execute queries on the database.
 
-Wszystkie komendy zdefiniowane są w podkatalogu `commands`.
+## Application
 
-Komendy opdowiadają za opdowiednią walidację argumentów i opcji,
-przekazanie ich do logiki aplikacji oraz wyświetlenie wyników.
+### Commands
 
-Każda komenda jest osobną klasą, której metody odpowiadają
-za wykonanie kodu dla poszczególnych argumentów i opcji.
-Np. `booking makeComplaint --bookingId 1 --complaintText "Zbyt głośno"`
-Wywoła metodę `makeComplaint` z klasy `BookingCommand` z argumentami `1` oraz `Zbyt głośno`. 
+All commands are defined in the `commands` subdirectory.
 
-Dodatkowo opis komend oraz przyjmowane argumenty i opcje można wyświetlić poprzez `--help`.
+Commands are responsible for appropriate argument and option validation,
+passing them to the application logic, and displaying results.
+
+Each command is a separate class, with methods responsible
+for executing code for specific arguments and options.
+For example, `booking makeComplaint --bookingId 1 --complaintText "Too noisy"`
+will call the `makeComplaint` method of the `BookingCommand` class with arguments `1` and `Too noisy`.
+
+Additionally, command descriptions and accepted arguments and options can be displayed using `--help`.
 
 ### Domain
 
-W podkatalogu `domain` znadują się foldery,
-grupujące poszczególne tabele bazy danych.
-W każdym z tych folderów znajdują się klasy typu
-`Service` oraz `Repository`.
+The `domain` subdirectory contains folders
+grouping individual database tables.
+Each of these folders contains `Service` and `Repository` classes.
 
 #### Service
 
-Klasy typu `Service` implementują logikę modyfikowania danych
-znadujących się w bazie i są wykorzystywane przez komendy.
-Weryfikają porpawność danych na poziomie aplikacji, przed zapisem do bazy.
+`Service` classes implement the logic for modifying data
+in the database and are used by commands.
+They validate data at the application level before saving to the database.
 
 #### Repository
 
-Klasy typu `Repository` odpwiadają za bezpośrednie wykonywanie
-zapytań SQL na bazie danych.
+`Repository` classes are responsible for directly executing
+SQL queries on the database.
