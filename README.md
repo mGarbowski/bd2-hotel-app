@@ -1,43 +1,42 @@
-# Hotel app
+# Hotel App
 * Mikołaj Garbowski
 * Michał Łuszczek
 * Maksym Bieńkowski
 * Jędrzej Grabski
 * Aleksander Drwal
 
-Projekt semestralny na przedmiot Bazy Danych 2 (2024L)
+Semester project for the Databases 2 course (2024L)
 
-## Opis projektu
-Projekt składa się z bazy danych i aplikacji obsługujących system rezerwacji w hotelach
+## Project Description
+The project consists of a database and applications supporting the hotel reservation system.
 
-* [Model danych](./docs/data-model.md)
-* [Instrukcja uruchomienia](./docs/build-and-run.md)
+* [Data Model](./docs/data-model.md)
+* [Build and Run Instructions](./docs/build-and-run.md)
+* [App Structure](./docs/app-structure.md)
 
-## Funkcjonalności
-* Operacyjne
-    * Wyszukiwanie dostępnych pokoi w wybranym obszarze przez klienta
-    * Złożenie rezerwacji przez klienta
-    * Wyświetlenie aktywnych rezerwacji klienta
-    * Zamówienie dodatkowej usługi przez klienta
-    * Wyświetlenie kwoty do zapłacenia przez klienta
-    * Symulowana zapłata należności przez klienta
-    * Wystawienie opinii przez klienta
-    * Zgłoszenie zażalenia przez klienta
-* Analityczno-raportowe
-    * Wyświetlenie podsumowania liczby rezerwacji z podziałem na hotele
-    * Wyświetlenie podsumowania przychodów z podziałem na hotele
-    * Wyświetlenie rankingu hoteli względem zagregowanych ocen
-    * Wyświetlenie podsumowania liczby zażaleń z podziałem na hotele
+## Features
+* Operational
+  * Searching for available rooms in a selected area by the client
+  * Making a reservation by the client
+  * Displaying the client's active reservations
+  * Ordering an additional service by the client
+  * Displaying the amount to be paid by the client
+  * Simulated payment of dues by the client
+  * Posting a review by the client
+  * Submitting a complaint by the client
+* Analytical and Reporting
+  * Displaying a summary of the number of reservations by hotel
+  * Displaying a summary of revenue by hotel
+  * Displaying a ranking of hotels based on aggregated ratings
+  * Displaying a summary of the number of complaints by hotel
 
+## Documentation
+The code documentation has been generated using JavaDocs.
+It can be accessed by opening the [index.html](docs/javadocs/index.html) file in the `docs/javadocs` folder.
 
-## Dokumentacja
-Dokumentacja kodu została wygenerowana za pomocą JavaDocs.
-Może być uruchomiona przez otworzenie pliku [index.html](docs/javadocs/index.html) w folderze `docs/javadocs`
-
-
-## Wykorzystane technologie
-* Baza danych PostgreSQL
-* Aplikacja wykorzystująca Spring Framework
-  * ORM Spring Data JPA
-  * Moduł Spring Shell to tworzenia aplikacji CLI
-* Model ER i logiczny - Oracle Data Modeler
+## Technologies Used
+* PostgreSQL database
+* Application using the Spring Framework
+  * Spring Data JPA ORM
+  * Spring Shell module for creating CLI applications
+* ER and logical model - Oracle Data Modeler
