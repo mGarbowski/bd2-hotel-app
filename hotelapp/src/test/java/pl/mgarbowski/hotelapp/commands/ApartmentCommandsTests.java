@@ -17,7 +17,7 @@ public class ApartmentCommandsTests {
     @Test
     void testSearchFreeApartmentsInCity() {
         var response = apartmentCommands.searchFreeApartmentsInCity("Toronto", Date.valueOf("2024-12-01"), Date.valueOf("2024-12-12"));
-        assertEquals("    Hotel: Rabin Rooms – Apartment number [5] (0,00 stars) – Capacity: 6 person – Price per day: 300,00\n" +
+        assertEquals("    Hotel: Rabin Rooms – Apartment number [5] (0.00 stars) – Capacity: 6 person – Price per day: 300.00\n" +
                 "        - Rooms: 3\n" +
                 "        - Bathrooms: 2\n" +
                 "        - Beds: 3\n" +

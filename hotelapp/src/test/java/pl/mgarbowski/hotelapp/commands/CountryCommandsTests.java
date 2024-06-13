@@ -15,7 +15,7 @@ public class CountryCommandsTests {
     @Test
     void testListAll() {
         var response = countryCommands.listAll();
-        assertEquals("[United States, United Kingdom, France, Germany, Canada]", response.toString());
+        assertEquals("[United States, United Kingdom, France, Germany, Canada, Poland]", response.toString());
     }
 
     @Test
