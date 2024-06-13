@@ -1,5 +1,6 @@
 .idea
 hotelapp.log
+hotelapp-verbose.log
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
