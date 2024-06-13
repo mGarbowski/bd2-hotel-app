@@ -123,9 +123,18 @@ public class StatisticsCommands {
      * @param hotels the list of hotel statistics
      * @return a formatted string of statistics for all hotels
      */
+    /**
+     * Formats all hotels' statistics into a string with a fixed-width header and rows.
+     *
+     * @param hotels the list of hotel statistics
+     * @return a formatted string of all hotels' statistics
+     */
     private static String formatAllHotels(List<HotelStatistics> hotels) {
         var rows = hotels.stream().map(StatisticsCommands::formatSingleHotelRow).toList();
-        var header = "ID\tAvg Rating\tName\tAddress\tEmail\tCustomers\tBookings\tComplaints\tTotal Earning\n";
+        var header = String.format(
+                "%-2s\t%-9s\t%-25s\t%-45s\t%-20s\t%-10s\t%-10s\t%-10s\t%-8s\n",
+                "ID", "Avg Rating", "Name", "Address", "Email", "Customers", "Bookings", "Complaints", "Total Earning"
+        );
         return header + String.join("\n", rows);
     }
 
@@ -137,7 +146,7 @@ public class StatisticsCommands {
      */
     private static String formatSingleHotelRow(HotelStatistics hotel) {
         return String.format(
-                "[%d]\t%.2f\t%s\t%s\t%s\t%d\t%d\t%d\t%.2f",
+                "%-2d\t%-9.2f\t%-25s\t%-45s\t%-20s\t%-10d\t%-10d\t%-10d\t%-6.2f",
                 hotel.getHotelId(),
                 hotel.getAvgRating(),
                 hotel.getName(),
