@@ -153,9 +153,11 @@ Welcome Jane Smith!
 * **Example Usage**: 
 ```
 shell:>user list
-Customer(id=1, name=John, surname=Doe, age=30, gender=M, email=john.doe@example.com, phoneNumber=123-456-7890, address=[1] 123 Main St, 10001, New York, United States)
-Customer(id=2, name=Jane, surname=Smith, age=25, gender=F, email=jane.smith@example.com, phoneNumber=987-654-3210, address=[2] 456 Park Ave, SW1A 1AA, London, United Kingdom)
-Customer(id=3, name=Michael, surname=Johnson, age=40, gender=M, email=michael.johnson@example.com, phoneNumber=555-123-4567, address=[3] 789 Rue de la Paix, 75001, Paris, France)
+[1] John Doe
+[2] Jane Smith
+[3] Michael Johnson
+[4] Emily Brown
+[5] William Davis
 ```
 
 ## Extra commands
@@ -227,14 +229,15 @@ Payment made successfully. Balance for the given booking after this payment is 0
 * **Example Usage**:
 ```
 shell:>stats apartments
-ID	Bookings	Customers	Complaints	Total earnings	Avg earnings
-[1]	1	1	1	4520.00	2260.00
-[2]	3	3	3	5075.00	845.83
-[3]	2	2	2	1475.00	368.75
-[4]	1	1	0	1200.00	1200.00
-[5]	2	2	0	4800.00	2400.00
-[6]	0	0	0	0.00	0.00
-[7]	0	0	0	0.00	0.00
+ID	Bookings  	Customers 	Complaints	Total earnings 	Avg earnings
+1 	1         	1         	1         	4520.00        	2260.00     
+2 	3         	3         	3         	5075.00        	845.83      
+3 	1         	1         	1         	875.00         	291.67      
+4 	1         	1         	0         	1200.00        	1200.00     
+5 	2         	2         	0         	4800.00        	2400.00     
+6 	1         	1         	1         	695.00         	347.50      
+7 	0         	0         	0         	0.00           	0.00        
+14	0         	0         	0         	0.00           	0.00        
 ```
 
 ### Show Statistics for Single Hotel
@@ -264,10 +267,10 @@ Average rating:         4.00
 * **Description**: Shows statistics for all hotels, including average rating, name, address, email, number of customers, number of bookings, number of complaints, and total earning.
 * **Example Usage**: 
 ```
-ID	Avg Rating	Name	Address	Email	Customers	Bookings	Complaints	Total Earning
-[3]	5.00	DeLaChumpee Manor	789 Rue de la Paix, 75001, Paris, France	hotel3@example.com	2	2	2	1475.00
-[1]	4.00	Escuza Hotel	123 Main St, 10001, New York, United States	hotel1@example.com	1	1	1	4520.00
-[2]	4.00	Chimponello Estate	456 Park Ave, SW1A 1AA, London, United Kingdom	hotel2@example.com	3	3	3	5075.00
-[4]	0.00	Three Trees Tavern	101 Friedrichstraße, 10117, Berlin, Germany	hotel4@example.com	1	1	0	1200.00
-[5]	0.00	Rabin Rooms	456 Bay St, M5J 2T3, Toronto, Canada	hotel5@example.com	2	2	0	4800.00
+ID	Avg Rating	Name                     	Address                                      	Email               	Customers 	Bookings  	Complaints	Total Earning
+3 	5.00     	DeLaChumpee Manor        	789 Rue de la Paix, 75001, Paris, France     	hotel3@example.com  	1         	1         	1         	875.00
+2 	4.20     	Chimponello Estate       	456 Park Ave, SW1A 1AA, London, United Kingdom	hotel2@example.com  	4         	4         	4         	5770.00
+1 	4.00     	Escuza Hotel             	123 Main St, 10001, New York, United States  	hotel1@example.com  	1         	1         	1         	4520.00
+4 	0.00     	Three Trees Tavern       	101 Friedrichstraße, 10117, Berlin, Germany  	hotel4@example.com  	1         	1         	0         	1200.00
+5 	0.00     	Rabin Rooms              	456 Bay St, M5J 2T3, Toronto, Canada         	hotel5@example.com  	2         	2         	0         	4800.00
 ```
