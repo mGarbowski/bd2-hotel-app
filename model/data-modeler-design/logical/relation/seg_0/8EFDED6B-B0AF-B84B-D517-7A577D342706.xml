@@ -9,6 +9,8 @@
 </engineerTo>
 <sourcePk>0A0103FF-FC8A-9F95-1675-54EF402B1053</sourcePk>
 <identifying>false</identifying>
+<nameOnSource>has a</nameOnSource>
+<nameOnTarget>is about an</nameOnTarget>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>

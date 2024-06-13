@@ -10,6 +10,8 @@
 <sourcePk>5437D4BF-3BA4-3ED7-C4FF-64DC4DCEEDA4</sourcePk>
 <dominantRole>92E211A7-D132-CFEE-A9BA-D194AAB93177</dominantRole>
 <identifying>false</identifying>
+<nameOnSource>is an element of</nameOnSource>
+<nameOnTarget>is made on</nameOnTarget>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
