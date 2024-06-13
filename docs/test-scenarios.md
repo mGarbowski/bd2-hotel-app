@@ -90,9 +90,11 @@
     - **Command**: `user list`
     - **Expected Result**:
       ```
-      Customer(id=1, name=John, surname=Doe, age=30, gender=M, email=john.doe@example.com, phoneNumber=123-456-7890, address=[1] 123 Main St, 10001, New York, United States)
-      Customer(id=2, name=Jane, surname=Smith, age=25, gender=F, email=jane.smith@example.com, phoneNumber=987-654-3210, address=[2] 456 Park Ave, SW1A 1AA, London, United Kingdom)
-      Customer(id=3, name=Michael, surname=Johnson, age=40, gender=M, email=michael.johnson@example.com, phoneNumber=555-123-4567, address=[3] 789 Rue de la Paix, 75001, Paris, France)
+      [1] John Doe
+      [2] Jane Smith
+      [3] Michael Johnson
+      [4] Emily Brown
+      [5] William Davis
       ```
 
 3. **Step 3**: Search for free apartments in Berlin from 2024-08-01 to 2024-08-05.
