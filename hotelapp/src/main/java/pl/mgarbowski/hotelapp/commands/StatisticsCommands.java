@@ -55,28 +55,14 @@ public class StatisticsCommands {
     }
 
     /**
-     * Formats statistics for all apartments into a string.
-     *
-     * @param apartments the list of apartment statistics
-     * @return a formatted string of statistics for all apartments
-     */
-    private static String formatApartments(List<ApartmentStatistics> apartments) {
-        var rows = apartments.stream()
-                .map(StatisticsCommands::formatSingleApartment)
-                .toList();
-        var header = "ID\tBookings\tCustomers\tComplaints\tTotal earnings\tAvg earnings\n";
-        return header + String.join("\n", rows);
-    }
-
-    /**
-     * Formats statistics for a single apartment into a string.
+     * Formats statistics for a single apartment into a string with fixed-width columns.
      *
      * @param apartment the statistics of the apartment
      * @return a formatted string of the apartment's statistics
      */
     private static String formatSingleApartment(ApartmentStatistics apartment) {
         return String.format(
-                "[%d]\t%d\t%d\t%d\t%.2f\t%.2f",
+                "%-2d\t%-10d\t%-10d\t%-10d\t%-15.2f\t%-12.2f",
                 apartment.getApartmentId(),
                 apartment.getNBookings(),
                 apartment.getNCustomers(),
@@ -86,6 +72,22 @@ public class StatisticsCommands {
         );
     }
 
+    /**
+     * Formats all apartments' statistics into a string with a fixed-width header and rows.
+     *
+     * @param apartments the list of apartment statistics
+     * @return a formatted string of all apartments' statistics
+     */
+    private static String formatApartments(List<ApartmentStatistics> apartments) {
+        var rows = apartments.stream()
+                .map(StatisticsCommands::formatSingleApartment)
+                .toList();
+        var header = String.format(
+                "%-2s\t%-10s\t%-10s\t%-10s\t%-15s\t%-12s\n",
+                "ID", "Bookings", "Customers", "Complaints", "Total earnings", "Avg earnings"
+        );
+        return header + String.join("\n", rows);
+    }
     /**
      * Formats detailed statistics for a single hotel into a string.
      *
