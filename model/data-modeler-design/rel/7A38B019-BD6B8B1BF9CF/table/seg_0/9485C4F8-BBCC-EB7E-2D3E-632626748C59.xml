@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9485C4F8-BBCC-EB7E-2D3E-632626748C59" name="apartment_statistics">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 12:37:53 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<ordsAlias>t_apartment_statistics</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<propertyMap>
+<property name="view.object_id" value="F0C92EAA-A9BE-D378-81B9-DCBEA07BB954"/>
+<property name="view.sql" value="CREATE VIEW apartment_statistics AS
+SELECT a.id                              AS apartment_id,
+       COUNT(c.id)                       AS n_customers,
+       COUNT(DISTINCT b.id)              AS n_bookings,
+       COUNT(DISTINCT co.id)             AS n_complaints,
+       coalesce(ps_sum.summed_amount, 0) AS total_earning,
+       coalesce(ps_sum.avg_amount, 0)    AS avg_earning
+FROM apartment a
+         LEFT JOIN booking b on a.id = b.apartment_id
+         LEFT JOIN customer c on b.customer_id = c.id
+         LEFT JOIN complaint co on b.id = co.booking_id
+         JOIN (SELECT a.id                as apartment_id,
+                      SUM(-1 * ps.amount) AS summed_amount,
+                      AVG(-1 * ps.amount) AS avg_amount
+               FROM apartment a
+                        LEFT JOIN booking b on a.id = b.apartment_id
+                        LEFT JOIN payments_summary ps on b.id = ps.booking_id
+               WHERE ps.amount &lt; 0
+                  OR ps.amount IS NULL
+               GROUP BY a.id) ps_sum on a.id = ps_sum.apartment_id
+GROUP BY a.id, ps_sum.summed_amount, ps_sum.avg_amount;"/>
+</propertyMap>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="apartment_id" id="3BA92FB1-0E5F-C9C7-3FAB-0119E1E7BB15">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 12:37:53 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="n_customers" id="83116E73-CFD7-75C5-FF90-230596EBBF0D">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 12:37:53 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="n_bookings" id="63550B5E-12BB-F75E-433F-34A0D8F3EF20">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 12:37:53 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="n_complaints" id="150C3EB0-40D6-CDAA-F08D-9FFA94BF11FA">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 12:37:53 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="total_earning" id="8CC36A78-2E52-AB81-8378-7395070ADF85">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 12:37:53 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="avg_earning" id="5CB8D019-9D82-81CF-568B-7F9C173E1A62">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 12:37:53 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>

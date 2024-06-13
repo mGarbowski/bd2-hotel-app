@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D7FA1C72-3FCC-C59E-3C76-A8DDFB04A27D" containerWithKeyObject="CB44DE16-421B-5CA3-7342-A0315453AAB5" localFKIndex="1C2C9A72-938C-75C7-DB88-6D733B323B4A" name="extra_service_order_booking_FK">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:55:48 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<referredTableLongName>booking</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BF7E1138-756C-457A-FD65-2893DF2EFDB2</referredTableID>
+<keyObject>50C1AD4D-6E1F-CEEF-7F8B-2A000581E3D2</keyObject>
+<referredKeyID>50C1AD4D-6E1F-CEEF-7F8B-2A000581E3D2</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

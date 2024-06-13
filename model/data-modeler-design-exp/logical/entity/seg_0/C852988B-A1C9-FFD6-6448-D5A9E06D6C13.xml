@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C852988B-A1C9-FFD6-6448-D5A9E06D6C13" name="country">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<importedID>804FEAAF-491E-73E7-D832-23CC3434ED6A</importedID>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="96262C99-5CEE-FFCB-6BA8-DF533AE7310E">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<importedID>818E6585-9573-7199-73B7-EDD6CB4DE885</importedID>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="563035CD-E3AE-48FC-3D3B-EDF2CD94B420">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<importedID>88448006-EB70-9F9F-A79F-5AA92214B54C</importedID>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="code" id="B3478A9C-EA8A-18C4-4516-54DAC6A0F769">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:43:34 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="317DB975-5523-1B7F-AADB-32E78BF9D764" name="country_PK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<importedID>479F3751-0152-8C3A-1A5E-79161B0F1862</importedID>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>96262C99-5CEE-FFCB-6BA8-DF533AE7310E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

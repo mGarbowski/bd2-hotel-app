@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="86FBFC03-38AC-348D-8B3C-FAB379290B05" name="available service">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-27 11:18:21 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="1C4DF487-5E17-3759-D3D6-2642516DE218">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-27 11:19:37 UTC</createdTime>
+<generatorID>00809691-C1D6-C291-8708-919ED5E9D625</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<referedAttribute>D8B7C17C-2229-B6B5-0371-78BF573513C6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="65D09440-002E-774B-92E3-2B786F8D72D1">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-27 11:19:57 UTC</createdTime>
+<generatorID>3F78F425-25FB-33F8-5B9C-F0955408DB89</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<referedAttribute>6EE160F6-4892-A672-472A-79E8EBDF415F</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="709E4801-7DB1-89F7-D3E4-1D534F0DB580" name="available service PK">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-27 11:19:37 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1C4DF487-5E17-3759-D3D6-2642516DE218</attributeRef>
+<attributeRef>65D09440-002E-774B-92E3-2B786F8D72D1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

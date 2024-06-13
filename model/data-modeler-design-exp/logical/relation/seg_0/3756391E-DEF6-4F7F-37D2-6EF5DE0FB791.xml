@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="apartment hotel FK" directorySegmentName="seg_0" id="3756391E-DEF6-4F7F-37D2-6EF5DE0FB791">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<importedID>611E85CC-C889-3ABB-B279-9C24DF8F4DC2</importedID>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<sourcePk>9BBE9D93-F64A-480B-7EE2-A6D5176288F6</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>has</nameOnSource>
+<nameOnTarget>is in</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>2ADB4694-F21D-33B3-5E00-CE2D9F2C1DF1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>92E211A7-D132-CFEE-A9BA-D194AAB93177</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,9 +1,11 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="55D59389-6751-141F-34A9-060DCC0A55AB" name="payments_summary">
+<EntityView class="oracle.dbtools.crest.model.design.logical.EntityView" directorySegmentName="seg_0" id="23EB9697-022A-BA3F-9CAF-B5F8FED60427" name="payments summary">
 <createdBy>mgarbowski</createdBy>
-<createdTime>2024-05-24 10:41:38 UTC</createdTime>
-<generatorID>23EB9697-022A-BA3F-9CAF-B5F8FED60427</generatorID>
-<ownerDesignName>data-modeler-design</ownerDesignName>
+<createdTime>2024-05-24 10:37:25 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
 <userDefined>true</userDefined>
 <userDefinedSQL><![CDATA[SELECT gen_random_uuid()                                      AS id,
        b.id                                                   AS booking_id,
@@ -24,89 +26,94 @@ SELECT gen_random_uuid() AS id, b.id AS booking_id, 'Payment' AS name, p.amount
 FROM payment p
          JOIN booking b ON p.booking_id = b.id;]]></userDefinedSQL>
 <parsed>true</parsed>
+<viewType>EntityView</viewType>
 <usedContainers>
-<container alias="b" containerID="BF7E1138-756C-457A-FD65-2893DF2EFDB2"/>
+<container alias="b" containerID="EDB35E62-75C8-D6AE-EFB6-BB51FBC12A25"/>
 </usedContainers>
 <viewElements>
-<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="id" id="10C40F80-A2C3-E36C-8F96-AB1381EF7BA4">
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="id" id="DCD17ACA-1319-B350-4C8B-44725C605B07">
 <createdBy>mgarbowski</createdBy>
-<createdTime>2024-05-24 10:41:38 UTC</createdTime>
-<generatorID>DCD17ACA-1319-B350-4C8B-44725C605B07</generatorID>
+<createdTime>2024-05-24 10:37:51 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <alias>id</alias>
 <dataType>UNKNOWN</dataType>
 <expression>gen_random_uuid()</expression>
 <reference>false</reference>
-<viewID>55D59389-6751-141F-34A9-060DCC0A55AB</viewID>
 </viewElement>
-<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="booking_id" id="D04B48C9-744B-D616-D937-A4FC3587649B">
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="booking_id" id="E34ED66A-6277-DA38-483C-9F1D7EE7A031">
 <createdBy>mgarbowski</createdBy>
-<createdTime>2024-05-24 10:41:38 UTC</createdTime>
-<generatorID>E34ED66A-6277-DA38-483C-9F1D7EE7A031</generatorID>
+<createdTime>2024-05-24 10:37:51 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <alias>booking_id</alias>
 <dataType>INTEGER</dataType>
 <reference>false</reference>
-<referencedColumn>C9A199C6-85E3-EF9F-ADA6-78D2C3B28356</referencedColumn>
-<table>BF7E1138-756C-457A-FD65-2893DF2EFDB2</table>
+<referencedColumn>72EC5C4D-898D-6793-83DE-D0859DBD44BB</referencedColumn>
+<table>EDB35E62-75C8-D6AE-EFB6-BB51FBC12A25</table>
 <tableAlias>b</tableAlias>
-<viewID>55D59389-6751-141F-34A9-060DCC0A55AB</viewID>
 </viewElement>
-<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="name" id="3249B2BA-0F5C-0F81-C265-E8DBC062F50D">
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="name" id="6C3ACBB2-9E5A-6F03-ECC9-4FF304AF6858">
 <createdBy>mgarbowski</createdBy>
-<createdTime>2024-05-24 10:41:38 UTC</createdTime>
-<generatorID>6C3ACBB2-9E5A-6F03-ECC9-4FF304AF6858</generatorID>
+<createdTime>2024-05-24 10:37:51 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <alias>name</alias>
 <dataType>UNKNOWN</dataType>
 <expression>&apos;Reservation fee&apos;</expression>
 <reference>false</reference>
-<viewID>55D59389-6751-141F-34A9-060DCC0A55AB</viewID>
 </viewElement>
-<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="amount" id="42166A66-2DFB-2520-D73A-9E7D7A1E545E">
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="amount" id="CABD8911-8424-C734-54FA-C433FA501BE0">
 <createdBy>mgarbowski</createdBy>
-<createdTime>2024-05-24 10:41:38 UTC</createdTime>
-<generatorID>CABD8911-8424-C734-54FA-C433FA501BE0</generatorID>
+<createdTime>2024-05-24 10:37:51 UTC</createdTime>
 <ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <alias>amount</alias>
 <dataType>NUMBER</dataType>
 <expression> -1 * (b.end_date - b.start_date + 1) * a.price_per_day</expression>
 <reference>false</reference>
-<viewID>55D59389-6751-141F-34A9-060DCC0A55AB</viewID>
 </viewElement>
 </viewElements>
 <usedObjects>
-<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="BF7E1138-756C-457A-FD65-2893DF2EFDB2">
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="EDB35E62-75C8-D6AE-EFB6-BB51FBC12A25">
 <container>true</container>
 <tableName>booking</tableName>
 </UsedObject>
-<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="08103B54-062A-82BF-D529-06EAC711F48E">
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="92E211A7-D132-CFEE-A9BA-D194AAB93177">
 <container>true</container>
 <tableName>apartment</tableName>
 </UsedObject>
-<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="54FE7E33-73B2-D6FB-2F02-9DE208333D47">
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="E1FCC395-2AC2-31B4-3C28-B500B81400CD">
 <container>true</container>
 <tableName>payment</tableName>
 </UsedObject>
-<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="C9A199C6-85E3-EF9F-ADA6-78D2C3B28356">
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="72EC5C4D-898D-6793-83DE-D0859DBD44BB">
 <columnName>id</columnName>
 <tableName>booking</tableName>
 </UsedObject>
-<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="63D3802B-0E32-C1CF-A0C6-18176F213AA9">
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="3F2935B5-8DB0-7165-D3A4-5EA526835B8E">
 <columnName>id</columnName>
 <tableName>apartment</tableName>
 </UsedObject>
-<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="5D577496-D732-6377-BC9D-A889EFFF5C35">
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="5E60C7A5-CCEB-E5FE-515F-7ED019B70A43">
 <columnName>amount</columnName>
 <tableName>payment</tableName>
 </UsedObject>
 </usedObjects>
-</TableView>
+</EntityView>
