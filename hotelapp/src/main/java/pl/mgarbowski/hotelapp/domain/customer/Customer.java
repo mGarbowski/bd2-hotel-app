@@ -22,4 +22,8 @@ public class Customer {
     private String phoneNumber;
     @OneToOne
     private Address address;
+
+    public String toString() {
+        return String.format("[%d] %s %s", id, name, surname);
+    }
 }
