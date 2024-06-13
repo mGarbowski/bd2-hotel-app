@@ -17,6 +17,7 @@ The project consists of a database and applications supporting the hotel reserva
 * [App Structure](./docs/app-structure.md)
 * [End User Documentation](./docs/end-user-documentation.md)
 * [Database documentation](./docs/database-structure.md)
+* [End user test scenarios](./docs/test-scenarios.md)
 
 ## Features
 * Operational
