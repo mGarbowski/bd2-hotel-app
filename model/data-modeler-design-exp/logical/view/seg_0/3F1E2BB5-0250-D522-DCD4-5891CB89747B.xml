@@ -1,0 +1,334 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<EntityView class="oracle.dbtools.crest.model.design.logical.EntityView" directorySegmentName="seg_0" id="3F1E2BB5-0250-D522-DCD4-5891CB89747B" name="hotel statistics">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:39:25 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<userDefined>true</userDefined>
+<userDefinedSQL><![CDATA[CREATE VIEW hotel_statistics AS
+SELECT h.id                    AS hotel_id,
+       h.name                  AS name,
+       h.email                 AS email,
+       h.avg_rating            AS avg_rating,
+       addr.street             AS street,
+       addr.zip_code           AS zip_code,
+       city.name               AS city,
+       country.name            AS country,
+       COUNT(c2.id)            AS n_customers,
+       h.total_bookings        AS n_bookings,
+       COUNT(DISTINCT c.id)    AS n_complaints,
+       ps_summed.summed_amount AS total_earning
+FROM hotel h
+         JOIN apartment a on a.hotel_id = h.id
+         JOIN address addr on h.address_id = addr.id
+         JOIN city on addr.city_id = city.id
+         JOIN country on city.country_id = country.id
+         LEFT JOIN booking b on a.id = b.apartment_id
+         LEFT JOIN complaint c on b.id = c.booking_id
+         LEFT JOIN customer c2 on b.customer_id = c2.id
+         JOIN (SELECT h2.id                            as hotel_id,
+                      COALESCE(SUM(-1 * ps.amount), 0) AS summed_amount
+               FROM hotel h2
+                        JOIN apartment a2 on h2.id = a2.hotel_id
+                        JOIN booking b2 on a2.id = b2.apartment_id
+                        LEFT JOIN payments_summary ps on b2.id = ps.booking_id
+               WHERE ps.amount < 0
+                  OR ps.amount IS NULL
+               GROUP BY h2.id) ps_summed on h.id = ps_summed.hotel_id
+GROUP BY h.id, h.name, h.email, h.avg_rating, addr.street, addr.zip_code, city.name, country.name, h.total_bookings, ps_summed.summed_amount
+ORDER BY avg_rating DESC;]]></userDefinedSQL>
+<parsed>true</parsed>
+<viewType>EntityView</viewType>
+<usedContainers>
+<container alias="h" containerID="2ADB4694-F21D-33B3-5E00-CE2D9F2C1DF1"/>
+<container alias="addr" containerID="5E73B4D3-12A4-754B-4E58-C1AFC5808DA8"/>
+<container containerID="FA869720-02A4-A85D-5197-7A6601C5CE8F"/>
+<container containerID="C852988B-A1C9-FFD6-6448-D5A9E06D6C13"/>
+</usedContainers>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="hotel_id" id="DA8374E5-3CE3-59D2-F5E0-DFF491DE959E">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:39:35 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>hotel_id</alias>
+<dataType>INTEGER</dataType>
+<reference>false</reference>
+<referencedColumn>6EE160F6-4892-A672-472A-79E8EBDF415F</referencedColumn>
+<table>2ADB4694-F21D-33B3-5E00-CE2D9F2C1DF1</table>
+<tableAlias>h</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="name" id="3C2D0499-DA13-58C4-3186-8CD3564D6906">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-12 21:15:14 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>name</alias>
+<dataType>VARCHAR2 (64)</dataType>
+<reference>false</reference>
+<referencedColumn>347EE5E8-F17C-50DD-B8E4-C662DF8A285A</referencedColumn>
+<table>2ADB4694-F21D-33B3-5E00-CE2D9F2C1DF1</table>
+<tableAlias>h</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="email" id="7EFDFB0F-6298-B06D-783A-6249B21AF41E">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-12 21:15:14 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>email</alias>
+<dataType>VARCHAR2 (64)</dataType>
+<reference>false</reference>
+<referencedColumn>4F5F619D-0F87-8CF8-5EF5-E854AC879AA1</referencedColumn>
+<table>2ADB4694-F21D-33B3-5E00-CE2D9F2C1DF1</table>
+<tableAlias>h</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="avg_rating" id="B8E011CC-BCEC-9C63-9486-74EE17AB19D5">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-12 21:15:14 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>avg_rating</alias>
+<dataType>NUMBER (5,2)</dataType>
+<reference>false</reference>
+<referencedColumn>6974C0D8-9A79-2766-27E6-8DE47B8A7A06</referencedColumn>
+<table>2ADB4694-F21D-33B3-5E00-CE2D9F2C1DF1</table>
+<tableAlias>h</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="street" id="5AC07C00-263B-2B3E-A83A-12B796F03FCC">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-12 21:15:14 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>street</alias>
+<dataType>VARCHAR2 (64)</dataType>
+<reference>false</reference>
+<referencedColumn>49530412-DFDF-E1A0-DD5D-D0F35F936920</referencedColumn>
+<table>5E73B4D3-12A4-754B-4E58-C1AFC5808DA8</table>
+<tableAlias>addr</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="zip_code" id="E5C97EBE-5403-A990-8433-87DD532193E2">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-12 21:15:14 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>zip_code</alias>
+<dataType>UNKNOWN</dataType>
+<reference>false</reference>
+<table>5E73B4D3-12A4-754B-4E58-C1AFC5808DA8</table>
+<tableAlias>addr</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="city" id="3CFB2400-8FB1-5F9F-A98B-BF28312E804B">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-12 21:15:14 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>city</alias>
+<dataType>VARCHAR2 (64)</dataType>
+<reference>false</reference>
+<referencedColumn>CE305931-01E8-3EB9-78AD-BBCE53D70C78</referencedColumn>
+<table>FA869720-02A4-A85D-5197-7A6601C5CE8F</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="country" id="8724BFF6-7E17-BDE2-F082-91ECF36C342C">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-12 21:15:14 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>country</alias>
+<dataType>VARCHAR2</dataType>
+<reference>false</reference>
+<referencedColumn>563035CD-E3AE-48FC-3D3B-EDF2CD94B420</referencedColumn>
+<table>C852988B-A1C9-FFD6-6448-D5A9E06D6C13</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="n_customers" id="74366675-7706-8AE2-5C4B-900656706D58">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:39:35 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>n_customers</alias>
+<dataType>UNKNOWN</dataType>
+<expression>Count(c2.id)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="n_bookings" id="51D33986-FEC4-5C6C-FBA1-7E63674CBA6F">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:39:35 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>n_bookings</alias>
+<dataType>INTEGER</dataType>
+<reference>false</reference>
+<referencedColumn>E2991260-E3BB-1A02-FA53-4962AF5BE30D</referencedColumn>
+<table>2ADB4694-F21D-33B3-5E00-CE2D9F2C1DF1</table>
+<tableAlias>h</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="n_complaints" id="1B25D382-729E-0AEE-DE59-A5D184733869">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:39:35 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>n_complaints</alias>
+<dataType>UNKNOWN</dataType>
+<expression>Count(Distinct c.id)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="total_earning" id="8F75163B-4A50-3714-9CB0-AF13E0370DDF">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:39:35 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>total_earning</alias>
+<dataType>UNKNOWN</dataType>
+<expression>ps_summed.summed_amount</expression>
+<reference>false</reference>
+<tableAlias>ps_summed</tableAlias>
+</viewElement>
+</viewElements>
+<usedObjects>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="2ADB4694-F21D-33B3-5E00-CE2D9F2C1DF1">
+<container>true</container>
+<tableName>hotel</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="5E73B4D3-12A4-754B-4E58-C1AFC5808DA8">
+<container>true</container>
+<tableName>address</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="FA869720-02A4-A85D-5197-7A6601C5CE8F">
+<container>true</container>
+<tableName>city</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="C852988B-A1C9-FFD6-6448-D5A9E06D6C13">
+<container>true</container>
+<tableName>country</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="09B9102D-24AC-6A42-B6FC-B918D3B24DD4">
+<container>true</container>
+<tableName>customer</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="A81CD240-2CDB-A0A2-B8F1-03F995F39464">
+<container>true</container>
+<tableName>complaint</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="92E211A7-D132-CFEE-A9BA-D194AAB93177">
+<container>true</container>
+<tableName>apartment</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="EDB35E62-75C8-D6AE-EFB6-BB51FBC12A25">
+<container>true</container>
+<tableName>booking</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="6EE160F6-4892-A672-472A-79E8EBDF415F">
+<columnName>id</columnName>
+<tableName>hotel</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="347EE5E8-F17C-50DD-B8E4-C662DF8A285A">
+<columnName>name</columnName>
+<tableName>hotel</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="4F5F619D-0F87-8CF8-5EF5-E854AC879AA1">
+<columnName>email</columnName>
+<tableName>hotel</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="6974C0D8-9A79-2766-27E6-8DE47B8A7A06">
+<columnName>avg_rating</columnName>
+<tableName>hotel</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="49530412-DFDF-E1A0-DD5D-D0F35F936920">
+<columnName>street</columnName>
+<tableName>address</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="CE305931-01E8-3EB9-78AD-BBCE53D70C78">
+<columnName>name</columnName>
+<tableName>city</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="563035CD-E3AE-48FC-3D3B-EDF2CD94B420">
+<columnName>name</columnName>
+<tableName>country</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="FA0DE262-79CB-E43A-2F7E-5A63A7B5F3CC">
+<columnName>id</columnName>
+<tableName>customer</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="E2991260-E3BB-1A02-FA53-4962AF5BE30D">
+<columnName>total_bookings</columnName>
+<tableName>hotel</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="8CF97FC2-8F2E-AA84-2514-5BC131A680C0">
+<columnName>id</columnName>
+<tableName>complaint</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="F988EDDE-DF00-BC59-CAA0-27A4CFDC8C91">
+<columnName>id</columnName>
+<tableName>address</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="E8276A71-F60A-0B47-7E7A-9DAA836D7791">
+<columnName>id</columnName>
+<tableName>city</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="96262C99-5CEE-FFCB-6BA8-DF533AE7310E">
+<columnName>id</columnName>
+<tableName>country</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="3F2935B5-8DB0-7165-D3A4-5EA526835B8E">
+<columnName>id</columnName>
+<tableName>apartment</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="72EC5C4D-898D-6793-83DE-D0859DBD44BB">
+<columnName>id</columnName>
+<tableName>booking</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="017A07F6-54CF-3CB3-E172-038758B8712F">
+<columnName>customer_id</columnName>
+<tableName>booking</tableName>
+</UsedObject>
+</usedObjects>
+</EntityView>

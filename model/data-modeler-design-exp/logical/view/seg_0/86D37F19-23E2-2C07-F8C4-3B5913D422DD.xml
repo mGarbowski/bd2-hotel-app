@@ -1,0 +1,162 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<EntityView class="oracle.dbtools.crest.model.design.logical.EntityView" directorySegmentName="seg_0" id="86D37F19-23E2-2C07-F8C4-3B5913D422DD" name="apartment statistics">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:38:17 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<userDefined>true</userDefined>
+<userDefinedSQL><![CDATA[CREATE VIEW apartment_statistics AS
+SELECT a.id                              AS apartment_id,
+       COUNT(c.id)                       AS n_customers,
+       COUNT(DISTINCT b.id)              AS n_bookings,
+       COUNT(DISTINCT co.id)             AS n_complaints,
+       coalesce(ps_sum.summed_amount, 0) AS total_earning,
+       coalesce(ps_sum.avg_amount, 0)    AS avg_earning
+FROM apartment a
+         LEFT JOIN booking b on a.id = b.apartment_id
+         LEFT JOIN customer c on b.customer_id = c.id
+         LEFT JOIN complaint co on b.id = co.booking_id
+         JOIN (SELECT a.id                as apartment_id,
+                      SUM(-1 * ps.amount) AS summed_amount,
+                      AVG(-1 * ps.amount) AS avg_amount
+               FROM apartment a
+                        LEFT JOIN booking b on a.id = b.apartment_id
+                        LEFT JOIN payments_summary ps on b.id = ps.booking_id
+               WHERE ps.amount < 0
+                  OR ps.amount IS NULL
+               GROUP BY a.id) ps_sum on a.id = ps_sum.apartment_id
+GROUP BY a.id, ps_sum.summed_amount, ps_sum.avg_amount;]]></userDefinedSQL>
+<parsed>true</parsed>
+<viewType>EntityView</viewType>
+<usedContainers>
+<container alias="a" containerID="92E211A7-D132-CFEE-A9BA-D194AAB93177"/>
+</usedContainers>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="apartment_id" id="045D956E-59AC-8A58-BB08-31FBC9B10F0C">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:38:37 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>apartment_id</alias>
+<dataType>INTEGER</dataType>
+<reference>false</reference>
+<referencedColumn>3F2935B5-8DB0-7165-D3A4-5EA526835B8E</referencedColumn>
+<table>92E211A7-D132-CFEE-A9BA-D194AAB93177</table>
+<tableAlias>a</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="n_customers" id="DF96BF23-733D-DEDE-BD16-534EB45B5F7D">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:38:37 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>n_customers</alias>
+<dataType>UNKNOWN</dataType>
+<expression>Count(c.id)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="n_bookings" id="718FA780-A8E6-50AF-ACAF-D4BB1C698FB0">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:38:37 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>n_bookings</alias>
+<dataType>UNKNOWN</dataType>
+<expression>Count(Distinct b.id)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="n_complaints" id="4C12261B-F557-48B8-43E6-8AC11BBAA867">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:38:37 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>n_complaints</alias>
+<dataType>UNKNOWN</dataType>
+<expression>Count(Distinct co.id)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="total_earning" id="F9DB6262-72DB-C74F-ACD3-4FEDB3FCE06C">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:38:37 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>total_earning</alias>
+<dataType>UNKNOWN</dataType>
+<expression>Coalesce(ps_sum.summed_amount, 0)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="avg_earning" id="CC501B0D-A191-CA1A-8340-7C33F0C64BF6">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:38:37 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>avg_earning</alias>
+<dataType>UNKNOWN</dataType>
+<expression>Coalesce(ps_sum.avg_amount, 0)</expression>
+<reference>false</reference>
+</viewElement>
+</viewElements>
+<usedObjects>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="92E211A7-D132-CFEE-A9BA-D194AAB93177">
+<container>true</container>
+<tableName>apartment</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="09B9102D-24AC-6A42-B6FC-B918D3B24DD4">
+<container>true</container>
+<tableName>customer</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="EDB35E62-75C8-D6AE-EFB6-BB51FBC12A25">
+<container>true</container>
+<tableName>booking</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="A81CD240-2CDB-A0A2-B8F1-03F995F39464">
+<container>true</container>
+<tableName>complaint</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="3F2935B5-8DB0-7165-D3A4-5EA526835B8E">
+<columnName>id</columnName>
+<tableName>apartment</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="FA0DE262-79CB-E43A-2F7E-5A63A7B5F3CC">
+<columnName>id</columnName>
+<tableName>customer</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="72EC5C4D-898D-6793-83DE-D0859DBD44BB">
+<columnName>id</columnName>
+<tableName>booking</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="8CF97FC2-8F2E-AA84-2514-5BC131A680C0">
+<columnName>id</columnName>
+<tableName>complaint</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="017A07F6-54CF-3CB3-E172-038758B8712F">
+<columnName>customer_id</columnName>
+<tableName>booking</tableName>
+</UsedObject>
+</usedObjects>
+</EntityView>

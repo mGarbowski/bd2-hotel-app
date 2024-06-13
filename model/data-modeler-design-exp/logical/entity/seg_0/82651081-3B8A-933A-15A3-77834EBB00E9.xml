@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="82651081-3B8A-933A-15A3-77834EBB00E9" name="extra service order">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:31:31 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="D9941C07-5C15-FCE4-4B8A-BB6016C9F303">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:31:49 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="timestamp" id="6DEE09F4-1FEA-A211-0D51-53FE7F135400">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:31:56 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="C7BE073E-26EA-FEA4-DCE9-04CC157889D8">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:32:49 UTC</createdTime>
+<generatorID>27EFE87B-0B9B-444F-DB89-A3BED3270A2E</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<referedAttribute>1C4DF487-5E17-3759-D3D6-2642516DE218</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id11" id="3189DF92-492C-68E1-C6DA-0A84544B8E41">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:32:49 UTC</createdTime>
+<generatorID>27EFE87B-0B9B-444F-DB89-A3BED3270A2E</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<referedAttribute>65D09440-002E-774B-92E3-2B786F8D72D1</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="68EC2296-3204-B299-81E6-E7CCB7CED89C" name="extra service order PK">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:31:51 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D9941C07-5C15-FCE4-4B8A-BB6016C9F303</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

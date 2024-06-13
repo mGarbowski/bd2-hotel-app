@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F8038F51-A961-7F59-3093-3611DFDDA67A" name="currency">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:38:13 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="iso code" id="9B850CDD-FEA1-E614-B815-ED6770E9FF9C">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:38:34 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="0E8B96BC-FE79-358F-802F-99770DE9F796">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:38:19 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9CB9B1FF-3F06-5468-75DE-C86C8E800228" name="Currency PK">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 11:39:11 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9B850CDD-FEA1-E614-B815-ED6770E9FF9C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

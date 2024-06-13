@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2ADB4694-F21D-33B3-5E00-CE2D9F2C1DF1" name="hotel">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<importedID>A58307BF-C9A1-9015-D6C1-A5560783FA0D</importedID>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="6EE160F6-4892-A672-472A-79E8EBDF415F">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<importedID>C0DE325F-94A7-E7A7-3164-226EA9065645</importedID>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="347EE5E8-F17C-50DD-B8E4-C662DF8A285A">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:26:56 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="phone number" id="8B512D47-A900-BA5D-D341-EB984CC87A2C">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<importedID>EE1247CE-71D7-74FF-9951-8D18CDC3124E</importedID>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="4F5F619D-0F87-8CF8-5EF5-E854AC879AA1">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<importedID>DFF1AD90-ED75-614F-830A-825566DEFD4B</importedID>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="stars" id="F41493CF-8575-2EB1-01DF-A2EB0C33513E">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<importedID>E6C4D39D-ADC7-E6DD-EF84-9134DCC0F297</importedID>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="address id" id="1BD77595-B181-06F2-A48F-D9D911EFF153">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<generatorID>AA196E6B-80F9-32C0-F6DF-C37BEC99D542</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<importedID>45EB381A-01C3-301F-4D12-4807928E05CB</importedID>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<referedAttribute>F988EDDE-DF00-BC59-CAA0-27A4CFDC8C91</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="total_bookings" id="E2991260-E3BB-1A02-FA53-4962AF5BE30D">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:33:30 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="avg_rating" id="6974C0D8-9A79-2766-27E6-8DE47B8A7A06">
+<createdBy>michluszcz</createdBy>
+<createdTime>2024-05-09 13:23:51 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9BBE9D93-F64A-480B-7EE2-A6D5176288F6" name="hotel_PK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:44:01 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<importedID>CA3B9F57-4D5C-BDCE-E5CE-53ADCB3EC85F</importedID>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6EE160F6-4892-A672-472A-79E8EBDF415F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

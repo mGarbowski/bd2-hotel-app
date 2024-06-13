@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CB44DE16-421B-5CA3-7342-A0315453AAB5" name="extra_service_order">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:41:38 UTC</createdTime>
+<generatorID>82651081-3B8A-933A-15A3-77834EBB00E9</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="69EEDFA5-B60C-0C4E-3FA5-4D02726B9BB9">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:41:38 UTC</createdTime>
+<generatorID>D9941C07-5C15-FCE4-4B8A-BB6016C9F303</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="timestamp" id="EA98C330-8EED-7A64-9A4B-90899F9260CC">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:41:38 UTC</createdTime>
+<generatorID>6DEE09F4-1FEA-A211-0D51-53FE7F135400</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="booking_id" id="2F7ED806-BED4-345B-CD4C-DF1EC20DE26C">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:55:49 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D7FA1C72-3FCC-C59E-3C76-A8DDFB04A27D" referredColumn="C9A199C6-85E3-EF9F-ADA6-78D2C3B28356"/>
+</associations>
+</Column>
+<Column name="available_service_extra_service_id" id="6A0627F0-683B-7654-A737-B062A6B9A0FB">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:41:38 UTC</createdTime>
+<generatorID>C7BE073E-26EA-FEA4-DCE9-04CC157889D8</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1D6BE687-8C07-E28C-9EBF-38C615EDBF80" referredColumn="4DBCD0DD-12BA-CF8B-6334-A13795755DBF"/>
+</associations>
+</Column>
+<Column name="available_service_hotel_id" id="F67EE155-A7C2-3D84-1135-5BB2BAC4D826">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:41:38 UTC</createdTime>
+<generatorID>3189DF92-492C-68E1-C6DA-0A84544B8E41</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9B333C3E-7FCB-D312-87DD-E105A8D9E06E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1D6BE687-8C07-E28C-9EBF-38C615EDBF80" referredColumn="D60A755A-BB4C-CAC1-E09C-189A9E235624"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="706BD674-EBC9-AD4A-B680-A8AD89E885B6" name="extra_service_order_pk">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:41:38 UTC</createdTime>
+<generatorID>68EC2296-3204-B299-81E6-E7CCB7CED89C</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="69EEDFA5-B60C-0C4E-3FA5-4D02726B9BB9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7126DA8A-5082-49F5-91F0-D27C9CDE6A7B" name="extra_service_order__IDX">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:41:38 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>27EFE87B-0B9B-444F-DB89-A3BED3270A2E</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="6A0627F0-683B-7654-A737-B062A6B9A0FB"/>
+<colUsage columnID="F67EE155-A7C2-3D84-1135-5BB2BAC4D826"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="24202C93-043D-58C3-DCB3-A6ED719F67B5" name="extra_service_order_available_service_fk">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:41:38 UTC</createdTime>
+<generatorID>27EFE87B-0B9B-444F-DB89-A3BED3270A2E</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6A0627F0-683B-7654-A737-B062A6B9A0FB"/>
+<colUsage columnID="F67EE155-A7C2-3D84-1135-5BB2BAC4D826"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1C2C9A72-938C-75C7-DB88-6D733B323B4A" name="extra_service_order_booking_FK">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-05-24 10:55:48 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F7ED806-BED4-345B-CD4C-DF1EC20DE26C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

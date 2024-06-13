@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="28D15EED-54F2-CFD9-3983-A8C8B8418D95" name="available feature">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 12:23:09 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="name" id="0D9916D5-2CB4-07B8-E05F-310CBA9C031C">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 12:23:30 UTC</createdTime>
+<generatorID>29423C04-FC92-ACF8-06F6-89CDD6A83AEA</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<referedAttribute>D9222EA0-17FB-4797-68EA-2BB68FFFED1A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apartment_id" id="EC9352C1-38C8-48C0-647B-CDD3F87AFBD7">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 12:23:39 UTC</createdTime>
+<generatorID>4CDE561D-1DA2-01EC-8460-26B14F82208A</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<referedAttribute>3F2935B5-8DB0-7165-D3A4-5EA526835B8E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="53DE751C-8D9B-D7A5-650A-51893E785940" name="apartment feature PK">
+<createdBy>mgarbowski</createdBy>
+<createdTime>2024-03-26 12:23:39 UTC</createdTime>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EC9352C1-38C8-48C0-647B-CDD3F87AFBD7</attributeRef>
+<attributeRef>0D9916D5-2CB4-07B8-E05F-310CBA9C031C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

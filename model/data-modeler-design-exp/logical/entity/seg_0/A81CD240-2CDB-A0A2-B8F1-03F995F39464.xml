@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A81CD240-2CDB-A0A2-B8F1-03F995F39464" name="complaint">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:49:56 UTC</createdTime>
+<generatorID>F92642E5-CA20-BE7A-7076-6CD5CC25A15B</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="8CF97FC2-8F2E-AA84-2514-5BC131A680C0">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:49:56 UTC</createdTime>
+<generatorID>3053F0E3-F95F-0410-9681-27E5E27D3A8E</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="timestamp" id="DC0DB749-5500-9553-749E-08D616BA30AE">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:49:56 UTC</createdTime>
+<generatorID>C52D8F85-798C-915E-F636-A49DAE71C16D</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="text" id="FDB791E9-CF65-B0E2-6C93-1ACA9DB197FE">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:49:56 UTC</createdTime>
+<generatorID>B8512CE6-E8B9-8334-FA77-96C10DE1881F</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="booking id" id="6BF025FD-D824-CFF2-A4B7-FD493C969FCD">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:49:56 UTC</createdTime>
+<generatorID>4DA91E00-9EF2-9068-2DEE-FC735D066094</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<referedAttribute>72EC5C4D-898D-6793-83DE-D0859DBD44BB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B20047CB-3AC2-B2F8-EBC8-63DEBC0B056C" name="complaints PK">
+<createdBy>mGarbowski</createdBy>
+<createdTime>2023-05-31 17:49:56 UTC</createdTime>
+<generatorID>E457B41C-638A-8079-C38E-8A0056060EFB</generatorID>
+<ownerDesignName>data-modeler-design-exp</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8CF97FC2-8F2E-AA84-2514-5BC131A680C0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
