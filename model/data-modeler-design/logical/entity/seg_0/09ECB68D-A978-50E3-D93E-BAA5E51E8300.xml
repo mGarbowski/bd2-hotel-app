@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="09ECB68D-A978-50E3-D93E-BAA5E51E8300" name="apartment statistics">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:46:20 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="apartment_id" id="E7F91FBE-F286-6049-0DDA-F93E804A388A">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:46:20 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="n customers" id="7F7F579A-3DE7-A7CE-50CE-1EAAFF3ADAC4">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:46:20 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="n bookings" id="69257F21-F5BD-3716-9000-593D5964FD60">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:46:20 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="n complaints" id="59132DB5-4049-7AE0-7768-C4CFD6C1CB95">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:46:20 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="total_earning" id="DD7C7ACF-B6A2-D2F3-4553-34BF4BDF0B2C">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:46:20 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="avg_earning" id="5AA3668E-2A18-520B-DC12-9F5F4944E673">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:46:20 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9646515E-65ED-F8B9-9600-E902ABF87CCD" name="apartment_PK">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:46:20 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E7F91FBE-F286-6049-0DDA-F93E804A388A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

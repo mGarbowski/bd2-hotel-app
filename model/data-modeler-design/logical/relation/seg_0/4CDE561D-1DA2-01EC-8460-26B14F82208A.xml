@@ -8,6 +8,8 @@
 </engineerTo>
 <sourcePk>5437D4BF-3BA4-3ED7-C4FF-64DC4DCEEDA4</sourcePk>
 <identifying>true</identifying>
+<nameOnSource>has available</nameOnSource>
+<nameOnTarget>is available in</nameOnTarget>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
