@@ -8,6 +8,8 @@
 </engineerTo>
 <sourcePk>9CB9B1FF-3F06-5468-75DE-C86C8E800228</sourcePk>
 <identifying>false</identifying>
+<nameOnSource> </nameOnSource>
+<nameOnTarget>is made in</nameOnTarget>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>

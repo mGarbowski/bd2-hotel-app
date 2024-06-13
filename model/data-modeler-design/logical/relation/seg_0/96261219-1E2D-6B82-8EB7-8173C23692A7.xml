@@ -5,11 +5,12 @@
 <ownerDesignName>data-modeler-design</ownerDesignName>
 <importedID>D8575BA9-0459-0121-99B1-774CE7BEEC76</importedID>
 <engineerTo>
-<item key="C4901E35-FB96-7B30-306D-CD59B4FD5DD4" value="true"/>
 <item key="7A38B019-6EC9-F38C-E08B-BD6B8B1BF9CF" value="true"/>
 </engineerTo>
 <sourcePk>25D84A4F-D04B-4BAB-1EA2-DD76AE3897E6</sourcePk>
 <identifying>false</identifying>
+<nameOnSource>has in</nameOnSource>
+<nameOnTarget>is a part of</nameOnTarget>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>

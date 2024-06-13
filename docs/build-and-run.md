@@ -50,3 +50,6 @@ With the project correctly loaded in IntelliJ Gradle, the application can be con
 The program can be downloaded from the [Oracle](https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/download/) website.
 
 File > Open > data-modeler-design.dmd
+
+### Testing
+To run tests, you can run the `./gradlew check` binary in the apps main directory.

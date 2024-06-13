@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7EC899A8-3447-1169-40EB-BC77A0AFFFC1" name="hotel_statistics">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:37:46 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<ordsAlias>t_hotel_statistics</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<propertyMap>
+<property name="view.object_id" value="0FDAC8F6-CA1B-32CF-F2FB-D594E64E260E"/>
+<property name="view.sql" value="CREATE VIEW hotel_statistics AS
+SELECT h.id                    AS hotel_id,
+       COUNT(c2.id)            AS n_customers,
+       h.total_bookings        AS n_bookings,
+       COUNT(DISTINCT c.id)    AS n_complaints,
+       ps_summed.summed_amount AS total_earning
+FROM hotel h
+         JOIN apartment a on a.hotel_id = h.id
+         LEFT JOIN booking b on a.id = b.apartment_id
+         LEFT JOIN complaint c on b.id = c.booking_id
+         LEFT JOIN customer c2 on b.customer_id = c2.id
+         JOIN (SELECT h2.id                            as hotel_id,
+                      COALESCE(SUM(-1 * ps.amount), 0) AS summed_amount
+               FROM hotel h2
+                        JOIN apartment a2 on h2.id = a2.hotel_id
+                        JOIN booking b2 on a2.id = b2.apartment_id
+                        LEFT JOIN payments_summary ps on b2.id = ps.booking_id
+               WHERE ps.amount &lt; 0
+                  OR ps.amount IS NULL
+               GROUP BY h2.id) ps_summed on h.id = ps_summed.hotel_id
+GROUP BY h.id, ps_summed.summed_amount;"/>
+</propertyMap>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="hotel_id" id="D49774BC-3EC5-A9E1-FF0B-214ADCB1BE4B">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:37:46 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="n_customers" id="8C54FF26-41D8-9D5D-A406-8E10D128DB99">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:37:46 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="n_bookings" id="E3FB3A8E-01B4-404B-45B5-CC0F62536138">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:37:46 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="n_complaints" id="44C5A2C3-9E32-0254-878A-818916593D44">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:37:46 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="total_earning" id="FE403792-198B-006D-1A29-2DF99B8E407B">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:37:46 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>

@@ -9,6 +9,8 @@
 <sourcePk>5437D4BF-3BA4-3ED7-C4FF-64DC4DCEEDA4</sourcePk>
 <targetPk>9CB9B1FF-3F06-5468-75DE-C86C8E800228</targetPk>
 <identifying>false</identifying>
+<nameOnSource>is paid for in</nameOnSource>
+<nameOnTarget>pays for</nameOnTarget>
 <optionalSource>false</optionalSource>
 <optionalTarget>true</optionalTarget>
 <sourceCardinality>*</sourceCardinality>

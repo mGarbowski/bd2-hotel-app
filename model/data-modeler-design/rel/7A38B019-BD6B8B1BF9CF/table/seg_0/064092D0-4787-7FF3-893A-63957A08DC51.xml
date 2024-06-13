@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="064092D0-4787-7FF3-893A-63957A08DC51" name="payments_summary">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:37:46 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<ordsAlias>t_payments_summary</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<propertyMap>
+<property name="view.object_id" value="55D59389-6751-141F-34A9-060DCC0A55AB"/>
+<property name="view.sql" value="SELECT gen_random_uuid()                                      AS id,
+       b.id                                                   AS booking_id,
+       &apos;Reservation fee&apos;                                      AS name,
+       -1 * (b.end_date - b.start_date + 1) * a.price_per_day AS amount
+FROM booking b
+         JOIN apartment a on b.apartment_id = a.id
+UNION ALL
+SELECT gen_random_uuid() AS id, b.id AS booking_id, s.name, -1 * s.price
+FROM extra_service s
+         JOIN available_service avs ON s.id = avs.extra_service_id
+         JOIN extra_service_order so
+              ON so.available_service_hotel_id = avs.hotel_id AND
+                 so.available_service_extra_service_id = avs.extra_service_id
+         JOIN booking b ON so.booking_id = b.id
+UNION ALL
+SELECT gen_random_uuid() AS id, b.id AS booking_id, &apos;Payment&apos; AS name, p.amount
+FROM payment p
+         JOIN booking b ON p.booking_id = b.id;"/>
+</propertyMap>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="40704292-3F94-DBED-F1B3-248035A911BA">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:37:46 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="booking_id" id="5E207A4A-B498-79DD-C6A5-D903B29F2DCB">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:37:46 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="3F4E9B8C-0A41-80C2-6568-7BC18EFA4DBE">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:37:46 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="amount" id="BF92ED04-46C9-D8ED-F54A-219F0C295289">
+<createdBy>jed</createdBy>
+<createdTime>2024-06-13 11:37:46 UTC</createdTime>
+<ownerDesignName>data-modeler-design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>
